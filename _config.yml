@@ -1,0 +1,32 @@
+name:         Machines in the Valley
+description:  A digital history project by Jason A. Heppler.
+markdown:     kramdown
+highlighter:  pygments
+# leave blank when working locally
+url:          http://localhost:4000
+
+# Owner/author information
+owner:
+  name:           Jason Heppler
+  avatar:         photo.jpg
+  email:          jason@jasonheppler.org
+  twitter:        "jaheppler"
+  instagram:      "hepplerj"
+  github:         "hepplerj"
+  facebook:       "jason.heppler"
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:    "http://plus.google.com/112447146120355094986"
+
+links:
+  - title: Topics
+    url: /studies/
+  - title: Views
+    url: /visualizations/
+  - title: Data
+    url: /data/
+  - title: Contribute
+    url: /contribute/
+  - title: Blog
+    url: /blog/
+  - title: About
+    url: /about/

@@ -1,0 +1,63 @@
+---
+layout: page
+permalink: /visualizations/
+title: Visualizations
+headline: Visualizations
+modified: 2014-01-23
+tags: [Jason Heppler, digital history, research]
+---
+
+## {{ page.title }}
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <a href="{{ sitel.url }}/visualizations/greenspace/"><img class="project_preview" src="{{site.url}}/assets/image/traffic_journey_preview.png"/>
+    Journey-to-Work in the Bay Area, 1958</a><br/>
+    <p>A key criticism of conservationists and environmentalists in the 
+    Bay Area focused on the massive uptick in traffic that resulted in 
+    smog obscuring the views that many residents enjoyed. Here is a 
+    snapshot of where people were commuting from in order to visually 
+    understand the traffic flow between suburban homes and suburban 
+    offices.</p>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <a href="{{ sitel.url }}/visualizations/greenspace/"><img class="project_preview" src="{{site.url}}/assets/image/greenspace_preview.png"/>
+    Bay Area Open Space</a><br/>
+    <p>There are more acres of combined green space in the Bay Area than urban 
+    space. The map shows the distribution of open space and urban areas 
+    in the Peninsula.</p>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <a href="{{ sitel.url }}/visualizations/urban_areas/"><img class="project_preview" src="{{site.url}}/assets/image/urban_areas_preview.png"/>
+    Urban Areas of the San Francisco Peninsula</a><br/>
+    <p>After 1945, every municipality in the Bay Area underwent 
+    aggressive expansion. Annexations, incorporations, and 
+    consolidations created a sprawling, complicated map of urban areas 
+    on the Peninsula.</p>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <a href="{{ sitel.url }}/visualizations/companies/"><img class="project_preview" src="{{site.url}}/assets/image/superfund_preview.png"/>
+    The Pollution Landscape, 1970&#8212;2000</a><br/>
+    <p>In 1982 news broke that Fairchild Semiconductor's manufacturing facility in South San Jose had leaked industrial solvents into the soil and groundwater, affecting nearby drinking wells operated by the Great Oak Water Company that supplied 16,000 residents. By the end of the decade, numerous leaks, spills, and contaminations would be uncovered.</p>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <a href="{{ site.url }}/visualizations/population/"><img class="project_preview" src="{{ site.url }}/assets/image/population_preview.png"/>
+    Population Figures, 1850&#8212;2014</a><br/>
+    <p>During and after World War II, northern California experienced 
+    tremendous urban growth outside of its traditional urban centers of 
+    Oakland, Berkeley, and San Francisco. These charts visualize population 
+    change throughout the Peninsula.</p>
+  </div>
+</div>
