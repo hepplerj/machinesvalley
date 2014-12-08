@@ -1,0 +1,122 @@
+path {
+  fill: none;
+  stroke: none;
+  stroke-linejoin: round;
+  stroke-width: 1px;
+}
+
+.map-tooltip {
+  font-size: 10pt;
+  font-family: sans-serif;
+  color: #333;
+  line-height: 1em;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid silver;
+  padding: .5em;
+  max-width: 350px;
+  pointer-events: none;
+  z-Index: 1000;
+}
+
+.axis {
+  font: 10px sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.background {
+  cursor: move!important;
+}
+
+.axis .domain {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .3;
+  stroke-width: 10px;
+  stroke-linecap: round;
+}
+
+.axis .halo {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 8px;
+  stroke-linecap: round;
+}
+
+.slider .handle {
+  fill: #fff;
+  stroke: #000;
+  stroke-opacity: .5;
+  stroke-width: 1.25px;
+  pointer-events: none;
+}
+
+#filters {
+
+}
+
+/* Map Features */
+
+.company-circ {
+  stroke: #000;
+  stroke-width: .5px;
+  fill-opacity: .8;
+  cursor: crosshair;
+}
+
+.company-circ-hidden {
+  display: none;
+}
+
+.superfund-circ {
+  fill: #d21245;
+  stroke: #000;
+  stroke-opacity: .5;
+  stroke-width: 1px;
+  fill-opacity: .7;
+  cursor: crosshair;
+}
+
+.superfund-circ :hover {
+  stroke: #fff;
+}
+
+.superfund-circ-hidden {
+  display: none;
+}
+
+.toxics-circ {
+  stroke: #000;
+  stroke-opacity: .5;
+  stroke-width: 1px;
+  fill-opacity: .7;
+  cursor: crosshair;
+}
+
+/*.openspace { fill: #009B9E; opacity: .7; }*/
+
+.PiYG .q0-8{fill:rgb(197,27,125)}  /* pink */
+.PiYG .q1-8{fill:rgb(222,119,174)}
+.PiYG .q2-8{fill:rgb(241,182,218)}
+.PiYG .q3-8{fill:rgb(253,224,239)}
+.PiYG .q4-8{fill:rgb(230,245,208)}
+.PiYG .q5-8{fill:rgb(184,225,134)}
+.PiYG .q6-8{fill:rgb(127,188,65)}
+.PiYG .q7-8{fill:rgb(77,146,33)}   /* green */
+
+ /* Fix Google Maps canvas
+ *
+ * Wrap your Google Maps embed in a `.google-map-canvas` to reset Bootstrap's
+ * global `box-sizing` changes. You may optionally need to reset the `max-width`
+ * on images in case you've applied that anywhere else. (That shouldn't be as
+ * necessary with Bootstrap 3 though as that behavior is relegated to the
+ * `.img-responsive` class.)
+ */
+
+.google-map-canvas,
+.google-map-canvas * { .box-sizing(content-box); }
+
+/* Optional responsive image override */
+img { max-width: none; }
