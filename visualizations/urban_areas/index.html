@@ -7,10 +7,6 @@ layout: visualization
 
 <style>
 
-body {
-  font-family: sans-serif;
-}
-
 svg {
   background: #7EC9C8;
 }
@@ -89,7 +85,7 @@ var projection = d3.geo.albers()
     .center([0, 37.33])
     .rotate([121.9, 0])
     .parallels([50, 60])
-    .scale(1200 * 40)
+    .scale(1200 * 45)
     .translate([width / 2, height / 2]);
 
 var path = d3.geo.path()

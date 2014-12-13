@@ -1,0 +1,122 @@
+.toggles {
+  list-style-type:none;
+  display: table;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.toggles a {
+  display:block;
+  color:#000;
+  padding:7px 12px;
+  text-decoration:none
+}
+
+.toggles a:hover,
+.toggles .active a{
+  background: #e31a1c;
+  color: white;
+  cursor: pointer;
+}
+
+.toggles li {
+  line-height:12px;
+  float:left;
+  background: #b7b7b7;
+  margin-right:-1px;
+  border:1px solid #ddd;
+}
+
+.toggles li.active {
+  border:1px solid #ccc;
+  background: #fed976;
+  color: white;
+}
+
+svg {
+  background: #7ec9c8;
+}
+
+path { fill: #fee6ce; }
+
+.subunit081 { fill: #D0CAE0; } /* San Mateo*/
+.subunit075 { fill: #F0E2FB; } /* San Francisco */
+.subunit085 { fill: #f1f1f7; } /* Santa Clara */
+.subunit087 { fill: #CAD0E0; } /* Santa Cruz */
+.subunit001 { fill: #C2dde4; } /* Alameda */
+
+.subunit-boundary {
+  fill: none;
+  stroke: #777;
+  stroke-dasharray: 2,2;
+  stroke-linejoin: round;
+}
+
+.subunit-label {
+  fill: #777;
+  fill-opacity: .5;
+  font-size: 20px;
+  font-weight: 300;
+  text-anchor: middle;
+}
+
+text {
+  font-family: "Lato","Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  pointer-events: none;
+}
+
+.place,
+.place-label {
+  fill: #444;
+}
+
+.border {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.bubble {
+  fill: #363638;
+  fill-opacity: .5;
+  stroke: #fff;
+  stroke-width: .5px;
+}
+
+.bubble :hover {
+  stroke: #000;
+}
+
+.bubble-mtnview {
+  fill: green;
+  fill-opacity: .5;
+  stroke: #fff;
+  stroke-width: .5px;
+}
+
+.bubble-mtnview :hover {
+  stroke: #000;
+}
+
+.legend circle {
+  fill: none;
+  stroke: #ccc;
+}
+
+.legend text {
+  fill: #777;
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.city-arcs {
+  display: none;
+  fill: none;
+  stroke: #000;
+}
+
+.city-arcs:hover {
+  display: inline;
+}

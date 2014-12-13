@@ -3,7 +3,7 @@ description:  A digital history project by Jason A. Heppler.
 markdown:     kramdown
 highlighter:  pygments
 # leave blank when working locally
-url:
+url:          http://dissertation.jasonheppler.org
 
 # Owner/author information
 owner:
@@ -24,8 +24,6 @@ links:
     url: /visualizations/
   - title: Data
     url: /data/
-  - title: Contribute
-    url: /contribute/
   - title: Blog
     url: /blog/
   - title: About

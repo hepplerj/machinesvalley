@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /visualizations/
-title: Visualizations
-headline: Visualizations
+title: Views
+headline: Views
 modified: 2014-01-23
 tags: [Jason Heppler, digital history, research]
 ---
@@ -11,7 +11,7 @@ tags: [Jason Heppler, digital history, research]
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
-    <a href="{{ sitel.url }}/visualizations/greenspace/"><img class="project_preview" src="{{site.url}}/assets/image/traffic_journey_preview.png"/>
+    <a href="{{ sitel.url }}/visualizations/traffic/"><img class="project_preview" src="{{site.url}}/assets/image/traffic_journey_preview.png"/>
     Journey-to-Work in the Bay Area, 1958</a><br/>
     <p>A key criticism of conservationists and environmentalists in the 
     Bay Area focused on the massive uptick in traffic that resulted in 
@@ -19,16 +19,6 @@ tags: [Jason Heppler, digital history, research]
     snapshot of where people were commuting from in order to visually 
     understand the traffic flow between suburban homes and suburban 
     offices.</p>
-    </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12 col-md-8">
-    <a href="{{ sitel.url }}/visualizations/greenspace/"><img class="project_preview" src="{{site.url}}/assets/image/greenspace_preview.png"/>
-    Bay Area Open Space</a><br/>
-    <p>There are more acres of combined green space in the Bay Area than urban 
-    space. The map shows the distribution of open space and urban areas 
-    in the Peninsula.</p>
     </div>
 </div>
 

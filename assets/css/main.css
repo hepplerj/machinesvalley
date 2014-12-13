@@ -144,3 +144,9 @@ header {
 .sidebar {
   background: #f2f2f2;
 }
+
+.footnotes {
+  font-size: 11px;
+  line-height: 1.1em;
+  padding: 5px;
+}
