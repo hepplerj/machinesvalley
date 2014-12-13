@@ -10,10 +10,10 @@ Jason A. Heppler | <jason@jasonheppler.org> | http://jasonheppler.org
 If you use the data or analysis from this project, please provide a 
 citation:
 
-> Heppler, Jason A. Machines in the Valley. 2014--. 
-> <http://jasonheppler.org>
+> Heppler, Jason A. Machines in the Valley. 2014&#8212;. 
+> <http://dissertation.jasonheppler.org>
 
-## Description of directories
+## Description
 
 -   The `data` directory contains several sources of data. For example, 
     the `data/sv-companies` directory contains a `csv` of technology 
@@ -35,9 +35,10 @@ request or [email me][] data.
 Code and scripts in this repository are available for use under the MIT
 license <http://heppler.mit-license.org/>. 
 
-Data I include here is that which I believe falls under fair use or if I 
-have permission. For any specific citation or permission information, 
-please see the citation information in each directory.
+The data I include here I believe falls under [fair use][] or I have 
+obtained permission to share. For any specific citation or permission 
+information, please see the citation information in each directory.
 
   [Jekyll]: http://jekyllrb.com/
   [email me]: mailto:jason@jasonheppler.org
+  [fair use]: http://www.copyright.gov/fls/fl102.html
