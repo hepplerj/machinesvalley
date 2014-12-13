@@ -1,7 +1,7 @@
 queue()
-    .defer(d3.csv, "../data/sv_companies.csv")
-    .defer(d3.csv, "../data/ca_superfund.csv")
-    .defer(d3.csv, "../data/ca_toxic_sites.csv")
+    .defer(d3.csv, "/data/sv_companies.csv")
+    .defer(d3.csv, "/data/ca_superfund.csv")
+    .defer(d3.csv, "/data/ca_toxic_sites.csv")
     .await(ready);
 
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
