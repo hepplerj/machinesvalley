@@ -16,7 +16,7 @@ citation:
 ## Description of directories
 
 -   The `data` directory contains several sources of data. For example, 
-    the `data/companies` directory contains a `csv` of technology 
+    the `data/sv-companies` directory contains a `csv` of technology 
     companies in the Bay Area between 1945 and 2000. Each directory 
     contains the data plus a `txt` or `md` file explaining the contents, 
     provenance, and any data transformations I might have made on 
