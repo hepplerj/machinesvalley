@@ -31,7 +31,7 @@ var svg = d3.select("#viz").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("/data/pop_cities.csv", function(error, data) {
+d3.csv("/data/census-population/pop_cities.csv", function(error, data) {
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
 
   data.forEach(function(d) {

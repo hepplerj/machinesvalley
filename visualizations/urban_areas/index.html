@@ -76,8 +76,8 @@ path { fill: #fee6ce; }
 <script>
 
 queue()
-  .defer(d3.json, "{{ site.url }}/visualizations/data/ca_counties.json")
-  .defer(d3.json, "{{ site.url }}/visualizations/data/urban_areas_out.json")
+  .defer(d3.json, "/data/ca-counties/ca_counties.json")
+  .defer(d3.json, "/data/sv-urban/urban_areas_out.json")
   .await(ready);
 
 var width = 1055,

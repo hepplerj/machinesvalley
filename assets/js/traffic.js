@@ -1,7 +1,7 @@
 // Get our data ready
 queue()
-  .defer(d3.json, "/data/ca_counties.json")
-  .defer(d3.csv, "/data/traffic.csv")
+  .defer(d3.json, "/data/ca-counties/ca_counties.json")
+  .defer(d3.csv, "/data/sv-traffic/traffic.csv")
   .await(ready);
 
 var width = 1055,

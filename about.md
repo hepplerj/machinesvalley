@@ -41,6 +41,12 @@ what Richard White called hybrid landscapes, I argue the
 interconnections between these competing idealized landscapes shaped the 
 environmental, cultural, and political identities in the Bay Area.[^2]
 
+## Contributing
+
+If you are interested in collaborating or contributing to the data I 
+have collected, please email me or ping me on Twitter and I can give you 
+access to the Github repository.
+
 [^3]: Kenneth Jackson, *Crabgrass Frontier: The Suburbanization of the United States* (Oxford: Oxford University Press, 1987), p. 3.  
 
 [^1]: John B. Wright, "Land Tenure: The Spatial Musculature of the American West," in *Western Places, American Myths: How We Think About the West*, ed. Gary J. Hausladen, p. 85 
