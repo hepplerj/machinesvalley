@@ -55,24 +55,22 @@ function ready(error, ca_counties, commute) {
   .enter().append("g")
     .attr("class","bars")
     .attr("transform",function(d) { return "translate(" + projection([d.end_longitude, d.end_latitude]) + ")";});
-
-    /*
+/*
     bars.append("rect")
     .attr("height", function(d) { return d.amount / 2})
     .attr("width", 10)
     .attr("y", function(d) { return -(d.amount)})
     .attr("class", "bars")
-    .style("fill", "green")
+    .style("fill", function(d) { return color(d.work)})
     .style("stroke", "white")
-    .style("opacity", .4)
+    .style("opacity", .5)
     .style("stroke-width", .8);
-    */
+*/
 
     bars.append("text")
     .text(function(d) { return d.work })
     .attr("x", -10)
     .attr("y", 18);
-
     svg.append("g")
     .attr("class", "bubble")
     .selectAll("circle")
@@ -98,4 +96,42 @@ function ready(error, ca_counties, commute) {
 //        .attr("y", function(d) { return -2 * radius(d); })
 //        .attr("dy", "1.3em")
 //        .text(d3.format(".1s"));
+
+// Selector
+var views = {
+  "allView": {
+    "field": "allView",
+    "label": "View all"
+  },
+  "mountainViewView":{
+    "field": "mountainViewView",
+    "label": "Mountain View"
+  },
+  "sanJoseView":{
+    "field": "sanJoseView",
+    "label": "San Jose"
+  },
 };
+
+var fieldSelector = d3.select("#field-selector")
+  .on("change", fieldSelected);
+
+for (var key in views) {
+  fieldSelector.append("option")
+  .attr("value", key)
+  .text(views[key].label);
+}
+
+d3.selectAll("input").on("change", fieldSelected);
+
+function fieldSelected() {
+  field = fieldSelector.node().value;
+  if (this.value === "allView") {
+    //code here
+  } else {
+    //code here
+  }
+}
+
+};
+
