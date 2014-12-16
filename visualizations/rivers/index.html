@@ -14,6 +14,28 @@ visualization: rivers.js
 <div id="viz"></div>
 </div>
 
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+      <form role="form">
+        <label class="checkbox-inline">
+          <input id="showsuperfund" type="checkbox" onclick="filterPoints('.superfund-circ')" checked> Show Superfund sites
+        </label>
+        <label class="checkbox-inline">
+          <input id="showtoxics" type="checkbox" onclick="filterPoints('.toxics-circ')" checked> Show toxic sites and spills
+        </label>
+        <label class="checkbox-inline">
+          <input id="openspace" type="checkbox" onclick="filterPoints('.openspace-poly')" checked> Show open space 
+        </label>
+        <label class="checkbox-inline">
+          <input id="urbanarea" type="checkbox" onclick="filterPoints('.urbanarea-poly')" checked> Show urban areas 
+        </label>
+      </form>
+    </div><!-- .col-md-8 -->
+    <!-- <div class="col-md-4">
+      Filter industries by: <div id="field-selector"></div>
+    </div> --> <!-- .md-col-4 -->
+  </div><!-- .row -->
+
   <div class="row">
     <div class="col-md-8">
 

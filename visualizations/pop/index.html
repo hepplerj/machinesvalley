@@ -1,0 +1,74 @@
+---
+title: "Population in the Bay Area, 1850&#8212;2010"
+date: 2014-11-17 09:50:25
+permalink: /visualizations/pop/
+layout: page
+extra_css: population_map.css
+visualization: population_map.js
+---
+<div class="container">
+
+<h2>{{ page.title }}</h2>
+
+<div class="row">
+<div id="graph"></div>
+
+<p>
+  <label for="year">Year: </label>
+  <input type="text" id="year" style="border:0;color:#f6931f;font-weight:bold;"/>
+</p>
+
+<div id="slider" style="width: 200px;">
+
+</div>
+
+  <div class="row">
+    <div class="col-md-8">
+
+      <h3>About the Map</h3>
+
+      <p>
+      A persistent environmental critique of the Bay Area was the region's 
+      growing traffic problems, which not only caused heavy congestion but 
+      promoted smog that obscured the Valley's prized views. In 1958, the 
+      Santa Clara County Planning Commission reported on journey-to-work 
+      problems on the San Francisco Peninsula.
+      </p>
+
+      <p>
+      The visualization begins to confirm the argument&#8212;mine and
+      others&#8212;that there existed an imbalance between the places people lived
+      and the places people worked. These places were defined by city
+      policies. Specifically, the visualization reflects a heavy concentration
+      of commuters leaving San Jose for other parts of the Bay Area for their
+      jobs.
+      </p>
+
+            <hr>
+
+      <h3>Citation</h3>
+
+      <blockquote>
+         Jason A. Heppler, "{{ page.title}}," interactive media, {{site.url}}{{page.permalink}}, 2014.
+      </blockquote>
+
+      <hr>
+
+      </div><!-- .col-md-8 -->
+
+    <div class="col-md-4 sidebar">
+      <h4>Source</h4>
+        Paul F. Griffin and Ronald Chatham, "Industrial Analysis North Santa 
+        Clara County" (San Jose: County of Santa Clara Planning Department, 
+        1958).
+      <h4>Data</h4>
+      <ul>
+        <li><a href="">Table, "Journey to Work," from Karl Belser</a></li>
+      </ul>
+    </div>
+
+
+
+  </div><!-- .row -->
+
+</div>

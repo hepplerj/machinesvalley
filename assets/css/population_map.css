@@ -1,0 +1,39 @@
+svg {
+  background: #7ec9c8;
+}
+
+circle {
+  fill: steelblue;
+  fill-opacity: .6;
+  stroke: #fff;
+}
+
+path { fill: #fee6ce; }
+
+.subunit081 { fill: #D0CAE0; } /* San Mateo*/
+.subunit075 { fill: #F0E2FB; } /* San Francisco */
+.subunit085 { fill: #f1f1f7; } /* Santa Clara */
+.subunit087 { fill: #CAD0E0; } /* Santa Cruz */
+.subunit001 { fill: #C2dde4; } /* Alameda */
+
+.subunit-boundary {
+  fill: none;
+  stroke: #777;
+  stroke-dasharray: 2,2;
+  stroke-linejoin: round;
+}
+
+.subunit-label {
+  fill: #777;
+  fill-opacity: .5;
+  font-size: 20px;
+  font-weight: 300;
+  text-anchor: middle;
+}
+/*
+text {
+  font-family: "Lato","Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  pointer-events: none;
+}
+*/

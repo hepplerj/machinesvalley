@@ -5,6 +5,7 @@ queue()
   .defer(d3.json, "/data/ca-openspace/openspace_santaclara.json")
   .defer(d3.csv, "/data/ca-pollution/ca_superfund.csv")
   .defer(d3.csv, "/data/ca-pollution/ca_toxic_sites.csv")
+  .defer(d3.json, "/data/sv-urban/urban_areas_out.json")
   .await(ready);
 
 var width = 1055,
@@ -15,7 +16,7 @@ var radius = d3.scale.sqrt()
     .domain([0, 6])
     .range([1, 5]);
 
-var color = d3.scale.category20();
+var color = d3.scale.category20b();
 
 var projection = d3.geo.azimuthalEqualArea()
     .center([0, 37.30])
@@ -30,7 +31,7 @@ var svg = d3.select("#viz").append("svg")
     .attr("width", width + margin.right + margin.left)
     .attr("height", height);
 
-function ready(error, ca_counties, rivers, openspace, superfund, toxics) {
+function ready(error, ca_counties, rivers, openspace, superfund, toxics, urban_areas) {
 
   svg.selectAll(".subunit")
     .data(topojson.feature(ca_counties, ca_counties.objects.subunits).features)
@@ -60,15 +61,24 @@ function ready(error, ca_counties, rivers, openspace, superfund, toxics) {
     .style("fill", "none")
     .style("stroke", "#0092B2");
 
+  svg.selectAll(".urban_areas")
+      .data(topojson.feature(urban_areas, urban_areas.objects.urban_areas).features)
+    .enter().append("path")
+      .style("fill", function(d,i) { return color(d.id); })
+      .style("stroke", function(d,i) { return d3.lab(color(d.id)).darker(); })
+      .attr("class", "urbanarea-poly")
+      .attr("d", path)
+      .style("opacity", "0.3");
+
   svg.selectAll(".openspace")
       .data(topojson.feature(openspace, openspace.objects.units_sc).features)
     .enter().append("path")
-      .attr("class", "openspace")
-      .style("fill", "#A8C545")
+      .attr("class", "openspace-poly")
+      .style("fill", "#333")
       .style("stroke", "white")
       .style("stroke-width", "0.3")
       .attr("d", path)
-      .style("opacity", "0.3");
+      .style("opacity", "0.5");
 
   superfund_sites = svg.selectAll(".superfund")
     .data(superfund)
@@ -79,7 +89,7 @@ function ready(error, ca_counties, rivers, openspace, superfund, toxics) {
   superfund_sites
     .append("circle")
     .attr("r", 8.5)
-    .attr("class", "superfund");
+    .attr("class", "superfund-circ");
 
   toxic_sites = svg.selectAll(".toxics")
     .data(toxics)
@@ -90,8 +100,14 @@ function ready(error, ca_counties, rivers, openspace, superfund, toxics) {
   toxic_sites
     .append("circle")
     .attr("r", 4.5)
-    .attr("class", "toxics");
+    .attr("class", "toxics-circ");
 
+  };
 
-};
-
+function filterPoints(pointData) {
+  if(d3.selectAll(pointData).style("display") == "none") {
+    d3.selectAll(pointData).style("display", "block")
+  } else {
+  d3.selectAll(pointData).style("display", "none")
+  }
+}

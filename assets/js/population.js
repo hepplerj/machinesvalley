@@ -1,4 +1,4 @@
-var margin = {left: 50, right: 50, bottom: 50, top: 50},
+var margin = {left: 50, right: 20, bottom: 30, top: 30},
     width = 1055,
     height = 500;
 
@@ -25,11 +25,11 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.population); });
 
-var svg = d3.select("#viz").append("svg")
+var svg = d3.select("#viz")
+    .append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("height", height + margin.top + margin.bottom)
+    .attr("transform","translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("/data/census-population/pop_cities.csv", function(error, data) {
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));

@@ -41,7 +41,16 @@ what Richard White called hybrid landscapes, I argue the
 interconnections between these competing idealized landscapes shaped the 
 environmental, cultural, and political identities in the Bay Area.[^2]
 
-## Contributing
+### Iterations
+
+Much of this project is still a work-in-progress. Features, analysis, 
+and narrative will appear over time as ways for me to ask questions of 
+my research, illustrate points I'm trying to make, and extend upon 
+subjects and themes covered in my dissertation chapters. Various aspects 
+of the project are bound to change over time. As those changes occur, I 
+will try to document on the project blog.
+
+### Contributing
 
 If you are interested in collaborating or contributing to the data I 
 have collected, please email me or ping me on Twitter and I can give you 
