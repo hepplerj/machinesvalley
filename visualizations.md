@@ -9,6 +9,9 @@ tags: [Jason Heppler, digital history, research]
 
 ## {{ page.title }}
 
+<p>Views are interpretive historical visualizations from my research. 
+Each view aims to address a research question or theme.</p>
+
 <div class="row">
   <div class="col-xs-12 col-md-8">
     <a href="{{ sitel.url }}/visualizations/urban_areas/"><img class="project_preview" src="{{site.url}}/assets/image/urban_areas_preview.png"/>
@@ -30,10 +33,20 @@ tags: [Jason Heppler, digital history, research]
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
+    <img class="project_preview" src="{{site.url}}/assets/image/annexation_preview.png"/>
+    San Jose Annexations, 1850&#8212;2010 (Coming Soon)<br/>
+    <p>After 1945, the City of San Jose embarked on an aggressive 
+    annexation campaign in the Bay Area with the intent of becoming the 
+    "Los Angeles of the North."</p>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
     <a href="{{ site.url }}/visualizations/rivers/"><img class="project_preview" src="{{ site.url }}/assets/image/rivers_preview.png"/>
     Environments of the Bay Area</a><br/>
     <p>How did the landscapes of the Bay Area overlap? This map depicts 
-    the overlapping Natural, Urban, Industrial landscapes of the Bay 
+    the overlapping Natural, Urban, and Industrial landscapes of the Bay 
     Area.</p> 
   </div>
 </div>

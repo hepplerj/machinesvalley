@@ -25,6 +25,8 @@ GeoJSON file.
 - **[Silicon Valley companies, 1945-2000](https://github.com/hepplerj/machinesvalley/blob/gh-pages/data/sv_companies.csv)**: A database I am compiling of technology companies in the Bay Area between 1945 and 2000.
 - **[Bay Area Superfund sites](https://github.com/hepplerj/machinesvalley/blob/gh-pages/data/ca_superfund.csv)**: A database of the region's Superfund sites.
 - **[Bay Area toxic spills and sites](https://github.com/hepplerj/machinesvalley/blob/gh-pages/data/ca_toxic_sites.csv)**: A database of the region's toxic spill sites.
-- **[Bay Area city populations](https://github.com/hepplerj/machinesvalley/blob/gh-pages/data/pop_cities.csv)**:
-- **[Bay Area county populations]()**: 
+- **[Bay Area city 
+populations](https://github.com/hepplerj/machinesvalley/blob/gh-pages/data/pop_cities.csv)**: Census figures for Bay Area cities.
+- **[Bay Area county 
+populations](https://github.com/hepplerj/machinesvalley/blob/gh-pages/data/census-population/population_bay_area.csv)**: Census figures for Bay Area counties.
 - **[Bay Area 1958 journey-to-work figures](https://github.com/hepplerj/machinesvalley/blob/gh-pages/data/traffic.csv)**: Compiled for the [journey-to-work]() visualization.
