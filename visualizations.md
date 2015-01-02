@@ -44,7 +44,7 @@ Each view aims to address a research question or theme.</p>
 <div class="row">
   <div class="col-xs-12 col-md-8">
     <a href="{{ site.url }}/visualizations/rivers/"><img class="project_preview" src="{{ site.url }}/assets/image/rivers_preview.png"/>
-    Environments of the Bay Area</a><br/>
+    Landscapes of the Bay Area</a><br/>
     <p>How did the landscapes of the Bay Area overlap? This map depicts 
     the overlapping Natural, Urban, and Industrial landscapes of the Bay 
     Area.</p> 
