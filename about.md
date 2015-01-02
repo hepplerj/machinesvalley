@@ -30,15 +30,14 @@ Valley would become: A postindustrial trend-setter? A fertile and
 beautiful agricultural producer? A countryside paradise? A metropolitan 
 leader?
 
-Space forms the central component of my work. Geographer John Write has 
-argued that "places are best seen as sifting stages where the exercise 
+Space forms the central component of my work. Geographer John Wright has 
+argued that "places are best seen as shifting stages where the exercise 
 of power and resistance to it vie for dominance."[^1] Physical and 
 conceptual boundaries were drawn around competing landscapes in the Bay 
 Area. These boundaries encapsulated three landscapes: agriculture, 
-industry, and suburbs. These intermixed landscapes placed unique but 
-concurrent pressures on natural resources on the Peninsula. By examining 
+industry, and suburbs. By examining 
 what Richard White called hybrid landscapes, I argue the 
-interconnections between these competing idealized landscapes shaped the 
+interconnections between these competing idealized landscapes shaped 
 environmental, cultural, and political identities in the Bay Area.[^2]
 
 ### Iterations
@@ -47,8 +46,7 @@ Much of this project is still a work-in-progress. Features, analysis,
 and narrative will appear over time as ways for me to ask questions of 
 my research, illustrate points I'm trying to make, and extend upon 
 subjects and themes covered in my dissertation chapters. Various aspects 
-of the project are bound to change over time. As those changes occur, I 
-will try to document on the project blog.
+of the project are bound to change over time.
 
 ### Contributing
 
