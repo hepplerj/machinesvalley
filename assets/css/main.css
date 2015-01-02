@@ -150,3 +150,10 @@ header {
   line-height: 1.1em;
   padding: 5px;
 }
+
+.topic-preview {
+ width: 140px;
+ height: auto;
+ float: left;
+ margin: 10px;
+}
