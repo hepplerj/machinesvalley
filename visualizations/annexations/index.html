@@ -1,211 +1,38 @@
 ---
-title: Bay Area Annexations, 1940--2000
-date: 2014-09-10
+title: "[IN DEVELOPMENT] San Jose Annexations, 1850&#8212;2000"
+date: 2015-01-17 19:31:46
 permalink: /visualizations/annexations/
-layout: visualization
+layout: page
+extra_css: annexation.css
+visualization: annexation.js
 ---
+<div class="container">
 
-<h2>{{ page.title }}</h2>
+  <h2>{{ page.title }}</h2>
 
-<style>
+  <div class="row">
+    <div id="map"></div>
+  </div>
 
-body {
-  font: 14px/22px sans-serif;
-}
+  <div class="row">
+    <div class="small-8 columns">
+      <div id="slider"></div>
+    </div>
+    <div class="small-4 columns">
+      <!-- <select name="field-selector" id="field-selector">
+    </select> -->
+    </div>
+  </div>
 
-.toggles {
-  list-style-type:none;
-  display: table;
-  margin: 0 auto;
-  padding: 0px;
-}
+  <div class="row">
+    <p>In the postwar era, San Jose undertook an aggressive annexation campaign
+    to fold surrounding land and cities into its orbit.</p>
+    <hr>
+    <h3>Citation</h3>
+    <p>Blah blah.</p>
+    <hr>
+    <h3>Explanation of Data</h3>
+    <p>Blah blah.</p>
+  </div>
 
-.toggles a {
-  display:block;
-  color:#000;
-  padding:7px 12px;
-  text-decoration:none
-}
-
-.toggles a:hover,
-.toggles .active a{
-  background: #e31a1c;
-  color: white;
-  cursor: pointer;
-}
-
-.toggles li {
-  line-height:12px;
-  float:left;
-  background: #b7b7b7;
-  margin-right:-1px;
-  border:1px solid #ddd;
-}
-
-.toggles li.active {
-  border:1px solid #ccc;
-  background: #fed976;
-  color: white;
-}
-
-svg {
-  background: #e0ecf4;
-}
-
-path { fill: #fee6ce; }
-
-.subunit081 { fill: #fee6ce; }
-.subunit075 { fill: #fee6ce; }
-.subunit085 { fill: #f1f1f7; } /* SC */
-.subunit087 { fill: #fee6ce; }
-.subunit001 { fill: #fee6ce; }
-
-.annexations { fill: #333; opacity: .3; }
-
-.openspace { fill: green; opacity: .3; }
-
-.openspace-boundary {
-  fill: none;
-  stroke: #777;
-  stroke-dasharray: 1,2;
-  stroke-linejoin: round;
-}
-
-.subunit-boundary {
-  fill: none;
-  stroke: #777;
-  stroke-dasharray: 2,2;
-  stroke-linejoin: round;
-}
-
-.subunit-label {
-  fill: #777;
-  fill-opacity: .5;
-  font-size: 20px;
-  font-weight: 300;
-  text-anchor: middle;
-}
-
-text {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 10px;
-  pointer-events: none;
-}
-
-.place,
-.place-label {
-  fill: #444;
-}
-
-</style>
-
-<div class="filter">
-  <ul id="position" class="toggles">
-    <li class="pos-button" id="all"><a>All</a></li>
-    <li class="pos-button" id="qb"><a>1950</a></li>
-    <li class="pos-button" id="rb"><a>1960</a></li>
-    <li class="pos-button" id="wr"><a>1970</a></li>
-    <li class="pos-button" id="te"><a>1980</a></li>
-    <li class="pos-button" id="ol"><a>1990</a></li>
-    <li class="pos-button" id="dl"><a>2000</a></li>
-  </ul>
 </div>
-
-<script>
-// Get our data ready
-queue()
-    .defer(d3.json, "{{ site.url }}/visualizations/data/sj_annex_full.json")
-    .defer(d3.json, "{{ site.url }}/visualizations/data/ca_counties.json")
-    .defer(d3.json, "{{ site.url }}/visualizations/data/openspace_santaclara_new.json")
-    .await(ready);
-
-var width = 960,
-    height = 700;
-
-var cities = [
-      {'pos': [121.90000, 37.3333], 'name': 'San Jose'},
-      {'pos': [122.4167, 37,7833], 'name': 'San Francisco'},
-      {'pos': [122.0375, 37.3711], 'name': 'Sunnyvale'}
-      // mountain view
-      // cupertino
-      // santa clara
-    ];
-
-var projection = d3.geo.azimuthalEqualArea()
-    .center([0, 37.23])
-    .rotate([121.7, 0])
-    .scale(3200 * 20)
-    .translate([width / 2, height / 2]);
-
-var path = d3.geo.path()
-    .projection(projection)
-    .pointRadius(2);
-
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-var companyPoints = svg.append("g");
-
-parseDate = d3.time.format("%y/%m/%d").parse.getFullYear();
-
-function ready(error, sj_annexations, ca_counties, openspace) {
-
-  svg.selectAll(".subunit")
-    .data(topojson.feature(ca_counties, ca_counties.objects.subunits).features)
-  .enter().append("path")
-    .attr("class", function(d) { return "subunit" + d.id; })
-    .attr("d", path);
-
-  svg.append("path")
-    .datum(topojson.mesh(ca_counties, ca_counties.objects.subunits, function(a, b) { return a !== b }))
-    .attr("d", path)
-    .attr("class", "subunit-boundary");
-
-  // Printing county names
-  svg.selectAll(".subunit-label")
-    .data(topojson.feature(ca_counties, ca_counties.objects.subunits).features)
-  .enter().append("text")
-    .attr("class", function(d) { return "subunit-label " + d.id; })
-    .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
-    .attr("dy", ".35em")
-    .text(function(d) { return d.properties.name + " County"; });
-
-  // Display the annexations for San Jose
-  svg.selectAll(".annexations")
-    .data(topojson.feature(sj_annexations, sj_annexations.objects.sj_annex).features)
-  .enter().append("path")
-    .attr("class", function(d) { return "annexations" })
-    .attr("d", path);
-
-  // Display green space
-  // svg.selectAll(".openspace")
-  //     .data(topojson.feature(openspace, openspace.objects.units_sc).features)
-  //   .enter().append("path")
-  //     .attr("class", function(d) { return "openspace" })
-  //     .attr("d", path);
-
-    // svg.append("path")
-    //   .datum(topojson.mesh(openspace, openspace.objects.units_sc, function(a, b) { return a !== b }))
-    //   .attr("d", path)
-    //   .attr("class", "openspace-boundary");
-
-  // Printing city names
-  svg.append("path")
-    .datum(topojson.feature(ca_counties, ca_counties.objects.places))
-    .attr("d", path)
-    .attr("class", "place");
-
-  svg.selectAll(".place-label")
-      .data(topojson.feature(ca_counties, ca_counties.objects.places).features)
-    .enter().append("text")
-      .attr("class", "place-label")
-      .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
-      .attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 6 : -6; })
-      .attr("dy", ".35em")
-      .style("text-anchor", function(d) { return d.geometry.coordinates[0] > -1 ? "start" : "end"; })
-      .text(function(d) { return d.properties.name; });
-
-};
-
-</script>
