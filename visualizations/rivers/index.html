@@ -17,8 +17,10 @@ tags: [landscape, environment, companies, Superfund sites, pollution]
 <div id="viz"></div>
 </div>
 
+<div id="legend"></div>
+
 <div class="row">
-  <div class="col-xs-12 col-md-8">
+  <div style="width: 100%;">
       <form role="form">
         <label class="checkbox-inline">
           <input id="showsuperfund" type="checkbox" onclick="filterPoints('.superfund-circ')" checked> Show Superfund sites
@@ -27,10 +29,16 @@ tags: [landscape, environment, companies, Superfund sites, pollution]
           <input id="showtoxics" type="checkbox" onclick="filterPoints('.toxics-circ')" checked> Show toxic sites and spills
         </label>
         <label class="checkbox-inline">
-          <input id="openspace" type="checkbox" onclick="filterPoints('.openspace-poly')" checked> Show open space 
+          <input id="openspace" type="checkbox" onclick="filterPoints('.openspace-poly')" checked> Show open space, parks, and protected areas
         </label>
         <label class="checkbox-inline">
-          <input id="urbanarea" type="checkbox" onclick="filterPoints('.urbanarea-poly')" checked> Show urban areas 
+          <input id="urbanarea" type="checkbox" onclick="filterPoints('.urbanarea-poly')" checked> Show urban areas
+        </label>
+        <label class="checkbox-inline">
+          <input id="waterfeatures" type="checkbox" onclick="filterPoints('.waterfeatures')" checked> Show water features
+        </label>
+        <label class="checkbox-inline">
+          <input id="rivers" type="checkbox" onclick="filterPoints('.rivers')" checked> Show rivers and creeks
         </label>
       </form>
     </div><!-- .col-md-8 -->
@@ -45,21 +53,21 @@ tags: [landscape, environment, companies, Superfund sites, pollution]
       <h3>About the Map</h3>
 
       <p>
-      Throughout Silicon Valley, local and regional interests found expression 
-      on the Bay Area landscape through activities deemed the proper use for the 
-      land. Landscapes, as Richard White reminds us, are a mix of dynamic 
-      cultural and natural systems that create place. Landscapes are physical 
-      and mental maps according to preferences and experiences, which affect 
-      the environment through the <em>intent</em> and <em>actual</em> use of land. These 
+      Throughout Silicon Valley, local and regional interests found expression
+      on the Bay Area landscape through activities deemed the proper use for the
+      land. Landscapes, as Richard White reminds us, are a mix of dynamic
+      cultural and natural systems that create place. Landscapes are physical
+      and mental maps according to preferences and experiences, which affect
+      the environment through the <em>intent</em> and <em>actual</em> use of land. These
       are what White calls a hybrid landscape.
       </p>
 
       <p>
-      I argue that these overlapping landscapes&#8212;open space, industrial 
-      space, residential space, and the natural environment&#8212;shaped 
-      environmental politics in Silicon Valley. How people thought about the 
-      land and its proper use had a profound influence on environmental 
-      debates. The map illustrates the physical manifestation of a particular 
+      I argue that these overlapping landscapes&#8212;open space, industrial
+      space, residential space, and the natural environment&#8212;shaped
+      environmental politics in Silicon Valley. How people thought about the
+      land and its proper use had a profound influence on environmental
+      debates. The map illustrates the physical manifestation of a particular
       landscape's presence on the San Francisco Peninsula.
       </p>
 

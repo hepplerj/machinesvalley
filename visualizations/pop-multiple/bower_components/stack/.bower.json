@@ -1,0 +1,13 @@
+{
+  "name": "stack",
+  "homepage": "https://github.com/mbostock/stack",
+  "_release": "032b7bf947",
+  "_resolution": {
+    "type": "branch",
+    "branch": "gh-pages",
+    "commit": "032b7bf9470d507153b5bd7461d971fde71ccf6e"
+  },
+  "_source": "git://github.com/mbostock/stack.git",
+  "_target": "gh-pages",
+  "_originalSource": "mbostock/stack"
+}

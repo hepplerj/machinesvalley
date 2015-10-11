@@ -15,20 +15,29 @@
 <link rel="stylesheet" href="{{site.url}}/assets/css/main.css">
 <link rel="stylesheet" href="{{site.url}}/assets/css/navbar.css">
 <link rel="stylesheet" href="{{site.url}}/assets/css/sticky-footer-navbar.css">
+<link rel="stylesheet" href="{{site.url}}/assets/css/bigfoot-default.css">
 
 <!-- Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400italic,400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lustria' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
 <!-- Data viz -->
 <script src="{{ site.url }}/visualizations/lib/d3.v3.min.js"></script>
+<script src="{{ site.url }}/visualizations/lib/d3-legend.js"></script>
 <script src="{{ site.url }}/visualizations/lib/topojson.v1.min.js"></script>
 <script src="{{ site.url }}/visualizations/lib/queue.v1.min.js"></script>
 <script src="http://d3js.org/d3.geo.tile.v0.min.js"></script>
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="http://d3js.org/colorbrewer.v1.css">
+<script src="{{ site.url }}/assets/js/bigfoot.js"></script>
+
 
 {% if page.extra_css %}
 <link rel="stylesheet" href="{{site.url}}/assets/css/{{ page.extra_css }}">
 {% endif %}
+
+<script type="text/javascript">
+    $.bigfoot();
+</script>

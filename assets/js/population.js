@@ -1,16 +1,17 @@
-var margin = {left: 50, right: 20, bottom: 30, top: 30},
-    width = 1055,
-    height = 500;
+var margin = {top: 50, right: 100, bottom: 50, left: 50},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
-var parseDate = d3.time.format("%Y").parse;
-
-var x = d3.time.scale()
-    .range([0, width]);
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], 0.1);
 
 var y = d3.scale.linear()
-    .range([height, 0]);
+    .rangeRound([height, 0]);
 
-var color = d3.scale.category10();
+var color = d3.scale.ordinal()
+  .range(["#EFB605", "#E58903", "#E01A25", "#C20049", "#991C71", "#66489F", "#2074A0", "#10A66E", "#7EB852"]);
+
+var barPadding = 1;
 
 var xAxis = d3.svg.axis()
     .scale(x)
@@ -18,43 +19,29 @@ var xAxis = d3.svg.axis()
 
 var yAxis = d3.svg.axis()
     .scale(y)
-    .orient("left");
+    .orient("left")
+    .tickFormat(d3.format(".0%"));
 
-var line = d3.svg.line()
-    .interpolate("basis")
-    .x(function(d) { return x(d.date); })
-    .y(function(d) { return y(d.population); });
-
-var svg = d3.select("#viz")
-    .append("svg")
+var svg = d3.select("#viz").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-    .attr("transform","translate(" + margin.left + "," + margin.top + ")");
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("/data/census-population/pop_cities.csv", function(error, data) {
+d3.csv("/data-files/census-population/population_bay_area.csv", function(error, data) {
+  if (error) throw error;
+
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
 
   data.forEach(function(d) {
-    d.date = parseDate(d.date);
+    var y0 = 0;
+    d.populations = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
+    d.populations.forEach(function(d) { d.y0 /= y0; d.y1 /= y0; });
   });
 
-  var counties = color.domain().map(function(name) {
-    return {
-      name: name,
-      values: data.map(function(d) {
-        return {date: d.date, population: +d[name]};
-      })
-    };
-  });
+  data.sort(function(a,b) { return a.date - b.date; });
 
-  console.log(counties);
-
-  x.domain(d3.extent(data, function(d) { return d.date; }));
-
-  y.domain([
-    d3.min(counties, function(c) { return d3.min(c.values, function(v) { return v.population; }); }),
-    d3.max(counties, function(c) { return d3.max(c.values, function(v) { return v.population; }); })
-  ]);
+  x.domain(data.map(function(d) { return d.date; }));
 
   svg.append("g")
       .attr("class", "x axis")
@@ -63,28 +50,34 @@ d3.csv("/data/census-population/pop_cities.csv", function(error, data) {
 
   svg.append("g")
       .attr("class", "y axis")
-      .call(yAxis)
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Population");
+      .call(yAxis);
 
-  var county = svg.selectAll(".county")
-      .data(counties)
+  var state = svg.selectAll(".state")
+      .data(data)
     .enter().append("g")
-      .attr("class", "county");
+      .attr("class", "state")
+      .attr("transform", function(d) { return "translate(" + x(d.date) + ",0)"; });
 
-  county.append("path")
-      .attr("class", "line")
-      .attr("d", function(d) { return line(d.values); })
-      .style("stroke", function(d) { return color(d.name); });
+  state.selectAll("rect")
+      .data(function(d) { return d.populations; })
+    .enter().append("rect")
+      .attr("width", width / data.length - 2)
+      .attr("y", function(d) { return y(d.y1); })
+      .attr("height", function(d) { return y(d.y0) - y(d.y1); })
+      .style("fill", function(d) { return color(d.name); });
 
-  county.append("text")
-      .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
-      .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.population) + ")"; })
-      .attr("x", 3)
+  var legend = svg.select(".state:last-child").selectAll(".legend")
+      .data(function(d) { return d.populations; })
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d) { return "translate(" + x.rangeBand() + "," + y((d.y0 + d.y1) / 2) + ")"; });
+
+  legend.append("line")
+      .attr("x2", 10);
+
+  legend.append("text")
+      .attr("x", 13)
       .attr("dy", ".35em")
       .text(function(d) { return d.name; });
+
 });

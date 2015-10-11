@@ -115,8 +115,10 @@ path {
  * `.img-responsive` class.)
  */
 
+  /*
 .google-map-canvas,
 .google-map-canvas * { .box-sizing(content-box); }
+*/
 
 /* Optional responsive image override */
 img { max-width: none; }

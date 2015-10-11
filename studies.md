@@ -11,8 +11,8 @@ tags: [Jason Heppler, digital history, research]
 
 <div class="row">
 <img src="{{site.url}}/assets/image/farm_preview.png" class="img-rounded img-responsive topic-preview"> 
-<strong>Pastoral Memories and the Origins of the Countryside Landscape 
-(Coming Soon)</strong>
+<p><strong>Pastoral Memories and the Origins of the Countryside Landscape 
+(Coming Soon)</strong></p>
 <p>The Santa Clara Valley's rich alluvial soils and Mediterranean 
 climate made it an ideal location for farming. Spanish missionaries 
 established the Valley's early agricultural presence in the 1700s, and 
@@ -24,7 +24,7 @@ emerged as a popular memory on the imagined landscape.</p>
 
 <div class="row">
 <img src="{{site.url}}/assets/image/orchard_preview.png" class="img-rounded img-responsive topic-preview"> 
-<strong>A Home in the Countryside (Coming Soon)</strong>
+<p><strong>A Home in the Countryside (Coming Soon)</strong></p>
 <p>The memory of the valley's agricultural landscape persisted through 
 the suburbanization of the San Francisco Peninsula. The allure of the 
 valley's climate and natural surroundings became a major draw for 
@@ -36,8 +36,8 @@ nature in their communities.</p>
 
 <div class="row">
 <img src="{{site.url}}/assets/image/annex_preview.png" class="img-rounded img-responsive topic-preview"> 
-<strong>"Carved from a Forest of Fruit Trees": City Annexations and 
-Environmental Limits (Coming Soon)</strong>
+<p><strong>"Carved from a Forest of Fruit Trees": City Annexations and 
+Environmental Limits (Coming Soon)</strong></p>
 <p>Many municipalities in the Bay Area underwent aggressive expansion in 
 the postwar years, but none more so than San Jose. Under the tenure of 
 City Manager Dutch Hamann, San Jose grew from seventeen square miles to 134 
@@ -48,8 +48,8 @@ to anticipate.</p>
 
 <div class="row">
 <img src="{{site.url}}/assets/image/stanford_preview.png" class="img-rounded img-responsive topic-preview"> 
-<strong>"The Stanford Land Machine has Gone Berserk!" Stanford 
-University and the Stanford Industrial Park (Coming Soon)</strong>
+<p><strong>"The Stanford Land Machine has Gone Berserk!" Stanford 
+University and the Stanford Industrial Park (Coming Soon)</strong></p>
 <p>Stanford University is the largest landholder on the San Francisco 
 Peninsula, controlling nearly 9,000 acres. In the 1950s, Stanford started 
 acting as a real estate developer, first with the establishment of the 

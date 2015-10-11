@@ -1,6 +1,6 @@
 queue()
-  .defer(d3.json, "/data/ca-counties/ca_counties.json")
-  .defer(d3.csv, "/data/census-population/city_population.csv")
+  .defer(d3.json, "/data-files/ca-counties/ca_counties.json")
+  .defer(d3.csv, "/data-files/census-population/city_population.csv")
   .await(ready);
 
 $("#slider").slider({

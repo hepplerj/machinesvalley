@@ -48,6 +48,10 @@ my research, illustrate points I'm trying to make, and extend upon
 subjects and themes covered in my dissertation chapters. Various aspects 
 of the project are bound to change over time.
 
+### About the Author
+
+I am Jason Heppler, a Ph.D. candidate at the University of Nebraska-Lincoln and the Academic Technology Specialist for the Department of History at Stanford University.
+
 ### Contributing
 
 If you are interested in collaborating or contributing to the data I 

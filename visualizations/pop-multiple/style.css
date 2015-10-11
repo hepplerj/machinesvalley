@@ -1,0 +1,134 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Serif|PT+Serif:b|PT+Serif:i);
+
+.map {
+  height:100%;
+  width:75%;
+  z-index: 10;
+  font-size: initial;
+  top:0!important;
+  left:0!important;
+  padding: 0;
+  position:absolute;
+  line-height: initial;
+  /* pointer-events: none; */
+}
+
+iframe {
+  height:100%;
+  width:75%;
+  z-index: 10;
+  font-size: initial;
+  top:0!important;
+  left:0!important;
+  padding: 0;
+  position:absolute;
+  line-height: initial;
+  /* pointer-events: none; */
+}
+
+.church, .town, .census, .d3MapControlsBox { 
+  pointer-events: all;
+}
+
+.church {
+  fill: red;
+  fill-opacity: 0.5;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.town {
+  fill: white;
+  fill-opacity: 0;
+  stroke: purple;
+  stroke-width: 1px;
+
+}
+
+.county {
+  fill: none;
+  stroke: lightblue;
+  stroke-width: 1px;
+}
+
+section {
+  background: #fff;
+  color: #000;
+  padding: 2em;
+  font-family: "PT Serif", Baskerville, Georgia;
+  /* font-size: 1.2rem; */
+}
+
+h2 {
+  /* top: 10px; */
+  position: relative;
+  /* color: white; */
+  z-index:20;
+} 
+
+#d3MapLayerBox {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+code a {
+  text-decoration: none;
+}
+
+section.text p {
+  width: 75%;
+  font-size: 0.6em;
+  line-height: 1.4em;
+  margin: 1rem;
+  float: left;
+}
+
+aside {
+  font-size: 0.40em;
+  width: 20%;
+  line-height: 1.4em;
+  float:right;
+  margin-top: 1.4rem
+}
+
+aside h2 {
+  line-height: 1.2em;
+  font-size: 1.75em;
+}
+
+a, .green {
+  color: rgb(137, 177, 81);
+}
+
+.d3MapModalContent p a {
+  color: white;
+}
+
+.brown {
+  color: rgb(113, 90, 56);
+}
+
+li a {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: underline;
+}
+
+code a {
+  color: black;
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+#diachronic-date {
+  font-size:5em;
+}

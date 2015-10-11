@@ -8,7 +8,7 @@ tags: [Jason Heppler, digital history, research]
 
 ## {{ page.title }}
 
-{% for post in site.posts limit:8 %}
+{% for post in site.posts limit:10 %}
 <article class="post">
     <h3 class="post-title">
       <a href="{{ post.url }}">{{ post.title }}</a>

@@ -1,7 +1,7 @@
 queue()
-    .defer(d3.csv, "/data/sv-companies/sv_companies.csv")
-    .defer(d3.csv, "/data/ca-pollution/ca_superfund.csv")
-    .defer(d3.csv, "/data/ca-pollution/ca_toxic_sites.csv")
+    .defer(d3.csv, "/data-files/sv-companies/sv_companies.csv")
+    .defer(d3.csv, "/data-files/ca-pollution/ca_superfund.csv")
+    .defer(d3.csv, "/data-files/ca-pollution/ca_toxic_sites.csv")
     .await(ready);
 
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
@@ -59,7 +59,11 @@ function ready(error, sites, ca_superfund, ca_toxics) {
       loading.text("Sorry, there has been an error. " +
                    "Please refresh and try again.");
       console.log(error);
-    }
+  }
+
+  var ua = navigator.userAgent.toLowerCase();
+  if (ua.indexOf('safari') != -1) {
+    if (ua.indexOf('chrome') > -1 || ua.indexOf('firefox') > -1) {
 
   loading.remove();
   svg.call(zoom);
@@ -93,7 +97,7 @@ function ready(error, sites, ca_superfund, ca_toxics) {
       })
       .on("mouseover", function(d,i) {
         tooltip.transition().duration(200).style("opacity", .8);
-        tooltip.html("<br><strong>SUPERFUND SITE</strong> <br>" 
+        tooltip.html("<br><strong>SUPERFUND SITE</strong> <br>"
                 + "<strong>Company</strong>: " + d.name.toTitleCase() +
                 (d.listed?"<br>" + "<strong>Date added</strong>: "+d.listed:"") + "<br>" +
                 (d.deleted?"<strong>Date deleted</strong>: "+d.deleted:"") + "<br>" +
@@ -124,7 +128,7 @@ function ready(error, sites, ca_superfund, ca_toxics) {
         })
         .on("mouseover", function(d,i) {
           tooltip.transition().duration(200).style("opacity", .8);
-          tooltip.html("<br>" + "<strong>" + "COMPANY" + "</strong><br>" 
+          tooltip.html("<br>" + "<strong>" + "COMPANY" + "</strong><br>"
                   + d.company.toTitleCase() + "" +
                   (d.date_founded?"<br>" + "Founded: "+d.date_founded:"") + "<br>" +
                   "Address: " + d.address.toTitleCase() + "<br>" +
@@ -139,7 +143,7 @@ function ready(error, sites, ca_superfund, ca_toxics) {
         .append("circle")
         .attr("r", 18 / zoom.scale())
         .attr("class", "company-circ")
-        .attr("fill", "#85A5CC")//, function(d) { return color(d.company_type) });
+        .attr("fill", "#EFB605")//, function(d) { return color(d.company_type) });
 
     var toxicsG = svg.append("g")
         .attr("id", "toxicsG")
@@ -163,25 +167,25 @@ function ready(error, sites, ca_superfund, ca_toxics) {
           tooltip.transition().duration(500).style("opacity", 0);
         });
 
-   toxicPoints 
+   toxicPoints
         .append("circle")
         .attr("r", 18 / zoom.scale())
         .attr("class", "toxics-circ")
-        .attr("fill", "#333");
+        .attr("fill", "#66489F");
 
   zoomed();
+    } else {
+      loading.remove();
+      loading = svg.append("text").attr({x:100,y:250}).text("Loading map...").style("font-size", "26px");
+      loading.text("Sorry, the SVG engine is currently broken in Safari. " +
+        "View the map using Chrome or Firefox.")
+      console.log(ua);
+    }
+  }
 
 };
 
 function zoomed() {
-    var tiles = tile
-        .scale(zoom.scale())
-        .translate(zoom.translate())
-        ();
-
-    vector
-        .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")")
-        .style("stroke-width", 1 / zoom.scale());
 
     d3.select("#companiesG")
         .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")");
@@ -204,7 +208,17 @@ function zoomed() {
       .attr("r", 18 / zoom.scale())
       .style("stroke-width", 1 / zoom.scale());
 
+    var tiles = tile
+        .scale(zoom.scale())
+        .translate(zoom.translate())
+        ();
+
+    vector
+        .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")")
+        .style("stroke-width", 1 / zoom.scale());
+
     var image = raster
+      .attr("class", "mapG")
         .attr("transform", "scale(" + tiles.scale + ")translate(" + tiles.translate + ")")
         .selectAll("image")
         .data(tiles, function (d) {
@@ -215,7 +229,7 @@ function zoomed() {
         .remove();
 
     image.enter().append("image")
-        .attr("xlink:href", function(d) { return "http://" + ["a", "b", "c", "d"][Math.random() * 4 | 0] + ".tiles.mapbox.com/v3/examples.map-i86nkdio/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; }) // ".tile.stamen.com/terrain/"
+        .attr("xlink:href", function(d) { return "http://" + ["a", "b", "c", "d"][Math.random() * 4 | 0] + ".tiles.mapbox.com/v4/hepplerj.d2ec1aca/" + d[2] + "/" + d[0] + "/" + d[1] + ".png?access_token=pk.eyJ1IjoiaGVwcGxlcmoiLCJhIjoiMjNqTEVBNCJ9.pGqKqkUDlcFmKMPeoARwkg"; }) // ".tile.stamen.com/terrain/"
         .attr("width", 1)
         .attr("height", 1)
         .attr("x", function (d) {
@@ -224,9 +238,6 @@ function zoomed() {
         .attr("y", function (d) {
             return d[1];
         });
-
-    // d3.selectAll("path")
-    //   .attr("d", geoPath);
 }
 
 // Used for the check boxes to turn off and on elements

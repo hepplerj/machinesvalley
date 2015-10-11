@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Census Tracts</title>
+  <meta charset="utf-8" />
+  <link type="text/css" rel="stylesheet" href="lib/d3map.css" />
+  <link type="text/css" rel="stylesheet" href="lib/style.css" />
+
+  <style>
+    .tracts {
+      fill: #ccc;
+      fill-opacity: 0.5;
+      stroke: none;
+      stroke-width: 0px;
+
+    }
+
+    .company {
+      fill: gold;
+      fill-opacity: 0.5;
+      stroke: black;
+      stroke-width: .5px;
+    }
+
+    .superfund {
+      fill: red;
+      fill-opacity: 0.5;
+      stroke: black;
+      stroke-width: 1.2px;
+      stroke-dasharray: 5,3;
+    }
+  </style>
+
+  <script src="lib/d3.min.js"></script>
+  <script src="lib/queue.min.js"></script>
+  <script src="lib/topojson.js"></script>
+  <script src="lib/d3.carto.map.min.js"></script>
+  <script src="lib/tile.js" charset="utf-8"></script>
+  <script src="lib/colorbrewer.js" charset="utf-8"></script>
+
+</head>
+<body onload="drawCensus()">
+
+  <section id="companies">
+    <div id="map" class="map">
+    </div>
+    <aside>
+      <h2>Landscapes in Conflict</h2>
+      <p>
+        Silicon Valley Median Income, 1980
+      </p>
+  </aside>
+</section>
+  <script src="landscape.js"></script>
+
+</body>
+</html>

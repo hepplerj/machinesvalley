@@ -1,5 +1,5 @@
 ---
-title: Urban Areas of the San Francisco Peninsula 
+title: Urban Areas of the San Francisco Peninsula
 date: 2014-09-10
 permalink: /visualizations/urban_areas/
 layout: visualization
@@ -9,6 +9,7 @@ layout: visualization
 
 svg {
   background: #7EC9C8;
+  font-family: "Lato", sans-serif;
 }
 
 path { fill: #fee6ce; }
@@ -52,15 +53,15 @@ path { fill: #fee6ce; }
       <h3>About the Map</h3>
 
       <p>
-      After World War II, every municipality in the Bay Area underwent 
-      aggressive expansion. Annexations, incorporations, and consolidations 
-      sprawled throughout the Santa Clara Valley. The visualization above 
-      shows the current urban areas on the San Francisco Peninsula. 
+      After World War II, every municipality in the Bay Area underwent
+      aggressive expansion. Annexations, incorporations, and consolidations
+      sprawled throughout the Santa Clara Valley. The visualization above
+      shows the current urban areas on the San Francisco Peninsula.
       </p>
 
       <h3>Citation</h3>
       <blockquote>
-      Jason A. Heppler, "{{ page.title}}," interactive map, 
+      Jason A. Heppler, "{{ page.title}}," interactive map,
       {{site.url}}{{page.permalink}}, 2014.
       </blockquote>
     </div>
@@ -72,8 +73,8 @@ path { fill: #fee6ce; }
 <script>
 
 queue()
-  .defer(d3.json, "/data/ca-counties/ca_counties.json")
-  .defer(d3.json, "/data/sv-urban/urban_areas_out.json")
+  .defer(d3.json, "/data-files/ca-counties/ca_counties.json")
+  .defer(d3.json, "/data-files/sv-urban/urban_areas_out.json")
   .await(ready);
 
 var width = 1055,

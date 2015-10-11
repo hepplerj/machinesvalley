@@ -1,11 +1,12 @@
 // Get our data ready
 queue()
-  .defer(d3.json, "/data/ca-counties/ca_counties.json")
-  .defer(d3.json, "/data/sv-rivers/bay-rivers.json")
-  .defer(d3.json, "/data/ca-openspace/openspace_santaclara.json")
-  .defer(d3.csv, "/data/ca-pollution/ca_superfund.csv")
-  .defer(d3.csv, "/data/ca-pollution/ca_toxic_sites.csv")
-  .defer(d3.json, "/data/sv-urban/urban_areas_out.json")
+  .defer(d3.json, "/data-files/ca-counties/ca_counties.json")
+  .defer(d3.json, "/data-files/sv-rivers/bay-rivers.json")
+  .defer(d3.json, "/data-files/ca-openspace/openspace_santaclara.json")
+  .defer(d3.csv, "/data-files/ca-pollution/ca_superfund.csv")
+  .defer(d3.csv, "/data-files/ca-pollution/ca_toxic_sites.csv")
+  .defer(d3.json, "/data-files/sv-urban/urban_areas_out.json")
+  .defer(d3.json, "/data-files/sc-water/scc-water-features.topojson")
   .await(ready);
 
 var width = 1055,
@@ -17,6 +18,10 @@ var radius = d3.scale.sqrt()
     .range([1, 5]);
 
 var color = d3.scale.category20b();
+
+var legendcolor = d3.scale.ordinal()
+  .range(["#d21245", "orange", "#333333", "#e7cb94", "crimson","#0092B2"])
+  .domain(["Superfund sites","Toxic sites and spills","Open space & parks","Urban areas","Water features","Rivers and creeks"]);
 
 var projection = d3.geo.azimuthalEqualArea()
     .center([0, 37.30])
@@ -31,7 +36,7 @@ var svg = d3.select("#viz").append("svg")
     .attr("width", width + margin.right + margin.left)
     .attr("height", height);
 
-function ready(error, ca_counties, rivers, openspace, superfund, toxics, urban_areas) {
+function ready(error, ca_counties, rivers, openspace, superfund, toxics, urban_areas, waterfeatures) {
 
   svg.selectAll(".subunit")
     .data(topojson.feature(ca_counties, ca_counties.objects.subunits).features)
@@ -60,6 +65,15 @@ function ready(error, ca_counties, rivers, openspace, superfund, toxics, urban_a
     .attr("class", "rivers")
     .style("fill", "none")
     .style("stroke", "#0092B2");
+
+  svg.selectAll(".waterfeatures")
+    .data(topojson.feature(waterfeatures, waterfeatures.objects.waterfeatures).features)
+  .enter().append("path")
+    .style("fill", "crimson")
+    .style("stroke", "crimson")
+    .attr("class", "waterfeatures")
+    .attr("id", function(d) { return d.TYPE; })
+    .attr("d", path);
 
   svg.selectAll(".urban_areas")
       .data(topojson.feature(urban_areas, urban_areas.objects.urban_areas).features)
@@ -101,6 +115,56 @@ function ready(error, ca_counties, rivers, openspace, superfund, toxics, urban_a
     .append("circle")
     .attr("r", 4.5)
     .attr("class", "toxics-circ");
+
+  // Legend
+  var legendMargin = {left: 5, top: 10, right: 5, bottom: 10},
+      legendWidth = 145,
+      legendHeight = 270;
+
+  var svgLegend = d3.select("svg").append("g")
+        .attr("width", (legendWidth + legendMargin.left + legendMargin.right))
+        .attr("height", (legendHeight + legendMargin.top + legendMargin.bottom));
+
+  // var legendWrapper = svgLegend.append("g").attr("class", "legendWrapper")
+  //         .attr("transform", "translate(" + legendMargin.left + "," + legendMargin.top +")");
+
+  var rectSize = 15, //dimensions of the colored square
+      rowHeight = 20, //height of a row in the legend
+      maxWidth = 144; //widht of each row
+
+  //Create container per rect/text pair
+  var legend = svgLegend.selectAll('.legendSquare')
+        .data(legendcolor.range())
+      .enter().append('g')
+        .attr('class', 'legendSquare')
+        .attr("transform", function(d,i) { return "translate(" + 0 + "," + (i * rowHeight) + ")"; });
+
+  //Non visible white rectangle behind square and text for better hover
+  legend.append('rect')
+      .attr('width', maxWidth)
+      .attr('height', rowHeight)
+      .style('fill', "white");
+
+  //Append small squares to Legend
+  legend.append('rect')
+      .attr('width', rectSize)
+      .attr('height', rectSize)
+      .style('fill', function(d) {return d;});
+
+  //Append text to Legend
+  legend.append('text')
+      .attr('transform', 'translate(' + 22 + ',' + (rectSize/2) + ')')
+      .attr("class", "legendText")
+      .style("font-size", "10px")
+      .attr("dy", ".35em")
+      .text(function(d,i) { return legendcolor.domain()[i]; });
+
+  // svgLegend.append("text")
+  //   .attr("transform","translate(" + 22 + "," + 122 + ")")
+  //   .attr("class","legendExplain")
+  //   .style("font-size","10px")
+  //   .attr("dy",".35em")
+  //   .text("Click legend items to toggle.")
 
   };
 
