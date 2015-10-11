@@ -1,6 +1,5 @@
-#map {
-  background: #7EC9C8;
-  width: 100%;
+#map svg {
+  background: #7ec9c8;
 }
 
 path {
@@ -11,6 +10,13 @@ path {
 h1 {
   font-size: 2rem;
   margin: 20px 0 20px 0;
+}
+
+.city-label {
+  fill: #333;
+  font-size: 10px;
+  font-weight: 300;
+  text-anchor: middle;
 }
 
 .counties {
@@ -144,7 +150,7 @@ path { fill: #fee6ce; }
 .subunit087 { fill: #fee6ce; }
 .subunit001 { fill: #fee6ce; }
 
-.annexations { fill: #333; opacity: .3; }
+.annexations { fill: brown; opacity: .3;}
 
 .subunit-boundary {
   fill: none;

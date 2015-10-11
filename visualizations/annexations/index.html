@@ -1,11 +1,14 @@
 ---
-title: "[IN DEVELOPMENT] San Jose Annexations, 1850&#8212;2000"
+title: "San Jose Annexations, 1850&#8212;2000"
 date: 2015-01-17 19:31:46
 permalink: /visualizations/annexations/
 layout: page
 extra_css: annexation.css
 visualization: annexation.js
 ---
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+
 <div class="container">
 
   <h2>{{ page.title }}</h2>
@@ -15,24 +18,108 @@ visualization: annexation.js
   </div>
 
   <div class="row">
-    <div class="small-8 columns">
-      <div id="slider"></div>
-    </div>
-    <div class="small-4 columns">
-      <!-- <select name="field-selector" id="field-selector">
-    </select> -->
+    <div class="small-8 columns" id="date-selector">
+      <input class="btn btn-default" type="button" value="1850" onclick="renderDate('1850')">
+      <input class="btn btn-default" type="button" value="1925" onclick="renderDate('1925')">
+      <input class="btn btn-default" type="button" value="1936" onclick="renderDate('1936')">
+      <input class="btn btn-default" type="button" value="1946" onclick="renderDate('1946')">
+      <input class="btn btn-default" type="button" value="1950" onclick="renderDate('1950')">
+      <input class="btn btn-default" type="button" value="1955" onclick="renderDate('1955')">
+      <input class="btn btn-default" type="button" value="1960" onclick="renderDate('1960')">
+      <input class="btn btn-default" type="button" value="1965" onclick="renderDate('1965')">
+      <input class="btn btn-default" type="button" value="1970" onclick="renderDate('1970')">
+      <input class="btn btn-default" type="button" value="1975" onclick="renderDate('1975')">
+      <input class="btn btn-default" type="button" value="1980" onclick="renderDate('1980')">
+      <input class="btn btn-default" type="button" value="1985" onclick="renderDate('1985')">
+      <input class="btn btn-default" type="button" value="1990" onclick="renderDate('1990')">
+      <input class="btn btn-default" type="button" value="1995" onclick="renderDate('1995')">
     </div>
   </div>
 
   <div class="row">
-    <p>In the postwar era, San Jose undertook an aggressive annexation campaign
-    to fold surrounding land and cities into its orbit.</p>
-    <hr>
-    <h3>Citation</h3>
-    <p>Blah blah.</p>
-    <hr>
-    <h3>Explanation of Data</h3>
-    <p>Blah blah.</p>
+  <br/>
   </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <p>In the postwar era, San Jose undertook an aggressive annexation campaign
+      to fold surrounding land and cities into its orbit.
+      The expansion of San Jose followed from a desire among business leaders, civic leaders, and boosters to improve the city's reputation as well as capture a larger tax base. Reform politicians in the 1940s maintained a belief in the idea that metropolitan growth equaled progress. In San Jose, those candidates formed the Progressive Committee and ousted the city manager, police and fire chiefs, and political bosses from the city's leadership. By the end of the 1940s, Progress Committee candidates and their ideology of growth was fully entrenched in city politics.
+      </p>
+
+      <p>
+      Growth, however, required funds&#8212;and city residents were rarely willing to allow new property taxes to help fund San Jose's need for new infrastructure. Bond elections throughout the 1940s were repeatedly voted down by residents. City leaders needed a new voice to help convince voters of the need for new taxes, and they found their champion in Anthony "Dutch" Hamann. The forty-year-old former businessman, teacher, and oil company representative had a strong attachment to the city and solid connections throughout the community.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> Hamann had not served in political office until his appointment by the city council in 1950 in a split 4-to-3 vote. As the city began its drive for urban growth, Hamann hoped to avoid the fate that had befallen his home of Orange County in Southern California with its many competing medium-sized cities. Hamann believed that a large city could better manage urban development and growth than several small towns all looking out for their own interests. He wanted San Jose to dominate the county, and thus avoid what he saw as petty competition among small towns.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> To grow and make available the funds to sustain growth, Hamann reasoned, the city needed to annex land to raise revenue from taxes.<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> "You don't build a city by staying in a vacuum," Hamann declared. "You build, you sell. . . . And I was the gun for hire."<sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>
+      </p>
+
+      <p>
+      And build San Jose did. The city approved over 1,400 annexations between 1945
+and 1970 including many narrow strips&#8212;"shoestring" annexations&#8212;snaking outward,
+sometimes only on one half of a street, to capture a desirable subdivision, commercial
+center, or street intersection. In some areas, annexations became a tool of coercion. Annex enough areas around land-owning hold-outs, city officials reasoned, and pockets of non-annexed land would have little choice but to succumb.<sup id="fnref:5"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> Hamann's drive for land became so aggressive that his staff became known as "Dutch's Panzer division"&#8212;named after the swift motorized armored tank squadrons of the Third Reich&#8212;as annexations sprawled outward from the city core.<sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup> "They say San Jose is going to become another Los Angeles," Hamann rebuked his critics. "Believe me, I'm going to do the best in my power to make that come true."<sup id="fnref:7"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup> Under Hamann's tenure, the San Jose Chamber of Commerce spent nearly $1 million to attract new industries to the city. The population boomed and the city sprawled. "It was just growth, growth, growth," Al Ruffo, San Jose's mayor in the 1940s, recalled approvingly. "That was everybody's song. And Dutch sang it the loudest."<sup id="fnref:8"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>
+      </p>
+
+      <div class="footnotes">
+        <ol>
+          <li id="fn:1">
+            <p>Trounstine and Christensen, <em>Movers and Shakers</em>, 89; Arbuckle, <em>San Jose</em>, 44-45. Hamann had graduated from the University of Santa Clara and played on the same football team as Councilman Al Ruffo. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+          </li>
+          <li id="fn:2">
+            <p>"Hamann: San Jose's Growth Guru," <em>San Jose Mercury</em>, 1999. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+          </li>
+          <li id="fn:3">
+            <p>Glenna Matthews, <em>Silicon Valley, Women, and the California Dream: Gender, Class, and Opportunity in the Twentieth Century</em> (Stanford: Stanford University Press, 2003), 96. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+          </li>
+          <li id="fn:4">
+            <p>Hamann quoted in Trounstine, and Christensen, Movers and Shakers, 96. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+          </li>
+          <li id="fn:5">
+            <p>"Annexations by Year", 2011, City of San Jose Planning Division; "City Size by Year", 2011, City of San Jose Planning Division; Belser, <em>Planning Progress 1956</em>, 47; Trounstine, and Christensen, <em>Movers and Shakers</em>, 93; "Correcting San Jose's Boomtime Mistake," <em>Business Week</em>, September 19, 1970, 74; Stanford Law Review, <em>San Jose</em>, 5. <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+          </li>
+          <li id="fn:6">
+            <p>Trounstine, and Christensen, <em>Movers and Shakers</em>, 93. <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+          </li>
+          <li id="fn:7">
+            <p>Stanford Law Review, <em>San Jose</em>, 17. <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+          </li>
+          <li id="fn:8">
+            <p>"Hamann: San Jose's Growth Guru," <em>San Jose Mercury</em>, 1999. <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+          </li>
+        </ol>
+      </div>
+
+      <hr>
+
+      <div class="draft">
+        <p><strong>This is a draft</strong>. Changes to the text, bibliography, visualization, and so on will be documented here as they occur.</p>
+      </div>
+
+      <hr>
+    </div>
+
+    <div class="col-md-4 sidebar">
+      <h4>Data Sources</h4>
+      <ul>
+        <li><a href="https://github.com/hepplerj/machinesvalley/blob/gh-pages/data/census-population/population_bay_area.csv">U.S. Census, 1940&#8212;2010</a></li>
+        <li>City of San Jose</li>
+      </ul>
+
+      <h4>Bibliography</h4>
+      <ul>
+        <li>Abbott, Carl. <em>Metropolitan Frontier: Cities in the Modern American West</em>. Tucson: University of Arizona Press, 1995.</li>
+        <li>Abbott, Carl. <em>How Cities Won the West: Four Centuries of Urban Change in Western North America</em>. Albuquerque: University of New Mexico Press, 2008.</li>
+        <li>Arbuckle, Clyde. <em>Clyde Arbuckle’s History of San Jose: Chronicling San Jose’s Founding as California’s Earliest Pueblo in 1777, Through Exciting and Tumultuous History Which Paved the Way for Today’s Metropolitan San Jose</em>. San Jose: Smith & McKay, 1985.</li>
+        <li>Bakken, Gordon Morris, and Brenda Farrington, eds. <em>The Urban West</em>. New York: Garland Pub, 2001.</li>
+        <li>Matthews, Glenna. <em>Silicon Valley, Women, and the California Dream: Gender, Class, and Opportunity in the Twentieth Century</em>. Stanford: Stanford University Pres, 2003.</li>
+        <li>Lukes, Timothy J. “Progressivism Off-Broadway: Reform Politics in San Jose, California, 1880-1920.” <em>Southern California Quarterly</em> 76 (December 1994): 377–400.</li>
+        <li>Mandich, Mitchell. “<a href="http://discover.sjlibrary.org/iii/encore_sjsu/record/C__Rb1503985__SThe%20Growth%20and%20Development%20of%20San%20Jose__Orightresult__U__X6?lang=eng&suite=sjsu.">The Growth and Development of San Jose, California&#8212;Social, Political, and Economic Considerations</a>.” M.A. thesis, San Jose State University, 1975.</li>
+        <li>Trounstine, Philip and Terry Christensen. <em>Movers and Shakers: The Study of Community Power</em>. New York: St. Martin's Press, 1982.</li>
+      </ul>
+
+      <div class="source-code">
+        <p>Source code: <a href="">Github</a> | Last updated: 2015-10-11</p>
+      </div>
+    </div>
+
+  </div><!-- row -->
 
 </div>

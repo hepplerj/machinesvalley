@@ -1,9 +1,17 @@
 body {
-  font: 300 15px/28px "Lato", sans-serif;
+  font: 300 16px/28px "Gentium Basic", serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Lustria", serif;
+  font-family: "Lato", sans-serif;
+  /*color: #DB4105;*/
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.4em;
+  margin: 10px 0 25px;
+  padding: 0;
 }
 
 .project_preview {
@@ -62,6 +70,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
   text-decoration: none;
   padding: 0 15px 0 15px;
+}
+
+.navbar {
+  font-family: "Lato", sans-serif;
 }
 
 header {
@@ -142,7 +154,20 @@ header {
 }
 
 .sidebar {
-  background: #f2f2f2;
+  background: #f9f9f9;
+}
+
+.source-code {
+  font-size: 10px;
+  float: right;
+}
+
+.draft {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 2px;
+  margin: 5px;
+  font-size: 12px;
 }
 
 .footnotes {
@@ -151,9 +176,42 @@ header {
   padding: 5px;
 }
 
+.footnotes p {
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+}
+
 .topic-preview {
  width: 140px;
  height: auto;
  float: left;
  margin: 10px;
+}
+
+.footer {
+  font-family: "Lato", sans-serif;
+}
+
+.footer p {
+    font-size: 12px;
+}
+
+.meta {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+}
+
+img {
+  display: block;
+  margin: 0 0 1rem;
+  border-radius: 5px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
