@@ -50,7 +50,7 @@ of the project are bound to change over time.
 
 ### About the Author
 
-I am Jason Heppler, a Ph.D. candidate at the University of Nebraska-Lincoln and the Academic Technology Specialist for the Department of History at Stanford University.
+I am Jason Heppler, historian at Stanford University and recent Ph.D. graduate of the University of Nebraska-Lincoln.
 
 ### Contributing
 
