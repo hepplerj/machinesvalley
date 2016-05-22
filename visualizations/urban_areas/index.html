@@ -77,16 +77,15 @@ queue()
   .defer(d3.json, "/data-files/sv-urban/urban_areas_out.json")
   .await(ready);
 
-var width = 1055,
-    height = Math.max(500, window.innerHeight - 200),
-    height = 500,
+var width = 890,
+    height = 400,
     margin = {left: 50, right: 50, bottom: 50, top: 50};
 
 var color = d3.scale.category20();
 
 var projection = d3.geo.albers()
-    .center([0, 37.33])
-    .rotate([121.9, 0])
+    .center([0, 37.43])
+    .rotate([122.1, 0])
     .parallels([50, 60])
     .scale(1200 * 45)
     .translate([width / 2, height / 2]);

@@ -4,6 +4,7 @@ markdown:     kramdown
 highlighter:  pygments
 # leave blank when working locally
 url:
+repo:         https://github.com/hepplerj/machinesvalley/
 
 # Owner/author information
 owner:
@@ -20,6 +21,8 @@ owner:
 permalink:      /:year/:month/:day/:title/
 
 links:
+  - title: Introduction
+    url: /introduction/
   - title: Topics
     url: /studies/
   - title: Views

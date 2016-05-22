@@ -1,14 +1,20 @@
-require "rubygems"
-require 'rake'
-require 'yaml'
-require 'time'
+require "rake/clean"
+#require "stringex"
+require "yaml"
+require "fileutils"
 
-SOURCE = "."
-CONFIG = {
-  'layouts' => File.join(SOURCE, "_layouts"),
-  'posts' => File.join(SOURCE, "_posts"),
-  'post_ext' => "md"
-}
+# Set "rake watch" as default
+task :default => :preview
+
+# Load the configuration file
+CONFIG = YAML.load_file("_config.yml")
+
+# Get and parse the date
+DATE = Time.now.strftime("%Y-%m-%d")
+
+# Directories
+POSTS = "source/_posts"
+DRAFTS = "source/_drafts"
 
 desc 'default: list available rake tasks'
 task :default do
@@ -16,39 +22,26 @@ task :default do
   sh 'rake --tasks --silent'
 end
 
-desc "give title as argument and create new post"
-# usage: rake item title="Post Title Goes Here" tags="tag1, tag2" date="1991-01-01"
-task :archive do
-  title = ENV["title"] || "new-post"
-  tags = ENV["tags"] || "tags"
-  item_date = ENV["date"] || "item-date"
+desc "New draft post"
+task :draft do |t|
+  title = get_stdin("What is the title of the post? ")
+  link_check = get_stdin("Is this a link post? (y/n) ")
+  link_url = if link_check == "y" then get_stdin("Enter url: ") end
+  filename = "_drafts/#{title.to_url}.md"
 
-  filename = "#{Time.now.strftime('%Y-%m-%d')}-#{title.gsub(/\s/, '-').downcase}.md"
-  path = File.join("_posts", filename)
-
-  category = ENV["category"] || "archive"
-
-  if File.exist? path; raise RuntimeError.new("File already exists. Won't clobber #{path}"); end
-  File.open(path, 'w') do |file|
-    file.write <<-EOS
----
-layout: post
-title: #{title}
-description: 
-created_date: #{Time.now.strftime('%Y-%m-%d %H:%M')}
-item_date: #{item_date}
-image:
-  feature:
-  thumb:
-item_files: _archive/_EDIT_
-category: [#{category}]
-tags: [#{tags}]
----
-EOS
-    end
-    puts "Now opening #{path} in vim..."
-    system "vim #{path}"
-end # task:post
+  puts "Creating new draft: #{filename}"
+  open(filename, "w") do |post|
+    post.puts "---"
+    post.puts "layout: post"
+    post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
+    post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
+    if link_check == "y" then post.puts "external-url: #{link_url}" end
+    if link_check == "n" then post.puts "image: \n    feature: \n    thumb: " end
+    post.puts "categories: "
+    post.puts "tags: "
+    post.puts "..."
+  end
+end
 
 # Usage: rake page name="about.html"
 # You can also specify a sub-directory path.
@@ -74,20 +67,48 @@ task :page do
   end
 end # task :page
 
-task :shapefiles do
-  sh "ogr2ogr -f GeoJSON geo.json \
-  ~/git/research-data/nhgis-shapefiles/state_1870/US_state_1870.shp \
-  -t_srs EPSG:4326"
-  sh "topojson -o state_1870.json  \
-  --id-property GISJOIN \
-  -p name=STATENAM,gis=GISJOIN \
-  -q 5e3 \
-  --simplify-proportion 0.30 \
-  -- states=geo.json"
-  sh "rm geo.json"
-end
-
 desc "Run the development server"
 task :preview do
   sh "jekyll serve --watch"
-end 
+end # task :preview
+
+desc "Build the production version of the site"
+task :build do
+  puts "\nBuilding the production version of the site ..."
+  ok_failed system "jekyll build"
+end # task :build
+
+desc "rsync to server"
+task :rsync do
+  puts "\nDeploying the site via rsync..."
+
+  ssh_port       = "22"
+  ssh_user       = "jasonhep@jasonheppler.org"
+  rsync_delete   = true
+  rsync_options  = "--checksum --stats -avz -e"
+  public_dir     = "_site/"
+  document_root  = "~/public_html/dissertation/"
+
+  exclude = ""
+  if File.exists?('./rsync-exclude')
+    exclude = "--exclude-from '#{File.expand_path('./rsync-exclude')}'"
+  end
+
+  ok_failed system("rsync #{rsync_options} 'ssh -p #{ssh_port}' #{exclude} #{"--delete" unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}")
+end # task :rsync
+
+desc "Build and deploy the production version of the site"
+task :deploy => [:build, :rsync]
+
+def get_stdin(message)
+  print message
+  STDIN.gets.chomp
+end
+
+def ok_failed(condition)
+  if (condition)
+    puts "OK"
+  else
+    puts "FAILED"
+  end
+end

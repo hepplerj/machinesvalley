@@ -9,7 +9,7 @@ queue()
   .defer(d3.json, "/data-files/sc-water/scc-water-features.topojson")
   .await(ready);
 
-var width = 1055,
+var width = 890,
     height = 600,
     margin = {left: 50, right: 50, bottom: 50, top: 50};
 

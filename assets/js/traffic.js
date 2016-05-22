@@ -51,7 +51,7 @@ function ready(error, ca_counties, commute) {
     .text(function(d) { return d.properties.name + " County"; });
 
     bars = svg.selectAll("g")
-    .data(commute)
+    .data(commute.filter())
   .enter().append("g")
     .attr("class","bars")
     .attr("transform",function(d) { return "translate(" + projection([d.end_longitude, d.end_latitude]) + ")";});

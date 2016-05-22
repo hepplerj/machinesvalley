@@ -1,2 +1,9 @@
 _site/
 viz/data
+narrative/
+*.dbf
+*.prj
+*.qpj
+*.shp
+*.shx
+.Rhistory

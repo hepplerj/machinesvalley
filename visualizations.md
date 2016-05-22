@@ -9,16 +9,16 @@ tags: [Jason Heppler, digital history, research]
 
 ## {{ page.title }}
 
-<p>Views are interpretive historical visualizations from my research. 
+<p>Views are interpretive historical visualizations from my research.
 Each view aims to address or illustrate a research question or theme.</p>
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
     <a href="{{ sitel.url }}/visualizations/urban_areas/"><img class="img-rounded img-responsive img-rounded" src="{{site.url}}/assets/image/urban_areas_preview.png"/>
     Urban Areas of the San Francisco Peninsula</a><br/>
-    <p>After 1945, every municipality in the Bay Area underwent 
-    aggressive expansion. Annexations, incorporations, and 
-    consolidations created a sprawling, complicated map of urban areas 
+    <p>After 1945, every municipality in the Bay Area underwent
+    aggressive expansion. Annexations, incorporations, and
+    consolidations created a sprawling, complicated map of urban areas
     on the Peninsula.</p>
     </div>
 </div>
@@ -43,8 +43,8 @@ Each view aims to address or illustrate a research question or theme.</p>
   <div class="col-xs-12 col-md-8">
     <a href="{{ site.url }}/visualizations/annexations/"><img class="img-responsive img-rounded" src="{{site.url}}/assets/image/annexation_preview.png"/>
     San Jose Annexations, 1850&#8212;2010</a><br/>
-    <p>After 1945, the City of San Jose embarked on an aggressive 
-    annexation campaign in the Bay Area with the intent of becoming the 
+    <p>After 1945, the City of San Jose embarked on an aggressive
+    annexation campaign in the Bay Area with the intent of becoming the
     "Los Angeles of the North."</p>
     </div>
 </div>
@@ -53,31 +53,19 @@ Each view aims to address or illustrate a research question or theme.</p>
   <div class="col-xs-12 col-md-8">
     <a href="{{ site.url }}/visualizations/rivers/"><img class="img-responsive img-rounded" src="{{ site.url }}/assets/image/rivers_preview.png"/>
     Landscapes of the Bay Area</a><br/>
-    <p>How did the landscapes of the Bay Area overlap? This map depicts 
-    the overlapping Natural, Urban, and Industrial landscapes of the Bay 
-    Area.</p> 
+    <p>How did the landscapes of the Bay Area overlap? This map depicts
+    the overlapping Natural, Urban, and Industrial landscapes of the Bay
+    Area.</p>
   </div>
 </div>
 
-
+<!--
 <div class="row">
-  <div class="col-xs-12 col-md-8">
-    <a href="{{ site.url }}/visualizations/population/"><img class="project_preview" src="{{ site.url }}/assets/image/population_preview.png"/>
-    Population Figures, 1850&#8212;2014</a><br/>
-    <p>During and after World War II, northern California experienced 
-    tremendous urban growth outside of its traditional urban centers of 
-    Oakland, Berkeley, and San Francisco. These charts visualize population 
-    change throughout the Peninsula.</p>
-  </div>
-</div>
-
-
-<!-- <div class="row">
   <div class="col-xs-12 col-md-8">
     <a href="{{ sitel.url }}/visualizations/traffic/"><img class="img-responsive img-rounded" src="{{site.url}}/assets/image/traffic_journey_preview.png"/>
     Journey-to-Work in the Bay Area, 1958</a><br/>
-    <p>A key criticism of conservationists and environmentalists in the Bay Area focused on the massive uptick in traffic that resulted in smog obscuring the views that many residents enjoyed. Here is a snapshot of where people were commuting from in order to visually understand the traffic flow between suburban homes and suburban 
+    <p>A key criticism of conservationists and environmentalists in the Bay Area focused on the massive uptick in traffic that resulted in smog obscuring the views that many residents enjoyed. Here is a snapshot of where people were commuting from in order to visually understand the traffic flow between suburban homes and suburban
     offices.</p>
     </div>
-</div> -->
-
+</div>
+-->

@@ -1,12 +1,12 @@
 queue()
-.defer(d3.json, "/data-files/ca-counties/ca_counties.json")
-.defer(d3.json, "/data-files/sv-annexations/sj_annexations.json")
-.defer(d3.json, "/data-files/sv-urban/urban_areas_out.json")
-.defer(d3.csv, "/data-files/sv-urban/ca-cities.csv")
-.await(ready);
+  .defer(d3.json, "/data-files/ca-counties/ca_counties.json")
+  .defer(d3.json, "/data-files/sv-annexations/sj_annexations.json")
+  .defer(d3.json, "/data-files/sv-urban/urban_areas_out.json")
+  .defer(d3.csv, "/data-files/sv-urban/ca-cities.csv")
+  .await(ready);
 
 var margin = {top: 50, right: 50, bottom: 50, left: 50},
-width = 1055,
+width = 860,
 height = 500,
 sliderHeight = 20,
 sliderWidth = 600,
@@ -49,16 +49,7 @@ var x = d3.scale.linear()
 .range([0, sliderWidth])
 .clamp(true);
 
-// var brushToYear = d3.scale.threshold()
-// .domain([1850, 1860, 1870, 1880, 1890,1900,1910,1912,1925,1930,1936,1940,1941,1946,1950,1955,1960,1965,1970,1975,1980,1985,1990,1995])
-// .range([1850, 1860, 1870, 1880, 1890,1900,1910,1912,1925,1930,1936,1940,1941,1946,1950,1955,1960,1965,1970,1975,1980,1985,1990,1995]);
-
 var color = d3.scale.category20();
-
-// var brush = d3.svg.brush()
-//   .x(x)
-//   .extent([current.year, current.year])
-//   .on("brush", brushed);
 
 sliderContainer.append("g")
   .attr("class", "x axis")
@@ -76,20 +67,9 @@ sliderContainer.append("g")
   })
   .attr("class", "halo");
 
-// var slider = sliderContainer.append("g")
-//   .attr("class", "slider")
-//   .call(brush);
-//   slider.selectAll(".extent, .resize").remove();
-//   slider.select(".background").attr("height", sliderHeight);
-
-// var handle = slider.append("circle")
-// .attr("class", "handle")
-// .attr("transform", "translate(0," + sliderHeight / 2 + ")")
-// .attr("r", 9);
-
 // Legend
 var legend = d3.select("svg").append("g")
-.attr("transform", "translate(" + (width - 190) + "," + 200 + ")")
+.attr("transform", "translate(" + (width - 140) + "," + 200 + ")")
 .classed("legend", true);
 
 var legendDate = legend.append("g")
@@ -122,23 +102,6 @@ function ready(error, county, annexations, urban_areas, cities) {
   drawMap(current.year, current.map);
   loading.remove();
 }
-
-// function brushed() {
-//   var value = brush.extent()[0];
-//   // console.log(value);
-//   if (d3.event.sourceEvent) {
-//     value = x.invert(d3.mouse(this)[0]);
-//     brush.extent([value, value]);
-//   }
-//   handle.attr("cx", x(value));
-//   var brushDate = brushToYear(value-5);
-
-//   if (brushDate !== current.year) {
-//     legendDate.text(brushDate);
-//     current.year = brushDate;
-//     drawMap(brushDate, current.map);
-//   }
-// }
 
 function drawMap(date, map) {
 
@@ -213,20 +176,6 @@ svg.selectAll(".city-label")
     .text(function(d) { return d.properties.name; });
 }
 
-// function drawCities() {
-//   bay_cities = svg.selectAll(".bay_cities")
-//     .data(cities)
-//   .enter().append("g")
-//     .attr("class", "bay_cities")
-//     .attr("transform", function(d) { return "translate(" + projection([d.longitude, d.latitude]) + ")"; });
-
-//   bay_cities
-//     .append("circle")
-//     .attr("r", 8.5)
-//     .attr("class", "bay_cities")
-//     .style("fill","red");
-// }
-
 function renderDate(dated) {
   clickDate = dated;
   console.log(clickDate);
@@ -244,4 +193,16 @@ function updateLegend(map) {
 
 function stopped() {
   if (d3.event.defaultPrevented) d3.event.stopPropagation();
+}
+
+function showStatistics(data) {
+
+// TODO: Begin work on a statistics view for the data.
+// The statistics view should be a sidebar view to the left of the map.
+// The visualization will show a small barchart of population that updates based
+// on the year selected in the map view. Views of the data show the population;
+// area size; population density;
+
+
+
 }

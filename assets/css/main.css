@@ -14,6 +14,10 @@ p {
   padding: 0;
 }
 
+a, a:link {
+  color: #007D68;
+}
+
 .project_preview {
   max-width: 800px;
   height: auto;
@@ -78,10 +82,13 @@ p {
 
 header {
   height: 150px;
+  position: relative;
+}
+
+.default-header {
   background-image: url(/assets/image/header@2x.png);
   background-size: cover;
   background-position: center;
-  position: relative;
 }
 
 .head-section {
@@ -104,7 +111,18 @@ header {
   text-shadow: 0 2px 2 rgba(0,0,0,0.3);
   font-family: "Lustria", serif;
 }
-
+.push-left {
+  text-align: left;
+  margin-left: 30px;
+}
+.headline {
+  font-size: 4.45rem;
+  line-height: 4.75rem;
+  width: 62%;
+}
+h1#headline {
+  text-shadow: 0 0 3px rgba(0,0,0,0.50);
+}
 .head-summary {
   font-size: 26px;
   max-width: 640px;
@@ -214,4 +232,55 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.story-header {
+  positon: absolute;
+  min-width: 747px;
+  left:0;
+  right:0;
+  margin-right:0;
+  margin-left:0;
+  width: 100%;
+  height: auto;
+}
+
+.cover {
+  width: 100%;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  width: 100%;
+}
+
+.navbar-narrative a {
+  color: #f2f2f2;
+  text-shadow: 0 0 3px rgba(0,0,0,0.50);
+}
+.navbar-narrative a:hover {
+  color: #333;
+  text-shadow: none;
+}
+.navbar-narrative a.navbar-brand:hover {
+  color: white;
+}
+.caption {
+  position: absolute;
+  left: 20px;
+}
+.caption {
+  font-size: 0.8124rem;
+  line-height: 1.0625rem;
+  font-weight: 300;
+  font-style: normal;
+  max-width: 100%;
+}
+.caption,
+figcaption {
+  color: #666;
+  font-family: "Lato", sans-serif;
+}
+.caption a {
+  color: #666;
 }
