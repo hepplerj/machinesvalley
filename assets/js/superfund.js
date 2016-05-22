@@ -5,7 +5,7 @@ queue()
     .await(ready);
 
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
-    width = 1140,
+    width = 900,
     height = Math.max(500, window.innerHeight - 200),
     lastYear = 2000,
     company = {};
@@ -21,11 +21,12 @@ var projection = d3.geo.mercator()
     .translate([width / 2, height / 2]);
 
 var center = projection([-122.0375, 37.3711]);
+//
+// var path = d3.geo.path()
+//     .projection(projection);
 
-var path = d3.geo.path()
+geoPath = d3.geo.path()
     .projection(projection);
-
-geoPath = d3.geo.path().projection(projection);
 
 var zoom = d3.behavior.zoom()
     .scale(projection.scale() * 2 * Math.PI)
@@ -35,9 +36,9 @@ var zoom = d3.behavior.zoom()
 
 // Adjust the projection on the computed center
 // so it uses the zoom behavior's translate & scale
-projection
-    .scale(1 / 2 / Math.PI)
-    .translate([0, 0]);
+// projection
+//     .scale(1 / 2 / Math.PI)
+//     .translate([0, 0]);
 
 var tooltip = d3.select("#viz").append("div")
     .attr("class", "map-tooltip")
@@ -52,7 +53,16 @@ var loading = svg.append("text").attr({x:500,y:250}).text("Loading map...").styl
 var raster = svg.append("g");
 var vector = svg.append("path");
 
+var eventGroup = svg.append("g");
+
 var color = d3.scale.category20b();
+
+// add div attribution (as per Mapbox' requirements)
+ d3.select("#viz")
+   .append("div")
+     .attr("class", "attribution")
+   .append("label")
+     .html("<a href='https://www.mapbox.com/about/maps/' target='_blank'>© MapBox © OpenStreetMap</a>&nbsp;<a href='https://www.mapbox.com/map-feedback/'>Improve this map</a>")
 
 function ready(error, sites, ca_superfund, ca_toxics) {
   if (error) {
@@ -61,41 +71,19 @@ function ready(error, sites, ca_superfund, ca_toxics) {
       console.log(error);
   }
 
-  var ua = navigator.userAgent.toLowerCase();
-  if (ua.indexOf('safari') != -1) {
-    if (ua.indexOf('chrome') > -1 || ua.indexOf('firefox') > -1) {
-
   loading.remove();
   svg.call(zoom);
 
-  // Field selector for company types
-  companyTypes = d3.nest()
-    .key(function(d) { return d.company_type;})
-    .sortKeys(d3.ascending)
-    .entries(sites);
-
-  var listCompanyTypes = d3.select("#field-selector").append("select").attr("class", "form-control").on("change", fieldSelected);
-
-  listCompanyTypes.selectAll("option")
-    .data(companyTypes)
-  .enter()
-    .append("option")
-    .attr("value", function(d) { return d.key})
-    .text(function(d) { return d.key.toTitleCase(); });
-
     // Draw Superfund sites
-    var superfundsG = svg.append("g")
-        .attr("id", "superfundG")
-        .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")");
-
-    var superfund_sites = superfundsG.selectAll(".superfunds")
-      .data(ca_superfund)
-    .enter()
-      .append("g")
-      .attr("transform", function (d) {
-          return "translate(" + projection([d.longitude, d.latitude]) + ")scale(" + projection.scale() + ")"
-      })
-      .on("mouseover", function(d,i) {
+    superfundElements = eventGroup
+        .selectAll(".superfunds")
+        .data(ca_superfund)
+      .enter().append("circle")
+        .attr("cx", function(d) { return projection([d.longitude, d.latitude])[0] })
+        .attr("cy", function(d) { return projection([d.longitude, d.latitude])[1] })
+        .attr("r", 12)
+        .attr("class", "superfund-circ")
+        .on("mouseover", function(d,i) {
         tooltip.transition().duration(200).style("opacity", .8);
         tooltip.html("<br><strong>SUPERFUND SITE</strong> <br>"
                 + "<strong>Company</strong>: " + d.name.toTitleCase() +
@@ -110,103 +98,124 @@ function ready(error, sites, ca_superfund, ca_toxics) {
         tooltip.transition().duration(500).style("opacity", 0);
       });
 
-    superfund_sites
-      .append("circle")
-      .attr("r", 60)
-      .attr("class", "superfund-circ");
-
-    var companiesG = svg.append("g")
-        .attr("id", "companiesG")
-        .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")");
-
-    var companyPoints = companiesG.selectAll(".companies")
-        .data(sites)
-      .enter()
-        .append("g")
-        .attr("transform", function (d) {
-            return "translate(" + projection([d.longitude, d.latitude]) + ")scale(" + projection.scale() + ")"
-        })
-        .on("mouseover", function(d,i) {
-          tooltip.transition().duration(200).style("opacity", .8);
-          tooltip.html("<br>" + "<strong>" + "COMPANY" + "</strong><br>"
-                  + d.company.toTitleCase() + "" +
-                  (d.date_founded?"<br>" + "Founded: "+d.date_founded:"") + "<br>" +
-                  "Address: " + d.address.toTitleCase() + "<br>" +
-                  (d.company_type?"<br>" + "Company type: " + d.company_type:"") + "<br>" +
-                  (d.description?"<hr>"+d.description:""))
-        })
-        .on("mouseout", function(d,i) {
-          tooltip.transition().duration(500).style("opacity", 0);
-        });
-
-    companyPoints
-        .append("circle")
-        .attr("r", 18 / zoom.scale())
-        .attr("class", "company-circ")
-        .attr("fill", "#EFB605")//, function(d) { return color(d.company_type) });
-
-    var toxicsG = svg.append("g")
-        .attr("id", "toxicsG")
-        .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")");
-
-    var toxicPoints = toxicsG.selectAll(".toxics")
+    toxicsElements = eventGroup
+        .selectAll(".toxics")
         .data(ca_toxics)
-      .enter()
-        .append("g")
-        .attr("transform", function (d) {
-            return "translate(" + projection([d.longitude, d.latitude]) + ")scale(" + projection.scale() + ")"
-        })
-        .on("mouseover", function(d,i) {
-          tooltip.transition().duration(200).style("opacity", .8);
-          tooltip.html("<br>" + "<strong>" + "TOXIC LEAK/SPILL" + "</strong><br>" + d.company.toTitleCase() + "" +
-                  "<br>" + "Address: " + d.address.toTitleCase() + "<br>" +
-                  (d.company_type?"<br>" + "Company type: " + d.company_type:"") + "<br>" +
-                  (d.source?"<hr>"+ "Source: " + d.source:""))
-        })
-        .on("mouseout", function(d,i) {
-          tooltip.transition().duration(500).style("opacity", 0);
-        });
-
-   toxicPoints
-        .append("circle")
-        .attr("r", 18 / zoom.scale())
+      .enter().append("circle")
+        .attr("cx", function(d) { return projection([d.longitude, d.latitude])[0] })
+        .attr("cy", function(d) { return projection([d.longitude, d.latitude])[1] })
+        .attr("r", 5)
         .attr("class", "toxics-circ")
-        .attr("fill", "#66489F");
+        .on("mouseover", function(d,i) {
+            tooltip.transition().duration(200).style("opacity", .8);
+            tooltip.html("<br>" + "<strong>" + "TOXIC LEAK/SPILL" + "</strong><br>" + d.company.toTitleCase() + "" +
+                    "<br>" + "Address: " + d.address.toTitleCase() + "<br>" +
+                    (d.company_type?"<br>" + "Company type: " + d.company_type:"") + "<br>" +
+                    (d.source?"<hr>"+ "Source: " + d.source:""))
+          })
+          .on("mouseout", function(d,i) {
+            tooltip.transition().duration(500).style("opacity", 0);
+          });
+
+    companyElements = eventGroup
+        .selectAll(".companies")
+        .data(sites)
+      .enter().append("circle")
+        .attr("cx", function(d) { return projection([d.longitude, d.latitude])[0] })
+        .attr("cy", function(d) { return projection([d.longitude, d.latitude])[1] })
+        .attr("r", 3)
+        .attr("class", "company-circ")
+        .on("mouseover", function(d,i) {
+            tooltip.transition().duration(200).style("opacity", .8);
+            tooltip.html("<br>" + "<strong>" + "COMPANY" + "</strong><br>"
+                    + d.company.toTitleCase() + "" +
+                    (d.date_founded?"<br>" + "Founded: "+d.date_founded:"") + "<br>" +
+                    "Address: " + d.address.toTitleCase() + "<br>" +
+                    (d.company_type?"<br>" + "Company type: " + d.company_type:"") + "<br>" +
+                    (d.description?"<hr>"+d.description:""))
+          })
+          .on("mouseout", function(d,i) {
+            tooltip.transition().duration(500).style("opacity", 0);
+          });
+
+  //   var companiesG = svg.append("g")
+  //       .attr("id", "companiesG")
+  //       .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")");
+   //
+  //   var companyPoints = companiesG.selectAll(".companies")
+  //       .data(sites)
+  //     .enter()
+  //       .append("g")
+  //       .attr("transform", function (d) {
+  //           return "translate(" + projection([d.longitude, d.latitude]) + ")scale(" + projection.scale() + ")"
+  //       })
+  //       .on("mouseover", function(d,i) {
+  //         tooltip.transition().duration(200).style("opacity", .8);
+  //         tooltip.html("<br>" + "<strong>" + "COMPANY" + "</strong><br>"
+  //                 + d.company.toTitleCase() + "" +
+  //                 (d.date_founded?"<br>" + "Founded: "+d.date_founded:"") + "<br>" +
+  //                 "Address: " + d.address.toTitleCase() + "<br>" +
+  //                 (d.company_type?"<br>" + "Company type: " + d.company_type:"") + "<br>" +
+  //                 (d.description?"<hr>"+d.description:""))
+  //       })
+  //       .on("mouseout", function(d,i) {
+  //         tooltip.transition().duration(500).style("opacity", 0);
+  //       });
+   //
+  //   companyPoints
+  //       .append("circle")
+  //       .attr("r", 3)
+  //       .attr("class", "company-circ");
+   //
+  //   var toxicsG = svg.append("g")
+  //       .attr("id", "toxicsG")
+  //       .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")");
+   //
+  //   var toxicPoints = toxicsG.selectAll(".toxics")
+  //       .data(ca_toxics)
+  //     .enter().append("g")
+  //       .attr("transform", function (d) {
+  //           return "translate(" + projection([d.longitude, d.latitude]) + ")scale(" + projection.scale() + ")"
+  //       })
+  //       .on("mouseover", function(d,i) {
+  //         tooltip.transition().duration(200).style("opacity", .8);
+  //         tooltip.html("<br>" + "<strong>" + "TOXIC LEAK/SPILL" + "</strong><br>" + d.company.toTitleCase() + "" +
+  //                 "<br>" + "Address: " + d.address.toTitleCase() + "<br>" +
+  //                 (d.company_type?"<br>" + "Company type: " + d.company_type:"") + "<br>" +
+  //                 (d.source?"<hr>"+ "Source: " + d.source:""))
+  //       })
+  //       .on("mouseout", function(d,i) {
+  //         tooltip.transition().duration(500).style("opacity", 0);
+  //       });
+   //
+  //  toxicPoints
+  //       .append("circle")
+  //       .attr("r", 1)
+  //       .attr("class", "toxics-circ");
 
   zoomed();
-    } else {
-      loading.remove();
-      loading = svg.append("text").attr({x:100,y:250}).text("Loading map...").style("font-size", "26px");
-      loading.text("Sorry, the SVG engine is currently broken in Safari. " +
-        "View the map using Chrome or Firefox.")
-      console.log(ua);
-    }
-  }
-
 };
 
 function zoomed() {
 
-    d3.select("#companiesG")
-        .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")");
+  // update projection
+  projection
+      .scale(zoom.scale() / 2 / Math.PI)
+      .translate(zoom.translate());
 
-    d3.selectAll(".company-circ")
-        .attr("r", 20 / zoom.scale())
-        .style("stroke-width", 1 / zoom.scale());
+  // update object positions
+  superfundElements
+      .attr("cx", function(d) { return projection([d.longitude, d.latitude])[0] })
+      .attr("cy", function(d) { return projection([d.longitude, d.latitude])[1] });
 
-    d3.select("#superfundG")
-      .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")");
+  companyElements
+      .attr("cx", function(d) { return projection([d.longitude, d.latitude])[0] })
+      .attr("cy", function(d) { return projection([d.longitude, d.latitude])[1] });
 
-    d3.selectAll(".superfund-circ")
-      .attr("r", 60 / zoom.scale())
-      .style("stroke-width", 1 / zoom.scale());
+  toxicsElements
+      .attr("cx", function(d) { return projection([d.longitude, d.latitude])[0] })
+      .attr("cy", function(d) { return projection([d.longitude, d.latitude])[1] });
 
-    d3.select("#toxicsG")
-      .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")");
-
-    d3.selectAll(".toxics-circ")
-      .attr("r", 18 / zoom.scale())
-      .style("stroke-width", 1 / zoom.scale());
 
     var tiles = tile
         .scale(zoom.scale())
@@ -247,24 +256,6 @@ function filterPoints(pointData) {
   } else {
   d3.selectAll(pointData).style("display", "none")
   }
-}
-
-// Used for the field selector to filter company types
-function fieldSelected() {
-  // field = companyTypes;
-  //console.log(field);
-  key = this.selectedIndex.value;
-  console.log(key);
-
-  d3.selectAll(".company-circ")
-    .transition()
-    .duration(300)
-    .style("display", function(d,i) {
-      if (key == d.company_type) {
-        return "block"
-      } else {
-        return "none" }
-    ;})
 }
 
 // Used for the check boxes to turn off and on elements
