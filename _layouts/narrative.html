@@ -5,7 +5,11 @@
 </head>
 <body>
 
+{% if page.cover-image %}
+  {% include narrative_navigation.html %}
+{% else %}
   {% include navigation.html %}
+{% endif %}
 
 <div class="container">
 
@@ -16,7 +20,6 @@
 </div>
 
 {% include footer.html %}
-
 {% include ga.html %}
 
 </body>

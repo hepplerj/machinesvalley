@@ -1,8 +1,8 @@
-<header class="default-header">
+<header class="cover" style="background-image: url({{site.url}}/assets/image/{{page.cover-image}});">
 <div class="navbar-wrapper">
       <div class="container">
 
-        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="navbar navbar-static-top navbar-narrative" role="navigation">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -25,4 +25,9 @@
 
       </div>
     </div>
+
+    <h1 id="headline" class="headline head-text push-left">{{ page.title }}</h1>
 </header>
+<figcaption id="media-caption-{{ page.cover-image }}" class="caption" itemprop="caption description">
+  <span class="credit" itemprop="copyrightHolder">Photo credit: <a href="{{page.cover-credit-link}}">{{page.cover-credit}}</a></span>
+</figcaption>

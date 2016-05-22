@@ -2,7 +2,7 @@ path {
   fill: none;
   stroke: none;
   stroke-linejoin: round;
-  stroke-width: 1px;
+  /*stroke-width: 1px;*/
 }
 
 .map-tooltip {
@@ -53,17 +53,14 @@ path {
   pointer-events: none;
 }
 
-#filters {
-
-}
-
 /* Map Features */
 
 .company-circ {
   stroke: #000;
-  stroke-width: .5px;
   fill-opacity: .8;
+  stroke-opacity: .5;
   cursor: crosshair;
+  fill: #EFB605;
 }
 
 .company-circ-hidden {
@@ -74,7 +71,6 @@ path {
   fill: #d21245;
   stroke: #000;
   stroke-opacity: .5;
-  stroke-width: 1px;
   fill-opacity: .7;
   cursor: crosshair;
 }
@@ -90,35 +86,31 @@ path {
 .toxics-circ {
   stroke: #000;
   stroke-opacity: .5;
-  stroke-width: 1px;
+  fill: #66489F;
   fill-opacity: .7;
   cursor: crosshair;
 }
 
-/*.openspace { fill: #009B9E; opacity: .7; }*/
-
-.PiYG .q0-8{fill:rgb(197,27,125)}  /* pink */
-.PiYG .q1-8{fill:rgb(222,119,174)}
-.PiYG .q2-8{fill:rgb(241,182,218)}
-.PiYG .q3-8{fill:rgb(253,224,239)}
-.PiYG .q4-8{fill:rgb(230,245,208)}
-.PiYG .q5-8{fill:rgb(184,225,134)}
-.PiYG .q6-8{fill:rgb(127,188,65)}
-.PiYG .q7-8{fill:rgb(77,146,33)}   /* green */
-
- /* Fix Google Maps canvas
- *
- * Wrap your Google Maps embed in a `.google-map-canvas` to reset Bootstrap's
- * global `box-sizing` changes. You may optionally need to reset the `max-width`
- * on images in case you've applied that anywhere else. (That shouldn't be as
- * necessary with Bootstrap 3 though as that behavior is relegated to the
- * `.img-responsive` class.)
- */
-
-  /*
-.google-map-canvas,
-.google-map-canvas * { .box-sizing(content-box); }
-*/
-
-/* Optional responsive image override */
-img { max-width: none; }
+/* Mapbox attribution */
+.attribution {
+      padding: 3px;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      opacity: 0.5;
+      background-color: white;
+    }
+    .attribution label {
+      font-size: 10px;
+      font-weight: bold;
+    }
+    .attribution a {
+      color: #404040;
+      text-decoration: none;
+    }
+    .attribution a:hover {
+      text-decoration: underline;
+    }
+    .attribution a:link {
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
