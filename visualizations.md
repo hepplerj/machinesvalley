@@ -14,6 +14,16 @@ Each view aims to address or illustrate a research question or theme.</p>
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
+    <a href="{{ site.url }}/visualizations/rivers/"><img class="img-responsive img-rounded" src="{{ site.url }}/assets/image/rivers_preview.png"/>
+    Landscapes of the Bay Area</a><br/>
+    <p>How did the landscapes of the Bay Area overlap? This map depicts
+    the overlapping Natural, Urban, and Industrial landscapes of the Bay
+    Area.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
     <a href="{{ sitel.url }}/visualizations/urban_areas/"><img class="img-rounded img-responsive img-rounded" src="{{site.url}}/assets/image/urban_areas_preview.png"/>
     Urban Areas of the San Francisco Peninsula</a><br/>
     <p>After 1945, every municipality in the Bay Area underwent
@@ -51,21 +61,17 @@ Each view aims to address or illustrate a research question or theme.</p>
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
-    <a href="{{ site.url }}/visualizations/rivers/"><img class="img-responsive img-rounded" src="{{ site.url }}/assets/image/rivers_preview.png"/>
-    Landscapes of the Bay Area</a><br/>
-    <p>How did the landscapes of the Bay Area overlap? This map depicts
-    the overlapping Natural, Urban, and Industrial landscapes of the Bay
-    Area.</p>
-  </div>
+    <img class="img-responsive img-rounded" src="{{site.url}}/assets/image/mv_annexation_preview.png"/>
+    Mountain View Annexations, 1850&#8212;2010 &middot; <em>coming soon</em><br/>
+    <p>Mountain View underwent dramatic expansion like many of the Bay Area cities in the postwar era.</p>
+    </div>
 </div>
 
-<!--
 <div class="row">
   <div class="col-xs-12 col-md-8">
-    <a href="{{ sitel.url }}/visualizations/traffic/"><img class="img-responsive img-rounded" src="{{site.url}}/assets/image/traffic_journey_preview.png"/>
-    Journey-to-Work in the Bay Area, 1958</a><br/>
+    <img class="img-responsive img-rounded" src="{{site.url}}/assets/image/traffic_journey_preview.png"/>
+    Journey-to-Work in the Bay Area, 1958 &middot; <em>coming soon</em><br/>
     <p>A key criticism of conservationists and environmentalists in the Bay Area focused on the massive uptick in traffic that resulted in smog obscuring the views that many residents enjoyed. Here is a snapshot of where people were commuting from in order to visually understand the traffic flow between suburban homes and suburban
     offices.</p>
     </div>
 </div>
--->

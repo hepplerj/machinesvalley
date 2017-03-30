@@ -1,0 +1,150 @@
+#mapid {
+    width: 860px;
+    height: 500px;
+}
+
+path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 20px 0 20px 0;
+}
+
+.na {
+  fill: lightgray;
+}
+
+.num {
+  float: right;
+  margin-right: 0.25rem;
+}
+
+table {
+  border: none;
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+  width: 100%;
+}
+
+td {
+  text-align: right;
+  padding: 2px 0!important;
+}
+
+tr {
+  margin: 0;
+  background-color: white;
+}
+
+.field {
+  text-align: left;
+  padding-left: 0;
+}
+
+.table-break {
+  padding-top: 15px!important;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.axis {
+  font: 10px sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.background {
+  cursor: move!important;
+}
+
+.axis .domain {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .3;
+  stroke-width: 10px;
+  stroke-linecap: round;
+}
+
+.axis .halo {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 8px;
+  stroke-linecap: round;
+}
+
+.slider .handle {
+  fill: #fff;
+  stroke: #000;
+  stroke-opacity: .5;
+  stroke-width: 1.25px;
+  pointer-events: none;
+}
+
+.date-label {
+  font-size: 24px;
+}
+
+#field-selector {
+  margin-top: 10px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.active {
+  stroke: black!important;
+  stroke-width: 0.75!important;
+  stroke-linecap: round!important;
+  stroke-linejoin: round!important;
+}
+
+path { fill: brown; opacity: .4; }
+
+.subunit081 { fill: #fee6ce; }
+.subunit075 { fill: #fee6ce; }
+.subunit085 { fill: #f1f1f7; } /* SC */
+.subunit087 { fill: #fee6ce; }
+.subunit001 { fill: #fee6ce; }
+
+.annexations { fill: brown; opacity: .3;}
+
+.subunit-boundary {
+  fill: none;
+  stroke: #777;
+  stroke-dasharray: 2,2;
+  stroke-linejoin: round;
+}
+
+.subunit-label {
+  fill: #777;
+  fill-opacity: .5;
+  font-size: 20px;
+  font-weight: 300;
+  text-anchor: middle;
+}
+
+#sidebar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  opacity: 0.85;
+  background-color: white;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  z-index: 10000;
+  width: 300px;
+  border: 1px solid gray;
+}

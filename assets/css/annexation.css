@@ -1,5 +1,7 @@
-#map svg {
-  background: #7ec9c8;
+#mapid {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 5px;
 }
 
 path {
@@ -142,27 +144,29 @@ tr {
   stroke-linejoin: round!important;
 }
 
-path { fill: #fee6ce; }
+path { fill: brown; opacity: .5; }
 
-.subunit081 { fill: #fee6ce; }
-.subunit075 { fill: #fee6ce; }
-.subunit085 { fill: #f1f1f7; } /* SC */
-.subunit087 { fill: #fee6ce; }
-.subunit001 { fill: #fee6ce; }
-
-.annexations { fill: brown; opacity: .3;}
-
-.subunit-boundary {
-  fill: none;
-  stroke: #777;
-  stroke-dasharray: 2,2;
-  stroke-linejoin: round;
+#sidebar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  opacity: 0.85;
+  background-color: white;
+  border-radius: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  z-index: 10000;
+  width: 300px;
+  border: 1px solid gray;
 }
 
-.subunit-label {
-  fill: #777;
-  fill-opacity: .5;
-  font-size: 20px;
-  font-weight: 300;
-  text-anchor: middle;
+#sidebar p {
+  font-size: 12px;
+  margin: 0;
+}
+
+ul#instructions {
+  font-size: 12px;
+  margin-left: -25px;
 }

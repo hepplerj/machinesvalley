@@ -4,7 +4,7 @@ date: 2015-01-17 19:31:46
 permalink: /visualizations/annexations/
 layout: page
 extra_css: annexation.css
-visualization: annexation.js
+visualization: annexation_new.js
 ---
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
@@ -14,7 +14,24 @@ visualization: annexation.js
   <h2>{{ page.title }}</h2>
 
   <div class="row">
-    <div id="map"></div>
+    <div style="position: relative; display: block">
+      <div id="sidebar">
+        <h4>Annexation Statistics</h4>
+        <hr />
+        <div id="controls">
+          <p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;</p>
+        </div>
+        
+        <p id="howToUse" style="margin-top: 10px; margin-bottom: 0px; font-weight: bold">How to use...</p>
+        <ul id="instructions"; style="display: none">
+          <li>Select the year to view the annexations and incorporations</li>
+          <li>Zoom in/out by rolling the mouse wheel, or by using the plus/minus buttons</li>
+          <li>Pan around the map by dragging the mouse</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="mapid" style="position: relative"></div>
   </div>
 
   <div class="row">
@@ -116,7 +133,9 @@ center, or street intersection. In some areas, annexations became a tool of coer
       </ul>
 
       <div class="source-code">
-        <p>Source code: <a href="https://github.com/hepplerj/machinesvalley/blob/gh-pages/assets/js/annexation.js">Github</a> | Last updated: 2015-10-11</p>
+        <p>Source code: <a 
+            href="https://github.com/hepplerj/machinesvalley/blob/gh-pages/assets/js/annexation_new.js">Github</a> 
+          | Last updated: 2016-08-28</p>
       </div>
     </div>
 

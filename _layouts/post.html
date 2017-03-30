@@ -3,7 +3,7 @@ layout: single
 ---
 <h2>{{ page.title }}</h2>
 <div class="meta" style="margin-bottom: 15px;">
-  <span class="glyphicon glyphicon-time" aria-hidden="true"></span> <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date: "%B %e, %Y" | ordinalize  }}</time> &#183; <span class="glyphicon glyphicon-pencil"></span> {{ site.owner.name }} &#183; <span class="glyphicon glyphicon-tag"></span> {{ page.tags | array_to_sentence_string }}
+  <span class="glyphicon glyphicon-time" aria-hidden="true"></span> <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date: "%B %e, %Y" | ordinalize  }}</time> &#183; <strong>Topics:</strong> {{ page.tags | array_to_sentence_string }} <br/> <strong>Document Type:</strong> <a href="">{{ page.doc_type }}</a> &#183; <strong>Scope:</strong> <a href="">{{ page.scope }}</a>
 </div>
 
 <div class="container">

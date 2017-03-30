@@ -67,15 +67,15 @@ sliderContainer.append("g")
   })
   .attr("class", "halo");
 
-// Legend
-var legend = d3.select("svg").append("g")
-.attr("transform", "translate(" + (width - 140) + "," + 200 + ")")
-.classed("legend", true);
-
-var legendDate = legend.append("g")
-.attr("transform", "translate(0,0)")
-.append("text")
-.classed("date-label", "true");
+// // Legend
+// var legend = d3.select("svg").append("g")
+// .attr("transform", "translate(" + (width - 140) + "," + 200 + ")")
+// .classed("legend", true);
+//
+// var legendDate = legend.append("g")
+// .attr("transform", "translate(0,0)")
+// .append("text")
+// .classed("date-label", "true");
 
 var projection = d3.geo.azimuthalEqualArea()
   .center([0, 37.28])
@@ -133,8 +133,23 @@ function drawMap(date, map) {
       .classed("annexations", true)
       .attr("d", path);
 
+    // // set the text in the overlay panel
+    var text = [
+      "Year: <b>" + current.year + "</b>",
+      "Population: <b>" + "555" + "</b>",
+      "Population Density: <b>" + "555" + "</b>",
+      "City Size (sq. mi.): <b>" + "555" + "</b>",
+      "Average Farm Size (acres): <b>" + "555" + "</b>",
+      "Avg Income: <b>" + "555" + "K</b>"
+    ];
+    // update side panel
+    manageSidePanel(text);
+    //
+    // population barchart
+    // tree map race makeup
+
     current.map = map;
-    updateLegend(map);
+    // updateLegend(map);
 }
 
 function drawCounties() {
@@ -181,28 +196,39 @@ function renderDate(dated) {
   console.log(clickDate);
 
   if (clickDate !== current.year) {
-    legendDate.text(clickDate);
+    // legendDate.text(clickDate);
     current.year = clickDate;
     drawMap(clickDate, current.map);
   }
 }
 
-function updateLegend(map) {
-  legendDate.text(current.year);
-}
+// function updateLegend(map) {
+//   legendDate.text(current.year);
+// }
 
 function stopped() {
   if (d3.event.defaultPrevented) d3.event.stopPropagation();
 }
 
-function showStatistics(data) {
+function manageSidePanel(data) {
+    var controls = d3.select("#controls");
 
-// TODO: Begin work on a statistics view for the data.
-// The statistics view should be a sidebar view to the left of the map.
-// The visualization will show a small barchart of population that updates based
-// on the year selected in the map view. Views of the data show the population;
-// area size; population density;
+    // remove current elements
+    controls.selectAll("p").remove();
 
+    // add new p elements
+    controls.selectAll("p")
+        .data(data)
+      .enter().append("p")
+        .html(function(d) { return d; })
+  }
 
-
-}
+d3.select("#howToUse").on("click", function() {
+  var state = d3.select("#instructions").style("display");
+  if (state == "none") state = "block";
+  else state = "none";
+  d3.select("#instructions").style("display", state);
+  d3.select(this).text(function() {
+    return state == "none" ? "How to use..." : "How to use";
+  })
+})
