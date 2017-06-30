@@ -27,6 +27,8 @@ As essays, articles, reports, and white papers are produced with research data a
 
 *2017-03-27* &middot; Added the Introduction.
 
+*2017-06-30* &middot; Added table of county population growth to annexation visualizations. Added Mountain View annexation visualization.
+
 This project is under version control. If you'd like to see all of the updates the project has gone through, you can follow the updates on [Github](https://github.com/hepplerj/machinesvalley).
 
 ### Partners
