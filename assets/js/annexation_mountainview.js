@@ -1,5 +1,5 @@
 queue()
-  .defer(d3.json, "/data-files/sv-annexations/sj_annexations.json")
+  .defer(d3.json, "/data-files/sv-annexations/mountainview.json")
   .defer(d3.csv, "/data-files/census-population/census-total.csv")
   .await(ready);
 
@@ -16,15 +16,15 @@ var margin = {top: 50, right: 50, bottom: 50, left: 50},
 var maps = {
   "bayPopulation": {
     "field": "bayPopulation",
-    "label": "San Jose annexations"
+    "label": "Santa Clara County annexations"
   }
 };
 
-var current = { "year": 1850, "map": maps.bayPopulation };
+var current = { "year": 1940, "map": maps.bayPopulation };
 
 var mymap = L.map('mapid', {
-    center: [37.3382, -122.02],
-    zoom: 11,
+    center: [37.3861, -122.0839],
+    zoom: 12,
     dragging: true,
     scrollWheelZoom: 'center',
     doubleClickZoom: 'center',
@@ -63,10 +63,10 @@ function ready(error, annexations, census) {
       data.annexations  = annexations;
       data.census = census;
       
-      var dataByCounty = d3.nest()
-        .key(function(d) { return d.YEAR; })
-        .entries(data.census);
-    console.log(dataByCounty);
+    //   var dataByCounty = d3.nest()
+    //     .key(function(d) { return d.YEAR; })
+    //     .entries(data.census);
+    // console.log(dataByCounty);
 
       drawMap(current.year, current.map);
       loading.remove();
@@ -83,7 +83,7 @@ function drawMap(date, map) {
 
     // Data Join Path
     var feature = g.selectAll("path")
-        .data(topojson.feature(data.annexations, data.annexations.objects["anex_" + current.year]).features) 
+        .data(topojson.feature(data.annexations, data.annexations.objects["annex_" + current.year]).features) 
         .enter().append("path");
 
     mymap.on("viewreset", reset);
@@ -98,7 +98,7 @@ function drawMap(date, map) {
     
     // Reposition the SVG to cover the features
     function reset() {
-        var bounds = path.bounds(topojson.feature(data.annexations, data.annexations.objects["anex_" + current.year])),
+        var bounds = path.bounds(topojson.feature(data.annexations, data.annexations.objects["annex_" + current.year])),
             topLeft = bounds[0],
             bottomRight = bounds[1];
 
