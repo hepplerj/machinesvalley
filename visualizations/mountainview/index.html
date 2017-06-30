@@ -1,0 +1,106 @@
+---
+title: "Mountain View Annexations, 1850&#8212;2000"
+date: 2015-01-17 19:31:46
+permalink: /visualizations/mountainview/
+layout: page
+extra_css: annexation.css
+visualization: annexation_mountainview.js
+---
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+
+<div class="container">
+
+  <h2>{{ page.title }}</h2>
+
+  <div class="row">
+    <div style="position: relative; display: block">
+      <div id="sidebar">
+        <h4>Annexation Statistics</h4>
+        <hr />
+        <div id="controls">
+          <p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;</p>
+        </div>
+        
+        <p id="howToUse" style="margin-top: 10px; margin-bottom: 0px; font-weight: bold">How to use...</p>
+        <ul id="instructions"; style="display: none">
+          <li>Select the year to view the annexations and incorporations</li>
+          <li>Zoom in/out by rolling the mouse wheel, or by using the plus/minus buttons</li>
+          <li>Pan around the map by dragging the mouse</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="mapid" style="position: relative"></div>
+  </div>
+
+  <div class="row">
+    <div class="small-8 columns" id="date-selector">
+      <input class="btn btn-default" type="button" value="1940" onclick="renderDate('1940')">
+      <input class="btn btn-default" type="button" value="1945" onclick="renderDate('1945')">
+      <input class="btn btn-default" type="button" value="1950" onclick="renderDate('1950')">
+      <input class="btn btn-default" type="button" value="1955" onclick="renderDate('1955')">
+      <input class="btn btn-default" type="button" value="1960" onclick="renderDate('1960')">
+      <input class="btn btn-default" type="button" value="1965" onclick="renderDate('1965')">
+      <input class="btn btn-default" type="button" value="1970" onclick="renderDate('1970')">
+      <input class="btn btn-default" type="button" value="1975" onclick="renderDate('1975')">
+      <input class="btn btn-default" type="button" value="1980" onclick="renderDate('1980')">
+      <input class="btn btn-default" type="button" value="1985" onclick="renderDate('1985')">
+      <input class="btn btn-default" type="button" value="1990" onclick="renderDate('1990')">
+    </div>
+  </div>
+
+  <div class="row">
+  <br/>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <p>Like other Bay Area metropolitan areas, Mountain View underwent its own dramatic expansion in the postwar era. 
+      </p>
+
+      <p>
+      </p>
+
+      <div class="footnotes">
+        
+      </div>
+
+      <hr>
+
+      <div class="draft">
+        <p><strong>This is a draft</strong>. Changes to the text, bibliography, visualization, and so on will be documented here as they occur.</p>
+      </div>
+
+      <hr>
+    </div>
+
+    <div class="col-md-4 sidebar">
+      <h4>Data Sources</h4>
+      <ul>
+        <li><a href="https://github.com/hepplerj/machinesvalley/blob/gh-pages/data/census-population/population_bay_area.csv">U.S. Census, 1940&#8212;2010</a></li>
+        <li>City of San Jose</li>
+      </ul>
+
+      <h4>Bibliography</h4>
+      <ul>
+        <li>Abbott, Carl. <em>Metropolitan Frontier: Cities in the Modern American West</em>. Tucson: University of Arizona Press, 1995.</li>
+        <li>Abbott, Carl. <em>How Cities Won the West: Four Centuries of Urban Change in Western North America</em>. Albuquerque: University of New Mexico Press, 2008.</li>
+        <li>Arbuckle, Clyde. <em>Clyde Arbuckle’s History of San Jose: Chronicling San Jose’s Founding as California’s Earliest Pueblo in 1777, Through Exciting and Tumultuous History Which Paved the Way for Today’s Metropolitan San Jose</em>. San Jose: Smith & McKay, 1985.</li>
+        <li>Bakken, Gordon Morris, and Brenda Farrington, eds. <em>The Urban West</em>. New York: Garland Pub, 2001.</li>
+        <li>Matthews, Glenna. <em>Silicon Valley, Women, and the California Dream: Gender, Class, and Opportunity in the Twentieth Century</em>. Stanford: Stanford University Pres, 2003.</li>
+        <li>Lukes, Timothy J. “Progressivism Off-Broadway: Reform Politics in San Jose, California, 1880-1920.” <em>Southern California Quarterly</em> 76 (December 1994): 377–400.</li>
+        <li>Mandich, Mitchell. “<a href="http://discover.sjlibrary.org/iii/encore_sjsu/record/C__Rb1503985__SThe%20Growth%20and%20Development%20of%20San%20Jose__Orightresult__U__X6?lang=eng&suite=sjsu.">The Growth and Development of San Jose, California&#8212;Social, Political, and Economic Considerations</a>.” M.A. thesis, San Jose State University, 1975.</li>
+        <li>Trounstine, Philip and Terry Christensen. <em>Movers and Shakers: The Study of Community Power</em>. New York: St. Martin's Press, 1982.</li>
+      </ul>
+
+      <div class="source-code">
+        <p>Source code: <a 
+            href="https://github.com/hepplerj/machinesvalley/blob/gh-pages/assets/js/annexation_new.js">Github</a> 
+          | Last updated: 2016-08-28</p>
+      </div>
+    </div>
+
+  </div><!-- row -->
+
+</div>

@@ -51,7 +51,7 @@ Each view aims to address or illustrate a research question or theme.</p>
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
-    <a href="{{ site.url }}/visualizations/annexations/"><img class="img-responsive img-rounded" src="{{site.url}}/assets/image/annexation_preview.png"/>
+    <a href="{{ site.url }}/visualizations/sanjose/"><img class="img-responsive img-rounded" src="{{site.url}}/assets/image/annexation_preview.png"/>
     San Jose Annexations, 1850&#8212;2010</a><br/>
     <p>After 1945, the City of San Jose embarked on an aggressive
     annexation campaign in the Bay Area with the intent of becoming the
@@ -61,8 +61,8 @@ Each view aims to address or illustrate a research question or theme.</p>
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
-    <img class="img-responsive img-rounded" src="{{site.url}}/assets/image/mv_annexation_preview.png"/>
-    Mountain View Annexations, 1850&#8212;2010 &middot; <em>coming soon</em><br/>
+    <a href="{{ site.url }}/visualizations/mountainview/"><img class="img-responsive img-rounded" src="{{site.url}}/assets/image/mv_annexation_preview.png"/>
+    Mountain View Annexations, 1850&#8212;2010</a><br/>
     <p>Mountain View underwent dramatic expansion like many of the Bay Area cities in the postwar era.</p>
     </div>
 </div>
