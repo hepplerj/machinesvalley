@@ -2,9 +2,10 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:900);
 @import url(http://fonts.googleapis.com/css?family=Pontano+Sans);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body {
-  font-family: "Merriweather", Georgia, serif;
+  font-family: "Open Sans", Georgia, serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 22px;
@@ -13,12 +14,12 @@ body {
 }
 
 h1,h2,h3 {
-  font-family: "Lato", "Helvetica Neue", sans-serif;
+  font-family: "Roboto Slab", "Helvetica Neue", sans-serif;
   font-weight: 700;
 }
 h4,h5,h6 {
   font-weight: 500;
-  // font-family: "Lato", "Helvetica Neue", sans-serif;
+  // font-family: "Roboto Slab", "Helvetica Neue", sans-serif;
 }
 
 p {
@@ -124,6 +125,11 @@ header {
   width: 100%;
   text-shadow: 0 2px 2 rgba(0,0,0,0.3);
   /*font-family: "Lustria", serif;*/
+}
+.narrative-text {
+  width: 70%;
+  margin: 0 auto;
+  color: #4a4a4a;
 }
 .push-left {
   text-align: left;
