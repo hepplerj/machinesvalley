@@ -23,6 +23,8 @@ Much of the site is a "work in progress." As a whole, the project seeks to make 
 
 As essays, articles, reports, and white papers are produced with research data and visualizations from this project, they will appear below.
 
+- "Green Dreams, Toxic Legacies: Toward a Digital Political Ecology of Silicon Valley," *International Journal of Humanities and Arts Computing*, accepted for publication.
+
 ### News and Updates
 
 *2017-03-27* &middot; Added the Introduction.

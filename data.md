@@ -8,13 +8,13 @@ tags: [Jason Heppler, digital history, research]
 
 ## {{ page.title }}
 
-I am happy to share my data and the tools I have compiled or created with
-other researchers. All of the resources here are free and available for use.
+I am happy to share my data and the tools I have compiled or created with other researchers, journalists, policy makers, and the public. All of the resources here are free and available for use. Code is licensed under the MIT License. Data may be licensed under different licenses; see the individual Github repositories for specific information.
 
 ### Maps and GIS
 
-- **[San Jose annexations GeoJSON](https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/sv-annexations/sj_annex_full.json)**: Using the data [provided by the City of San Jose](http://www.sanjoseca.gov/index.aspx?NID=3308), I restructured the shapefile into a yearly breakdown in order to build the [annexation visualization](/visualizations/annexations/).
-- **[Santa Clara open space GeoJSON](https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/ca-openspace/openspace_santaclara.json)**: Based on data provied by the Bay Area Open Space Conservancy.
+- **[San Jose annexations TopoJSON](https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/sv-annexations/sj_annex_full.json)**: Using the data [provided by the City of San Jose](http://www.sanjoseca.gov/index.aspx?NID=3308), I restructured the shapefile into a yearly breakdown in order to build the [annexation visualization](/visualizations/sanjose/).
+- **[Mountain View annexations TopoJSON](https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/sv-annexations/mountainview.json)**: Using the data provided by the City of Mountain View, I restructured the shapefile into a yearly breakdown in order to build the [annexation visualization](/visualizations/mountainview/).
+- **[Santa Clara open space GeoJSON](https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/ca-openspace/openspace_santaclara.json)**: Based on data provided by the Bay Area Open Space Conservancy.
 - **[California counties](https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/ca-counties/ca_counties.json)**: The California Bay Area counties GeoJSON file is used as a base map of some of the visualizations.
 - **[Bay Area urban areas](https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/sv-urban/urban_areas_out.json)**: A GeoJSON file of the Bay Area's 2014 urban areas.
 
