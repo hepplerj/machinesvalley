@@ -62,15 +62,15 @@ Each view aims to address or illustrate a research question or theme.</p>
 <div class="row">
   <div class="col-xs-12 col-md-8">
     <a href="{{ site.url }}/visualizations/mountainview/"><img class="img-responsive img-rounded" src="{{site.url}}/assets/image/mv_annexation_preview.png"/>
-    Mountain View Annexations, 1850&#8212;2010</a><br/>
+    Mountain View Annexations, 1940&#8212;1990</a><br/>
     <p>Mountain View underwent dramatic expansion like many of the Bay Area cities in the postwar era.</p>
     </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
-    <img class="img-responsive img-rounded" src="{{site.url}}/assets/image/traffic_journey_preview.png"/>
-    Journey-to-Work in the Bay Area, 1958 &middot; <em>coming soon</em><br/>
+    <a href="{{ site.url }}/visualizations/traffic/"><img class="img-responsive img-rounded" src="{{site.url}}/assets/image/traffic_journey_preview.png"/>
+    Journey-to-Work in the Bay Area, 1958</a><br/>
     <p>A key criticism of conservationists and environmentalists in the Bay Area focused on the massive uptick in traffic that resulted in smog obscuring the views that many residents enjoyed. Here is a snapshot of where people were commuting from in order to visually understand the traffic flow between suburban homes and suburban
     offices.</p>
     </div>
