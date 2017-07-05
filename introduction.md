@@ -47,7 +47,7 @@ Much of the site is a "work in progress." As a whole, the project seeks to make 
 
 **Jason A. Heppler** is the Digital Engagement Librarian and an Assistant Professor of History at the University of Nebraska at Omaha, and a researcher with Stanford University's Spatial History Project. He received his Ph.D. in history from the University of Nebraska-Lincoln in 2016 and is working on his first book on environmental politics in Silicon Valley.
 
-### Research Publications 
+### Essays, Publications, and Whitepapers 
 
 As essays, articles, reports, and white papers are produced with research data and visualizations from this project, they will appear below.
 

@@ -138,7 +138,7 @@ header {
 .headline {
   font-size: 4.45rem;
   line-height: 4.75rem;
-  // width: 62%;
+  font-family: "Roboto Slab", sans-serif;
 }
 h1#headline {
   text-shadow: 0 0 3px rgba(0,0,0,0.50);
@@ -147,7 +147,7 @@ h1#headline {
   font-size: 26px;
   max-width: 640px;
   margin: 5px auto 15px;
-  /*font-family: "Lato", sans-serif;*/
+  font-family: "Roboto Slab", sans-serif;
 }
 
 .head-by {
@@ -155,7 +155,7 @@ h1#headline {
   margin: 10px 0;
   opacity: 0.8;
   color: #aaa;
-  /*font-family: "Lato", sans-serif;*/
+  font-family: "Roboto Slab", sans-serif;
 }
 
 .head-by-main {
