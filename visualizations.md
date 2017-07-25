@@ -24,6 +24,14 @@ Each view aims to address or illustrate a research question or theme.</p>
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
+    <a href="{{ site.url }}/visualizations/openspace/"><img class="img-responsive img-rounded" src="{{site.url}}/assets/image/openspace_preview.png"/>
+    Conservation Lands in Santa Clara County</a><br/>
+    <p>The protected lands of Santa Clara County are administered by various local, regional, and federal agencies. The interactive map shows which areas of the land are administered by particular agencies.</p>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
     <a href="{{ sitel.url }}/visualizations/urban_areas/"><img class="img-rounded img-responsive img-rounded" src="{{site.url}}/assets/image/urban_areas_preview.png"/>
     Urban Areas of the San Francisco Peninsula</a><br/>
     <p>After 1945, every municipality in the Bay Area underwent
