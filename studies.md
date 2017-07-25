@@ -20,7 +20,7 @@ follow me on [Twitter](http://twitter.com/jaheppler).
 
 <div class="row">
 <img src="{{site.url}}/assets/image/farm_preview.png" class="img-rounded img-responsive topic-preview">
-<p><strong><a href="{{ site.url }}/narrative/pastoral/">Pastoral Memories and the Origins of the Countryside Landscape</a></strong></p>
+<p><strong>Pastoral Memories and the Origins of the Countryside Landscape</strong> &middot; <em>coming soon</em></p>
 <p>The Santa Clara Valley's rich alluvial soils and Mediterranean
 climate made it an ideal location for farming. Spanish missionaries
 established the Valley's early agricultural presence in the 1700s, and
