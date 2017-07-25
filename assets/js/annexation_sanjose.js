@@ -42,6 +42,19 @@ L.tileLayer("http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", {
     attribution: '<a href="http://carto.com">CARTO</a>'
 }).addTo(mymap);
 
+// Historic basemaps
+var sj_1938 = L.tileLayer("http://warp.worldmap.harvard.edu/maps/tile/4189/{z}/{x}/{y}.png");
+var sj_1959 = L.tileLayer("http://warp.worldmap.harvard.edu/maps/tile/4184/{z}/{x}/{y}.png");
+var sj_1886 = L.tileLayer("http://warp.worldmap.harvard.edu/maps/tile/4147/{z}/{x}/{y}.png");
+
+var historic_layers = L.layerGroup([sj_1886, sj_1938, sj_1959]);
+var overlayMaps = {
+  "San Jose (1886)": sj_1886,
+  "San Jose (1938)": sj_1938,
+  "San Jose (1959)": sj_1959
+}
+L.control.layers(overlayMaps).addTo(mymap);
+
 // .leaflet-objects-pane --> .leaflet-overlay-pane
 var svg = d3.select(mymap.getPanes().overlayPane).append("svg"),
     g = svg.append("g").attr("class", "leaflet-zoom-hide");
