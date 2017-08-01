@@ -101,7 +101,7 @@ header {
 }
 
 .default-header {
-  background-image: url(/assets/image/header@2x.png);
+  background-image: url(/assets/image/head@2x.png);
   background-size: cover;
   background-position: center;
 }
@@ -111,7 +111,7 @@ header {
   text-shadow: 0 1px 0 #000;
   padding: 0;
   background-color: #111;
-  background-image: url(/assets/image/header@2x.png);
+  background-image: url(/assets/image/head@2x.png);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -154,7 +154,7 @@ h1#headline {
   font-size: 12px;
   margin: 10px 0;
   opacity: 0.8;
-  color: #aaa;
+  color: #f2f2f2;
   font-family: "Roboto Slab", sans-serif;
 }
 
