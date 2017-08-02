@@ -26,7 +26,6 @@ var mymap = L.map('mapid', {
     center: [37.3382, -122.02],
     zoom: 11,
     dragging: true,
-    scrollWheelZoom: 'center',
     doubleClickZoom: 'center',
     boxZoom: false,
     zoomControl: false
@@ -38,9 +37,11 @@ L.control.zoom({
 }).addTo(mymap);
 
 // OpenStreetMap Tile
-L.tileLayer("http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", {
-    attribution: '<a href="http://carto.com">CARTO</a>'
+L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGVwcGxlcmoiLCJhIjoiMjNqTEVBNCJ9.pGqKqkUDlcFmKMPeoARwkg", {
+    attribution: '<a href="http://mapbox.com">Mapbox</a>'
 }).addTo(mymap);
+
+mymap.scrollWheelZoom.disable();
 
 // Historic basemaps
 var sj_1938 = L.tileLayer("http://warp.worldmap.harvard.edu/maps/tile/4189/{z}/{x}/{y}.png");
@@ -75,11 +76,6 @@ function ready(error, annexations, census) {
       
       data.annexations  = annexations;
       data.census = census;
-      
-    //   var dataByCounty = d3.nest()
-    //     .key(function(d) { return d.YEAR; })
-    //     .entries(data.census);
-    // console.log(dataByCounty);
 
       drawMap(current.year, current.map);
       loading.remove();
