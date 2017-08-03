@@ -61,6 +61,7 @@ my research, illustrate points I'm trying to make, and extend upon
 subjects and themes covered in my book. Various aspects 
 of the project are bound to change over time and I will try and record them here.
 
+- *2017-08-03* &middot; Updated San Jose narrative elements. 
 - *2017-07-25* &middot; Added historic base maps to San Jose annexation.
 - *2017-03-27* &middot; Added the Introduction.
 - *2017-06-30* &middot; Added table of county population growth to annexation visualizations. Added Mountain View annexation visualization.
