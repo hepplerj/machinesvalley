@@ -6,60 +6,33 @@ layout: page
 extra_css: annexation.css
 visualization: annexation_sanjose.js
 ---
-<style>
-#text {
-  position: fixed;
-  z-index: 401;
-  left: 2vw;
-  top: 150px;
-  width: 36vw;
-  height: 500px;
-  padding: 1em 2em;
-  overflow: scroll;
-  background: rgba(245,245,245,.95);
-}
-
-#text p {
-  font-size: 9pt;
-  margin-bottom: 15px;
-}
-
-#text #figure {
-  font-style: italic;
-  font-size: 7pt;
-}
-
-#text img {
-  width: 100%;
-  height: auto;
-}
-
-</style>
-
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
 
 <div class="container">
 
     <div id="text">
-        <div class="small-8 columns" id="date-selector">
+        <!-- <div class="small-8 columns" id="date-selector">
+        
+      </div> -->
+
+      <h1>{{ page.title }}</h1>
+
+      <div class="small-8 columns" id="date-selector">
         <input class="btn btn-default" type="button" value="1850" onclick="renderDate('1850')">
         <input class="btn btn-default" type="button" value="1925" onclick="renderDate('1925')">
         <input class="btn btn-default" type="button" value="1936" onclick="renderDate('1936')">
-        <input class="btn btn-default" type="button" value="1946" onclick="renderDate('1946')">
-        <input class="btn btn-default" type="button" value="1950" onclick="renderDate('1950')">
-        <input class="btn btn-default" type="button" value="1955" onclick="renderDate('1955')">
-        <input class="btn btn-default" type="button" value="1960" onclick="renderDate('1960')">
-        <input class="btn btn-default" type="button" value="1965" onclick="renderDate('1965')">
-        <input class="btn btn-default" type="button" value="1970" onclick="renderDate('1970')">
-        <input class="btn btn-default" type="button" value="1975" onclick="renderDate('1975')">
-        <input class="btn btn-default" type="button" value="1980" onclick="renderDate('1980')">
-        <input class="btn btn-default" type="button" value="1985" onclick="renderDate('1985')">
-        <input class="btn btn-default" type="button" value="1990" onclick="renderDate('1990')">
-        <input class="btn btn-default" type="button" value="1995" onclick="renderDate('1995')">
       </div>
 
-      <h1>San Jose Annexations, 1850-1995</h1>
+      <p>Until the 1950s, San Jose remained a small town mostly tied to the agricultural industry. As a major fruit producer, market, and distribution center, the town catered to its hinterlands. But industrialists, merchants, and business owners felt that San Jose's reliance on the cyclical and sometimes unsteady agricultural industry undermined the city's attempts to grow. The growth coalition captured a majority on the city council in 1944, and quickly established a new regime dedicated to diversifying the city's industries by courting new high tech and manufacturing businesses.</p>
+
+      <div class="small-8 columns" id="date-selector">
+        <input class="btn btn-default" type="button" value="1946" onclick="renderDate('1946')">
+          <input class="btn btn-default" type="button" value="1950" onclick="renderDate('1950')">
+          <input class="btn btn-default" type="button" value="1955" onclick="renderDate('1955')">
+          <input class="btn btn-default" type="button" value="1960" onclick="renderDate('1960')">
+          <input class="btn btn-default" type="button" value="1965" onclick="renderDate('1965')">
+        </div>
 
       <p>In the postwar era, San Jose undertook an aggressive annexation campaign
       to fold surrounding land and cities into its orbit.
@@ -170,6 +143,17 @@ visualization: annexation_sanjose.js
       <p>
       And build San Jose did. The city approved over 1,400 annexations between 1945 and 1970 including many narrow strips&#8212;"shoestring" annexations&#8212;snaking outward, sometimes only on one half of a street, to capture a desirable subdivision, commercial center, or street intersection. In some areas, annexations became a tool of coercion. Annex enough areas around land-owning hold-outs, city officials reasoned, and pockets of non-annexed land would have little choice but to succumb.<sup id="fnref:5"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> Hamann's drive for land became so aggressive that his staff became known as "Dutch's Panzer division"&#8212;named after the swift motorized armored tank squadrons of the Third Reich&#8212;as annexations sprawled outward from the city core.<sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup> "They say San Jose is going to become another Los Angeles," Hamann rebuked his critics. "Believe me, I'm going to do the best in my power to make that come true."<sup id="fnref:7"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup> Under Hamann's tenure, the San Jose Chamber of Commerce spent nearly $1 million to attract new industries to the city. The population boomed and the city sprawled. "It was just growth, growth, growth," Al Ruffo, San Jose's mayor in the 1940s, recalled approvingly. "That was everybody's song. And Dutch sang it the loudest."<sup id="fnref:8"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>
       </p>
+
+      <div class="small-8 columns" id="date-selector">
+        <input class="btn btn-default" type="button" value="1970" onclick="renderDate('1970')">
+        <input class="btn btn-default" type="button" value="1975" onclick="renderDate('1975')">
+        <input class="btn btn-default" type="button" value="1980" onclick="renderDate('1980')">
+        <input class="btn btn-default" type="button" value="1985" onclick="renderDate('1985')">
+        <input class="btn btn-default" type="button" value="1990" onclick="renderDate('1990')">
+        <input class="btn btn-default" type="button" value="1995" onclick="renderDate('1995')">
+      </div>
+
+      <p>The city continued its growth campaign until the mayoral elections of 1974. By the 1970s, a wave of anti-growth and slow-growth advocates began challenging the growth coalition's insistence on urban-expansion-as-progress, citing rising taxes, substandard city services, and the erosion of natural areas as signs that the city had gone too far. Citizens elected Janet Gray Hayes, a self-avowed environmentalist, as mayor in 1974. Among her policies was a shift to "in-fill," promoting the city to fill in areas of the city it already contained rather than continue to expand outward.</p>
 
       <div class="footnotes">
         <ol>

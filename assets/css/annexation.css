@@ -75,6 +75,48 @@ tr {
   background-color: white;
 }
 
+#text {
+  position: fixed;
+  z-index: 401;
+  left: 2vw;
+  top: 150px;
+  width: 36vw;
+  height: 500px;
+  padding: 1em 2em;
+  overflow: scroll;
+  background: rgba(245,245,245,.95);
+}
+
+#text p {
+  font-size: 9pt;
+  margin-bottom: 15px;
+}
+
+#text #figure {
+  font-style: italic;
+  font-size: 7pt;
+}
+
+#text img {
+  width: 100%;
+  height: auto;
+}
+
+#text a:link, a:visited {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 2px solid #333;
+  padding-bottom: 2px;
+}
+#text a:hover {
+  color: steelblue;
+  border-bottom: 1px solid steelblue;
+}
+
+#text ul {
+  font-size: 9pt;
+}
+
 .field {
   text-align: left;
   padding-left: 0;
