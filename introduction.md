@@ -43,6 +43,12 @@ environmental, cultural, and political identities in the Bay Area.[^2]
 
 Much of the site is a "work in progress." As a whole, the project seeks to make available materials to exlore the history of Silicon Valley and its impact on American history by exploring the social and political underpinnings of environmentalism.
 
+### Suggested citation
+
+If you use this project for academic work, here is a suggested citation.
+
+> Jason Heppler, *Machines in the Valley: Growth, Conflict, and Environmental Politics in Silicon Valley*, website, code, and datasets (2017): <http://dissertation.jasonheppler.org>.
+
 ### Project Team
 
 **Jason A. Heppler** is the Digital Engagement Librarian and an Assistant Professor of History at the University of Nebraska at Omaha, and a researcher with Stanford University's Spatial History Project. He received his Ph.D. in history from the University of Nebraska-Lincoln in 2016 and is working on his first book on environmental politics in Silicon Valley.
@@ -51,7 +57,7 @@ Much of the site is a "work in progress." As a whole, the project seeks to make 
 
 As essays, articles, reports, and white papers are produced with research data and visualizations from this project, they will appear below.
 
-- "Green Dreams, Toxic Legacies: Toward a Digital Political Ecology of Silicon Valley," *International Journal of Humanities and Arts Computing*, accepted for publication.
+- "Green Dreams, Toxic Legacies: Toward a Digital Political Ecology of Silicon Valley," *International Journal of Humanities and Arts Computing*, vol. 11, no. 1 (68-85), DOI: [10.3366/ijhac.2017.0179](http://www.euppublishing.com/doi/abs/10.3366/ijhac.2017.0179).
 
 ### News and Updates
 
