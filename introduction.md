@@ -9,7 +9,7 @@ tags: [Jason Heppler, digital history, research]
 
 ## {{ page.title }}
 
-This project explores the historical relationship between nature and Silicon Valley. *Machines in the Valley* seeks to investigate, represent, and analyze the social, political, and environmental changes to document Silicon Valley's consequence for California and American history. 
+This project explores the post-World War II development of environmental politics in Silicon Valley. *Machines in the Valley* seeks to investigate, represent, and analyze the social, political, and environmental changes to document Silicon Valley's consequence for California and American history. 
 
 Silicon Valley represented a new vision for the American West's political economy, an economic and political project marrying pastoral idealism with high tech urbanism. The urban form of the valley sought to overcome the urban industrial model of the Northeast and Midwest that had dominated the industrial centers of the U.S. As the Rust Belt decayed, discourse about what to do with this flagging industrial economy emerged in the 1960s and 1970s. A moment of possibility emerged for Silicon Valley. But as developers, planners, and business leaders tried to implement their vision, it ran into conflict with the suruban vision of open spaces, access to leisure, and freedom from pollution that white collar workers had come to expect. An environmental politic formed concurrently with the growth regime in Santa Clara County, and these two visions for the landscape came into contact with one another.
 

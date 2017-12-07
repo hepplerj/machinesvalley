@@ -22,7 +22,7 @@ permalink:      /:year/:month/:day/:title/
 links:
   - title: Introduction
     url: /introduction/
-  - title: Topics
+  - title: Stories
     url: /studies/
   - title: Views
     url: /visualizations/
