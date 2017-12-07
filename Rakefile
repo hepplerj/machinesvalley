@@ -69,13 +69,13 @@ end # task :page
 
 desc "Run the development server"
 task :preview do
-  sh "jekyll serve --watch"
+  sh "bundle exec jekyll serve --watch"
 end # task :preview
 
 desc "Build the production version of the site"
 task :build do
   puts "\nBuilding the production version of the site ..."
-  ok_failed system "jekyll build"
+  ok_failed system "bundle exec jekyll build"
 end # task :build
 
 desc "rsync to server"
@@ -83,11 +83,11 @@ task :rsync do
   puts "\nDeploying the site via rsync..."
 
   ssh_port       = "22"
-  ssh_user       = "jasonhep@jasonheppler.org"
+  ssh_user       = "jasonhep@192.241.132.143"
   rsync_delete   = true
   rsync_options  = "--checksum --stats -avz -e"
   public_dir     = "_site/"
-  document_root  = "~/public_html/dissertation/"
+  document_root  = "~/machinesinthevalley.org/"
 
   exclude = ""
   if File.exists?('./rsync-exclude')

@@ -2,7 +2,7 @@ name:         Machines in the Valley
 description:  A digital history project by Jason A. Heppler.
 markdown:     kramdown
 highlighter:  pygments
-url:          http://dissertation.jasonheppler.org # leave blank when working locally
+url:          http://machinesinthevalley.org # leave blank when working locally
 repo:         https://github.com/hepplerj/machinesvalley/
 
 # Owner/author information
