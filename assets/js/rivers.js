@@ -20,7 +20,7 @@ var radius = d3.scale.sqrt()
 var color = d3.scale.category20b();
 
 var legendcolor = d3.scale.ordinal()
-  .range(["#d21245", "orange", "#333333", "#e7cb94", "crimson","#0092B2"])
+  .range(["#e31a1c", "#ff7f00", "#15b290", "#ccc", "#1f78b4","#cb709d"])
   .domain(["Superfund sites","Toxic sites and spills","Open space & parks","Urban areas","Water features","Rivers and creeks"]);
 
 var projection = d3.geo.azimuthalEqualArea()
@@ -64,13 +64,13 @@ function ready(error, ca_counties, rivers, openspace, superfund, toxics, urban_a
     .attr("d", path)
     .attr("class", "rivers")
     .style("fill", "none")
-    .style("stroke", "#0092B2");
+    .style("stroke", "#cb709d");
 
   svg.selectAll(".waterfeatures")
     .data(topojson.feature(waterfeatures, waterfeatures.objects.waterfeatures).features)
   .enter().append("path")
-    .style("fill", "crimson")
-    .style("stroke", "crimson")
+    .style("fill", "#1f78b4")
+    .style("stroke", "#1f78b4")
     .attr("class", "waterfeatures")
     .attr("id", function(d) { return d.TYPE; })
     .attr("d", path);
@@ -78,8 +78,8 @@ function ready(error, ca_counties, rivers, openspace, superfund, toxics, urban_a
   svg.selectAll(".urban_areas")
       .data(topojson.feature(urban_areas, urban_areas.objects.urban_areas).features)
     .enter().append("path")
-      .style("fill", function(d,i) { return color(d.id); })
-      .style("stroke", function(d,i) { return d3.lab(color(d.id)).darker(); })
+      .style("fill", "#ccc")
+      .style("stroke", "#fff")
       .attr("class", "urbanarea-poly")
       .attr("d", path)
       .style("opacity", "0.3");
@@ -88,7 +88,7 @@ function ready(error, ca_counties, rivers, openspace, superfund, toxics, urban_a
       .data(topojson.feature(openspace, openspace.objects.units_sc).features)
     .enter().append("path")
       .attr("class", "openspace-poly")
-      .style("fill", "#333")
+      .style("fill", "#15b290")
       .style("stroke", "white")
       .style("stroke-width", "0.3")
       .attr("d", path)

@@ -45,14 +45,14 @@ text {
 }
 
 .superfund {
-  fill: red;
+  fill:#e31a1c;
   fill-opacity: .5;
   stroke: #333;
   stroke-width: .5px;
 }
 
 .toxics {
-  fill: orange;
+  fill:#ff7f00;
   fill-opacity: .5;
   stroke: #333;
   stroke-width: .5px;
