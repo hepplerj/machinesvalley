@@ -31,12 +31,14 @@ Valley would become: A postindustrial trend-setter? A fertile and
 beautiful agricultural producer? A countryside paradise? A metropolitan 
 leader?
 
-Space forms the central component of my work. Geographer John Wright has 
+*Machines in the Valley* seeks to use maps and immersive storytelling to
+demonstrate and narrate the process of landscape change in Silicon Valley
+between 1940 and 2010. The project combines detailed historic maps and curated
+visual stories to explore the racial, environmental, social, and political
+geographies of Silicon Valley. Inspired by geographer John Wright who 
 argued that "places are best seen as shifting stages where the exercise 
-of power and resistance to it vie for dominance."[^1] Physical and 
-conceptual boundaries were drawn around competing landscapes in the Bay 
-Area. These boundaries encapsulated three landscapes: agriculture, 
-industry, and suburbs. By examining 
+of power and resistance to it vie for dominance,"[^1] *Machines in the Valley*
+explores these shifting physical and conceptual boundaries. By examining 
 what Richard White called hybrid landscapes, I argue the 
 interconnections between these competing idealized landscapes shaped 
 environmental, cultural, and political identities in the Bay Area.[^2]
@@ -47,7 +49,7 @@ Much of the site is a "work in progress." As a whole, the project seeks to make 
 
 If you use this project for academic work, here is a suggested citation.
 
-> Jason Heppler, *Machines in the Valley: Growth, Conflict, and Environmental Politics in Silicon Valley*, website, code, and datasets (2017): <http://dissertation.jasonheppler.org>.
+> Jason Heppler, *Machines in the Valley: Growth, Conflict, and Environmental Politics in Silicon Valley*, website, code, and datasets (2018): <http://dissertation.jasonheppler.org>.
 
 ### Project Team
 
@@ -57,6 +59,9 @@ If you use this project for academic work, here is a suggested citation.
 
 As essays, articles, reports, and white papers are produced with research data and visualizations from this project, they will appear below.
 
+- My book, *Suburban by Nature: Silicion Valley and the Transformation of
+  American Environmental Politics* is under contract with the University of
+  Oklahoma Press and is expected to be published in 2020.
 - "Green Dreams, Toxic Legacies: Toward a Digital Political Ecology of Silicon Valley," *International Journal of Humanities and Arts Computing*, vol. 11, no. 1 (68-85), DOI: [10.3366/ijhac.2017.0179](http://www.euppublishing.com/doi/abs/10.3366/ijhac.2017.0179).
 
 ### News and Updates
