@@ -21,11 +21,11 @@ path { fill: #fee6ce; }
   text-anchor: middle;
 }
 
-.subunit081 { fill: #F7F6F1; } /*#D2DDCC; }*/
-.subunit075 { fill: #F7F6F1; } /*#dcd; }*/
-.subunit085 { fill: #F7F6F1; } /*#cdd; }*/
-.subunit087 { fill: #F7F6F1; } /*#DDCCDD; }*/
-.subunit001 { fill: #F7F6F1; } /*#fde0dd; }*/
+.subunit081 { fill: rgb(239,235,228); } /*#D2DDCC; }*/
+.subunit075 { fill: rgb(239,235,228); } /*#dcd; }*/
+.subunit085 { fill: rgb(239,235,228); } /*#cdd; }*/
+.subunit087 { fill: rgb(239,235,228); } /*#DDCCDD; }*/
+.subunit001 { fill: rgb(239,235,228); } /*#fde0dd; }*/
 
 .subunit-boundary {
   fill: none;
@@ -56,13 +56,13 @@ path { fill: #fee6ce; }
       After World War II, every municipality in the Bay Area underwent
       aggressive expansion. Annexations, incorporations, and consolidations
       sprawled throughout the Santa Clara Valley. The visualization above
-      shows the current urban areas on the San Francisco Peninsula.
+      shows the current urban areas on the San Francisco Peninsula. The highlighted     urban boundaries are the focus of this research project.
       </p>
 
       <h3>Citation</h3>
       <blockquote>
       Jason A. Heppler, "{{ page.title}}," interactive map,
-      {{site.url}}{{page.permalink}}, 2014.
+      {{site.url}}{{page.permalink}}, 2018.
       </blockquote>
     </div>
 
@@ -87,7 +87,7 @@ var projection = d3.geo.albers()
     .center([0, 37.43])
     .rotate([122.1, 0])
     .parallels([50, 60])
-    .scale(1200 * 45)
+    .scale(1200 * 55)
     .translate([width / 2, height / 2]);
 
 var path = d3.geo.path()
@@ -114,10 +114,23 @@ function ready(error, ca_counties, urban_areas) {
   svg.selectAll(".urban_areas")
       .data(topojson.feature(urban_areas, urban_areas.objects.urban_areas).features)
     .enter().append("path")
+      .style("fill", "#BFB7A8") //function(d,i) { return color(d.id); })
+      .style("stroke", "rgb(239,235,228)") // function(d,i) { return d3.lab(color(d.id)).darker(); })
+      .attr("d", path)
+      .style("opacity", "0.3")
+      .filter(function(cities) {
+		return cities.properties.name == "San Jose" ||
+			   cities.properties.name == "Palo Alto" ||
+			   cities.properties.name == "Mountain View" ||
+			   cities.properties.name == "Los Altos Hills" ||
+			   cities.properties.name == "East Palo Alto" ||
+			   cities.properties.name == "Sunnyvale" ||
+			   cities.properties.name == "Stanford" ||
+			   cities.properties.name == "Santa Clara";
+ 	  })
       .style("fill", function(d,i) { return color(d.id); })
       .style("stroke", function(d,i) { return d3.lab(color(d.id)).darker(); })
-      .attr("d", path)
-      .style("opacity", "0.3");
+      .style("stroke-width", 3);
 
   svg.selectAll(".city-label")
       .data(topojson.feature(urban_areas, urban_areas.objects.urban_areas).features)
@@ -125,7 +138,29 @@ function ready(error, ca_counties, urban_areas) {
       .attr("class", function(d) { return "city-label " + d.id; })
       .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
       .attr("dy", ".35em")
-      .text(function(d) { return d.properties.name; });
+      .text(function(d) { return d.properties.name; })
+	  .filter(function(labels) {
+			return labels.properties.name == "Emerald Lake Hills" ||
+				   labels.properties.name == "North Fair Oaks" ||
+				   labels.properties.name == "Ladera" ||
+				   labels.properties.name == "Portola Valley" ||
+				   labels.properties.name == "Los Altos" ||
+				   labels.properties.name == "Loyola" ||
+				   labels.properties.name == "Alum Rock" ||
+				   labels.properties.name == "West Menlo Park" ||
+				   labels.properties.name == "Woodside" ||
+				   labels.properties.name == "Menlo Park" ||
+				   labels.properties.name == "Monte Sereno" ||
+				   labels.properties.name == "Foster City" ||
+				   labels.properties.name == "Hillsborough" ||
+				   labels.properties.name == "Highlands-Baywood Park" ||
+				   labels.properties.name == "Moss Beach" ||
+				   labels.properties.name == "Cambrian Park" ||
+				   labels.properties.name == "Burbank" ||
+				   labels.properties.name == "Fruitdale" ||
+				   labels.properties.name == "East Foothills";
+		})
+	  .style("opacity", 0);
 
 };
 
