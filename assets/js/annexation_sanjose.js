@@ -14,13 +14,13 @@ var margin = {top: 50, right: 50, bottom: 50, left: 50},
     percentageFormat = d3.format(".2%");
 
 var maps = {
-  "bayPopulation": {
-    "field": "bayPopulation",
-    "label": "Santa Clara County annexations"
+  "sjAnnexations": {
+    "field": "sjAnnexations",
+    "label": "San Jose annexations"
   }
 };
 
-var current = { "year": 1850, "map": maps.bayPopulation };
+var current = { "year": 1850, "map": maps.sjAnnexations };
 
 var mymap = L.map('mapid', {
     center: [37.3382, -122.02],
@@ -36,10 +36,8 @@ L.control.zoom({
      position:'topright'
 }).addTo(mymap);
 
-// OpenStreetMap Tile
-L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGVwcGxlcmoiLCJhIjoiMjNqTEVBNCJ9.pGqKqkUDlcFmKMPeoARwkg", {
-    attribution: '<a href="http://mapbox.com">Mapbox</a>'
-}).addTo(mymap);
+// Mapbox Tile
+L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGVwcGxlcmoiLCJhIjoiMjNqTEVBNCJ9.pGqKqkUDlcFmKMPeoARwkg", { attribution: '<a href="http://mapbox.com">Mapbox</a>' }).addTo(mymap);
 
 mymap.scrollWheelZoom.disable();
 
@@ -47,13 +45,28 @@ mymap.scrollWheelZoom.disable();
 var sj_1938 = L.tileLayer("http://warp.worldmap.harvard.edu/maps/tile/4189/{z}/{x}/{y}.png");
 var sj_1959 = L.tileLayer("http://warp.worldmap.harvard.edu/maps/tile/4184/{z}/{x}/{y}.png");
 var sj_1886 = L.tileLayer("http://warp.worldmap.harvard.edu/maps/tile/4147/{z}/{x}/{y}.png");
+var sj_ward1 = L.tileLayer("https://maps.georeferencer.com/georeferences/964369491444/2017-02-20T14:25:19.132722Z/map/{z}/{x}/{y}.png?key=KPlLnmp6U0gZTmAcJ4Ob");
+var sj_ward2 = L.tileLayer("https://maps.georeferencer.com/georeferences/378644494803/2017-02-20T14:25:19.132722Z/map/{z}/{x}/{y}.png?key=KPlLnmp6U0gZTmAcJ4Ob");
+var sj_ward3 = L.tileLayer("https://maps.georeferencer.com/georeferences/786097815676/2015-03-09T17:36:28.256160Z/map/{z}/{x}/{y}.png?key=KPlLnmp6U0gZTmAcJ4Ob");
+var sj_ward4 = L.tileLayer("https://maps.georeferencer.com/georeferences/821679024348/2015-05-15T15:47:08.411680Z/map/{z}/{x}/{y}.png?key=KPlLnmp6U0gZTmAcJ4Ob");
+
+var scc_1876 = L.tileLayer("https://maps.georeferencer.com/georeferences/65947386281/2014-11-07T21:32:19.066300Z/map/{z}/{x}/{y}.png?key=KPlLnmp6U0gZTmAcJ4Ob");
 
 var historic_layers = L.layerGroup([sj_1886, sj_1938, sj_1959]);
 var overlayMaps = {
+  "San Jose, Ward 1 (1876)": sj_ward1,
+  "San Jose, Ward 2 (1876)": sj_ward2,
+  "San Jose, Ward 3 (1876)": sj_ward3,
+  "San Jose, Ward 4 (1876)": sj_ward4,
+
   "San Jose (1886)": sj_1886,
   "San Jose (1938)": sj_1938,
-  "San Jose (1959)": sj_1959
+
+  "Western Santa Clara County (1876)": scc_1876,
+
+  "Bay Area (1959)": sj_1959
 }
+
 L.control.layers(overlayMaps).addTo(mymap);
 
 // .leaflet-objects-pane --> .leaflet-overlay-pane
@@ -100,9 +113,9 @@ function drawMap(date, map) {
     
     // set the text in the overlay panel
     var text = [
-      "Year: <b>" + current.year + "</b>"
+      "Year: <b>" + current.year + "</b>",
+      "Percentage of African Americans: <b>" + "%" + "</b>"
     ];
-    // update side panel
     manageSidePanel(text);
     
     // Reposition the SVG to cover the features
@@ -130,10 +143,11 @@ function drawMap(date, map) {
     
 function renderDate(dated) {
   clickDate = dated;
-  console.log(clickDate);
+//   console.log(clickDate);
 
   if (clickDate !== current.year) {
     current.year = clickDate;
+    // d3.selectAll(".row-" + clickDate + " > td").style('background-color', '#e5f5e0')
     drawMap(clickDate, current.map);
   }
 }
