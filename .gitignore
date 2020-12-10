@@ -7,3 +7,6 @@ narrative/
 *.shp
 *.shx
 .Rhistory
+.DS_Store
+.jekyll-cache/
+Gemfile.lock
