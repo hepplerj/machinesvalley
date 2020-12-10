@@ -79,7 +79,6 @@ var loading = svg.append("text")
     .attr("text-anchor", "middle")
     .text("Loading the map ...");
 
-// d3.json("/data-files/sv-annexations/sj_annexations.json", function(error, tw) {
 function ready(error, annexations, census) {
     if (error) {
         loading.text("Sorry, there has been an error. " +

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Fly to a location based on scroll position</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:900);
+@import url(http://fonts.googleapis.com/css?family=Pontano+Sans);
+
+body {
+    font-family: "Roboto Slab", serif;
+    font-weight:300;font-size:14px;line-height:22px;
+    padding: 0;
+    margin: 0;
+}
+
+h1,h2,h3 {
+    font-family: "Pontano Sans", sans-serif;
+}
+h1 {
+          font-size: 30px;
+          text-align: center;
+        }
+#map {
+    position: fixed;
+    width:50%;
+}
+#features {
+    width: 50%;
+    margin-left: 50%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+section {
+    padding:  25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+}
+section.active {
+    opacity: 1;
+}
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 200px;
+}
+
+section #figure {
+    font-style: italic;
+    font-size: 7pt;
+    line-height: 14px;
+}
+
+section img {
+    width: 100%;
+    height: auto;
+}
+
+a:link, a:visited {
+    color: #333;
+    text-decoration: none;
+    border-bottom: 2px solid #333;
+    padding-bottom: 2px;
+}
+a:hover {
+    color: steelblue;
+    border-bottom: 1px solid steelblue;
+}
+</style>
+
+<div id='map'></div>
+<div id='features'>
+    <section id='sj-all' class='active'>
+        <h1>Neighborhoods as Polluted Space</h1>
+        <h3> FHA and Housing</h3>
+            <p>While the greatest financial benefits for cities came from taxing industry, municipalities of the Midpeninsula encouraged widespread suburban growth. In the wake of the "monetary and credit revolution," in the words of historian David Freund, that "made it easier&#8212;in many cases risk free&#8212;for the private sector to lend and borrow," thousands of new homeowners flooded housing markets. Aided by the Federal Housing Authority (FHA), created under the National Housing Act of 1934, guaranteed mortgage loans up to eighty percent of the value of a home encouraged widespread purchasing of homes. The federal subsidy into housing, Kenneth Jackson noted, meant there was “very little risk to the banker if a loan turned sour.” The new lending terms under the FHA of low down payments, larger loans in proportion to a home’s value, low interest rates, and longer loan repayments ushered in a dramatic rise in demand. Nationally, single-family housing sales and starts doubled between 1936 and 1941, and rose almost fifteen-fold between 1944 and 1950. The federal tax code also allowed home ownership to blossom by allowing homeowners to take deductions from their mortgage interest and property taxes. Renters, however, received no similar federal subsidy. Thus, federal policies encouraged <a href="{{site.url}}/visualization/annexation/">building in suburbs rather than city cores</a>. Federal tax policies also allowed developers to write off construction costs on commercial buildings, tipping incentives towards new construction instead of renovation.</p>
+    </section>
+    <section id='mayfair'>
+        <h3><i class="fa fa-map-marker"></i> Sal si Puedes</h3>
+        <p>November 1895. London is shrouded in fog and Sherlock Holmes and Watson pass time restlessly awaiting a new case. "The London criminal is certainly a dull fellow," Sherlock bemoans. "There have been numerous petty thefts," Watson offers in response. Just then a telegram arrives from Sherlock's brother Mycroft with a mysterious case.</p>
+        <img src="/assets/images/salsipuedes.png">
+        <p id="figure">Fig. 1: Children playing near a culvert at South 33rd Street in the Mayfair District, ca. 1950s. Fred Ross Papers, Stanford University.</p>
+        <p>Farm-to-table hexagon tattooed, pitchfork la croix williamsburg vexillologist ugh neutra distillery. Poke blog activated charcoal selfies, fam mumblecore kale chips trust fund bitters stumptown dreamcatcher. Lo-fi tousled wayfarers vegan, readymade fanny pack organic blog. You probably haven't heard of them jianbing post-ironic cray. Drinking vinegar food truck activated charcoal poutine, affogato williamsburg mixtape health goth swag gentrify chartreuse bicycle rights. Offal pug fixie wayfarers flexitarian. Sartorial deep v coloring book blue bottle, gentrify franzen ennui disrupt keytar organic.</p>
+    </section>
+    <section id='losaltoshills'>
+        <h3>Los Altos Hills</h3>
+        <p>Arthur Cadogan West was found dead, head crushed in on train tracks at Aldgate Station at 6AM Tuesday morning. West worked at Woolwich Arsenal on the Bruce-Partington submarine, a secret military project. Plans for the submarine had been stolen and seven of the ten missing papers were found in West's possession. Mycroft implores Sherlock to take the case and recover the three missing papers.</p>
+        <p>Farm-to-table hexagon tattooed, pitchfork la croix williamsburg vexillologist ugh neutra distillery. Poke blog activated charcoal selfies, fam mumblecore kale chips trust fund bitters stumptown dreamcatcher. Lo-fi tousled wayfarers vegan, readymade fanny pack organic blog. You probably haven't heard of them jianbing post-ironic cray. Drinking vinegar food truck activated charcoal poutine, affogato williamsburg mixtape health goth swag gentrify chartreuse bicycle rights. Offal pug fixie wayfarers flexitarian. Sartorial deep v coloring book blue bottle, gentrify franzen ennui disrupt keytar organic.</p>
+    </section>
+    <section id='epa'>
+        <h3>East Palo Alto</h3>
+        <p>Holmes and Watson's investigations take them across London. Sherlock deduces that West was murdered elsewhere, then moved to Aldgate Station to create the illusion that he was crushed on the tracks by a train. On their way to Woolwich Sherlock dispatches a telegram to Mycroft at London Bridge: "Send list of all foreign spies known to be in England, with full address."</p>
+    </section>
+    <section id='sj-all-final'>
+        <h3>SV</h3>
+        <p>Walter writes to Oberstein and convinces him to meet in the smoking room of the Charing Cross Hotel where he promises additional plans for the submarine in exchange for money. The plan works and Holmes and Watson catch both criminals.</p>
+        <small id="citation">
+            Adapted from <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Project Gutenberg</a>
+        </small>
+    </section>
+    <section id='sj-all-final'>
+            <h3>SV</h3>
+            <p>Walter writes to Oberstein and convinces him to meet in the smoking room of the Charing Cross Hotel where he promises additional plans for the submarine in exchange for money. The plan works and Holmes and Watson catch both criminals.</p>
+            <small id="citation">
+                Adapted from <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Project Gutenberg</a>
+            </small>
+        </section>
+        <section id='sj-all-final'>
+                <h3>SV</h3>
+                <p>Walter writes to Oberstein and convinces him to meet in the smoking room of the Charing Cross Hotel where he promises additional plans for the submarine in exchange for money. The plan works and Holmes and Watson catch both criminals.</p>
+                <small id="citation">
+                    Adapted from <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Project Gutenberg</a>
+                </small>
+            </section>
+</div>
+<script src = "app.js"></script>
+
+</body>
+</html>

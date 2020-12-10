@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<script src="http://d3js.org/d3.v4.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+	<script src="https://d3js.org/d3-geo-projection.v1.min.js"></script>
+
+<style>
+
+	.route {
+		fill: none;
+		stroke: #333;
+		opacity: 0.5;
+	}
+
+	.land { fill:#a8ddb5; }
+	
+	svg { background: #43a2ca; }
+
+	.source-city {
+		fill: white; 
+		stroke: darkgreen; 
+		stroke-width: 2px;
+	}
+</style>
+
+	
+</head>
+<body>
+	<div id="map"> </div>
+	<script>
+	
+var width = 950; var height = 850;
+
+var projection = d3.geoKavrayskiy7()
+	.scale(14000)
+	.rotate([-238,-38])
+	.translate([width/2,height/2])
+	.precision(0.1);
+
+var path = d3.geoPath().projection(projection);
+var svg = d3.select("#map").append("svg")
+	.attr("width", width)
+	.attr("height", height);
+	
+var g1 = svg.append("g");  
+var g2 = svg.append("g");
+
+d3.csv("/data-files/sv-traffic/traffic.csv", (error, data) => {
+
+    let cities = data.map((d) => {
+        let obj = {
+            home: d.home,
+            work: d.work,
+            employees: d.amount,
+            start_lat: d.start_latitude,
+            end_lat: d.end_latitude,
+            start_lon: d.start_longitude,
+            end_lon: d.end_longitude
+        };
+        return obj
+    })
+    return cities
+});
+
+d3.json("world.json", (error, world) => {
+	g1.insert("path")
+		.datum(topojson.feature(world, world.objects.land))
+		.attr("class", "land")
+		.attr("d", path);
+		
+	g2.append("circle")
+		.attr("cx", function() { return projection(cities["San Jose"].loc)[0];})
+		.attr("cy", function() { return projection(cities["San Jose"].loc)[1];})
+		.attr("r",6)
+		.attr("class","source-city");
+	
+	// g2.append("text")
+	// 	.attr("x", function() { return projection(ports["Puget Sound"].loc)[0] + 5;})
+	// 	.attr("y", function() { return projection(ports["Puget Sound"].loc)[1] + 0;})
+	// 	.text("Puget Sound");
+		
+});
+
+</script>
+</body>
+</html>
