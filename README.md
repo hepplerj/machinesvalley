@@ -1,7 +1,7 @@
 # Machines in the Valley
 
 These repository holds files, data, and visualizations related to my 
-dissertation. 
+book. 
 
 Jason A. Heppler | <jason@jasonheppler.org> | http://jasonheppler.org
 
@@ -11,7 +11,7 @@ If you use the data or analysis from this project, please provide a
 citation:
 
 > Heppler, Jason A. Machines in the Valley. 2014&#8212;. 
-> <http://dissertation.jasonheppler.org>
+> <https://machinesinthevalley.org>
 
 ## Description
 
