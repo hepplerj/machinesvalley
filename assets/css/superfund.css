@@ -60,7 +60,7 @@ path {
   fill-opacity: .8;
   stroke-opacity: .5;
   cursor: crosshair;
-  fill: #EFB605;
+  fill: #a6cee3;
 }
 
 .company-circ-hidden {
@@ -68,7 +68,7 @@ path {
 }
 
 .superfund-circ {
-  fill: #d21245;
+  fill: #e31a1c;
   stroke: #000;
   stroke-opacity: .5;
   fill-opacity: .7;
@@ -86,7 +86,7 @@ path {
 .toxics-circ {
   stroke: #000;
   stroke-opacity: .5;
-  fill: #66489F;
+  fill: #33a02c;
   fill-opacity: .7;
   cursor: crosshair;
 }

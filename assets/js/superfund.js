@@ -57,12 +57,12 @@ var eventGroup = svg.append("g");
 
 var color = d3.scale.category20b();
 
-// add div attribution (as per Mapbox' requirements)
+// add div attribution
  d3.select("#viz")
    .append("div")
      .attr("class", "attribution")
    .append("label")
-     .html("<a href='https://www.mapbox.com/about/maps/' target='_blank'>© MapBox © OpenStreetMap</a>&nbsp;<a href='https://www.mapbox.com/map-feedback/'>Improve this map</a>")
+     .html("<a href='https://carto.com/attributions' target='_blank'>© CARTO</a> © <OpenStreetMap href='https://www.openstreetmap.org/copyright'>OpenStreetMapOpenStreetMap</a>")
 
 function ready(error, sites, ca_superfund, ca_toxics) {
   if (error) {
@@ -104,7 +104,7 @@ function ready(error, sites, ca_superfund, ca_toxics) {
       .enter().append("circle")
         .attr("cx", function(d) { return projection([d.longitude, d.latitude])[0] })
         .attr("cy", function(d) { return projection([d.longitude, d.latitude])[1] })
-        .attr("r", 5)
+        .attr("r", 6)
         .attr("class", "toxics-circ")
         .on("mouseover", function(d,i) {
             tooltip.transition().duration(200).style("opacity", .8);
@@ -137,61 +137,6 @@ function ready(error, sites, ca_superfund, ca_toxics) {
           .on("mouseout", function(d,i) {
             tooltip.transition().duration(500).style("opacity", 0);
           });
-
-  //   var companiesG = svg.append("g")
-  //       .attr("id", "companiesG")
-  //       .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")");
-   //
-  //   var companyPoints = companiesG.selectAll(".companies")
-  //       .data(sites)
-  //     .enter()
-  //       .append("g")
-  //       .attr("transform", function (d) {
-  //           return "translate(" + projection([d.longitude, d.latitude]) + ")scale(" + projection.scale() + ")"
-  //       })
-  //       .on("mouseover", function(d,i) {
-  //         tooltip.transition().duration(200).style("opacity", .8);
-  //         tooltip.html("<br>" + "<strong>" + "COMPANY" + "</strong><br>"
-  //                 + d.company.toTitleCase() + "" +
-  //                 (d.date_founded?"<br>" + "Founded: "+d.date_founded:"") + "<br>" +
-  //                 "Address: " + d.address.toTitleCase() + "<br>" +
-  //                 (d.company_type?"<br>" + "Company type: " + d.company_type:"") + "<br>" +
-  //                 (d.description?"<hr>"+d.description:""))
-  //       })
-  //       .on("mouseout", function(d,i) {
-  //         tooltip.transition().duration(500).style("opacity", 0);
-  //       });
-   //
-  //   companyPoints
-  //       .append("circle")
-  //       .attr("r", 3)
-  //       .attr("class", "company-circ");
-   //
-  //   var toxicsG = svg.append("g")
-  //       .attr("id", "toxicsG")
-  //       .attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")");
-   //
-  //   var toxicPoints = toxicsG.selectAll(".toxics")
-  //       .data(ca_toxics)
-  //     .enter().append("g")
-  //       .attr("transform", function (d) {
-  //           return "translate(" + projection([d.longitude, d.latitude]) + ")scale(" + projection.scale() + ")"
-  //       })
-  //       .on("mouseover", function(d,i) {
-  //         tooltip.transition().duration(200).style("opacity", .8);
-  //         tooltip.html("<br>" + "<strong>" + "TOXIC LEAK/SPILL" + "</strong><br>" + d.company.toTitleCase() + "" +
-  //                 "<br>" + "Address: " + d.address.toTitleCase() + "<br>" +
-  //                 (d.company_type?"<br>" + "Company type: " + d.company_type:"") + "<br>" +
-  //                 (d.source?"<hr>"+ "Source: " + d.source:""))
-  //       })
-  //       .on("mouseout", function(d,i) {
-  //         tooltip.transition().duration(500).style("opacity", 0);
-  //       });
-   //
-  //  toxicPoints
-  //       .append("circle")
-  //       .attr("r", 1)
-  //       .attr("class", "toxics-circ");
 
   zoomed();
 };
@@ -238,7 +183,7 @@ function zoomed() {
         .remove();
 
     image.enter().append("image")
-        .attr("xlink:href", function(d) { return "http://" + ["a", "b", "c", "d"][Math.random() * 4 | 0] + ".tiles.mapbox.com/v4/hepplerj.d2ec1aca/" + d[2] + "/" + d[0] + "/" + d[1] + ".png?access_token=pk.eyJ1IjoiaGVwcGxlcmoiLCJhIjoiMjNqTEVBNCJ9.pGqKqkUDlcFmKMPeoARwkg"; })
+        .attr("xlink:href", function(d) { return "http://" + ["a", "b", "c", "d"][Math.random() * 4 | 0] + ".basemaps.cartocdn.com/rastertiles/voyager/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
         .attr("width", 1)
         .attr("height", 1)
         .attr("x", function (d) {
@@ -248,6 +193,8 @@ function zoomed() {
             return d[1];
         });
 }
+
+
 
 // Used for the check boxes to turn off and on elements
 function filterPoints(pointData) {
