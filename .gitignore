@@ -10,3 +10,6 @@ narrative/
 .DS_Store
 .jekyll-cache/
 Gemfile.lock
+
+node_modules/
+vendor/
