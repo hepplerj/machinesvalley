@@ -52,7 +52,7 @@ of the project are bound to change over time.
 
 ### About the Author
 
-I am [Jason Heppler](http://jasonheppler.org), the Digital Engagement Librarian at the University of Nebraska at Omaha.
+I am [Jason Heppler](https://jasonheppler.org), the senior developer at the Roy Rosenzweig Center for History and New media at George Mason University.
 
 ### Contributing
 

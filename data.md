@@ -12,7 +12,7 @@ I am happy to share my data and the tools I have compiled or created with other 
 
 ### Maps and GIS
 
-- **[San Jose annexations TopoJSON](https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/sv-annexations/sj_annex_full.json)**: Using the data [provided by the City of San Jose](http://www.sanjoseca.gov/index.aspx?NID=3308), I restructured the shapefile into a yearly breakdown in order to build the [annexation visualization](/visualizations/sanjose/).
+- **[San Jose annexations TopoJSON](https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/sv-annexations/sj_annex_full.json)**: Using the data [provided by the City of San Jose](https://www.sanjoseca.gov/index.aspx?NID=3308), I restructured the shapefile into a yearly breakdown in order to build the [annexation visualization](/visualizations/sanjose/).
 - **[Mountain View annexations TopoJSON](https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/sv-annexations/mountainview.json)**: Using the data provided by the City of Mountain View, I restructured the shapefile into a yearly breakdown in order to build the [annexation visualization](/visualizations/mountainview/).
 - **[Santa Clara open space GeoJSON](https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/ca-openspace/openspace_santaclara.json)**: Based on data provided by the Bay Area Open Space Conservancy.
 - **[California counties](https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/ca-counties/ca_counties.json)**: The California Bay Area counties GeoJSON file is used as a base map of some of the visualizations.

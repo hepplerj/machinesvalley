@@ -1,9 +1,10 @@
 ---
 layout: single
 permalink: /introduction/
-title: Introduction
-headline: Introduction
-modified: 2016-05-21
+title: Overview
+headline: Overview
+modified: 2023-02-17
+created: 2016-05-21
 tags: [Jason Heppler, digital history, research]
 ---
 
@@ -49,20 +50,18 @@ Much of the site is a "work in progress." As a whole, the project seeks to make 
 
 If you use this project for academic work, here is a suggested citation.
 
-> Jason Heppler, *Machines in the Valley: Growth, Conflict, and Environmental Politics in Silicon Valley*, website, code, and datasets (2018): <http://dissertation.jasonheppler.org>.
+> Jason Heppler, *Machines in the Valley: Growth, Conflict, and Environmental Politics in Silicon Valley*, website, code, and datasets (2018): <https://machinesinthevalley.org>.
 
 ### Project Team
 
-**Jason A. Heppler** is the Digital Engagement Librarian and an Assistant Professor of History at the University of Nebraska at Omaha, and a researcher with Stanford University's Spatial History Project. He received his Ph.D. in history from the University of Nebraska-Lincoln in 2016 and is working on his first book on environmental politics in Silicon Valley.
+**Jason A. Heppler** is the senior developer at the Roy Rosenzweig Center for History and New Media at George Mason University. He received his Ph.D. in history from the University of Nebraska-Lincoln in 2016 and is under contract with the University of Oklahoma Press for his book on Silicon Valley's environmental history due out in 2024.
 
 ### Essays, Publications, and Whitepapers 
 
 As essays, articles, reports, and white papers are produced with research data and visualizations from this project, they will appear below.
 
-- My book, *Suburban by Nature: Silicion Valley and the Transformation of
-  American Environmental Politics* is under contract with the University of
-  Oklahoma Press and is expected to be published in 2020.
-- "Green Dreams, Toxic Legacies: Toward a Digital Political Ecology of Silicon Valley," *International Journal of Humanities and Arts Computing*, vol. 11, no. 1 (68-85), DOI: [10.3366/ijhac.2017.0179](http://www.euppublishing.com/doi/abs/10.3366/ijhac.2017.0179).
+- My book, tentatively titled *Suburban by Nature: Silicion Valley and the Transformation of American Environmental Politics*, is under contract with the University of Oklahoma Press and is expected to be published in 2020.
+- "Green Dreams, Toxic Legacies: Toward a Digital Political Ecology of Silicon Valley," *International Journal of Humanities and Arts Computing*, vol. 11, no. 1 (68-85), DOI: [10.3366/ijhac.2017.0179](https://www.euppublishing.com/doi/abs/10.3366/ijhac.2017.0179).
 
 ### News and Updates
 
@@ -72,6 +71,7 @@ my research, illustrate points I'm trying to make, and extend upon
 subjects and themes covered in my book. Various aspects 
 of the project are bound to change over time and I will try and record them here.
 
+- *2023-02-17* &middot; Fixed some design layout issues.
 - *2017-08-03* &middot; Updated San Jose narrative elements. 
 - *2017-07-25* &middot; Added historic base maps to San Jose annexation.
 - *2017-03-27* &middot; Added the Introduction.
@@ -80,10 +80,6 @@ of the project are bound to change over time and I will try and record them here
 
 This project is under version control. If you'd like to see all of the updates the project has gone through, you can follow the updates on [Github](https://github.com/hepplerj/machinesvalley).
 
-### Partners
-
-[Stanford University Spatial History Project](http://www.stanford.edu/group/spatialhistory/): I am working as a researcher with the Spatial History Project to develop new visualizations.
-
 ### Copyright Statement
 
 All material produced here is published freely for educational and research use, subject to fair use regulations. The site design, programming, and data structures are all developed under the open source MIT License. Images and other material may have copyright restrictions; please contact the appropriate institution.
@@ -91,9 +87,7 @@ All material produced here is published freely for educational and research use,
 ### Contact
 
 Dr. Jason A. Heppler  
-University of Nebraska at Omaha  
-6001 Dodge Street  
-Omaha NE 68188  
+George Mason University
 [jason@jasonheppler.org](mailto:jason@jasonheppler.org)
 
 [^3]: Kenneth Jackson, *Crabgrass Frontier: The Suburbanization of the United States* (Oxford: Oxford University Press, 1987), p. 3.  
