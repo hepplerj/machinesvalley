@@ -1,5 +1,4 @@
 require "rake/clean"
-#require "stringex"
 require "yaml"
 require "fileutils"
 

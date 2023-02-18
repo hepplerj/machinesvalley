@@ -7,7 +7,7 @@
 # Usage: ./parse.rb /path/to/input.csv /path/to/output.json
 
 # Jason A. Heppler | jason@jasonheppler.org | jasonheppler.org
-# MIT License <http://heppler.mit-license.org/>
+# MIT License <https://heppler.mit-license.org/>
 #
 # Created: 2014-07-10
 

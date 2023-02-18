@@ -1,7 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,300,700);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100);
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:900);
-@import url(http://fonts.googleapis.com/css?family=Pontano+Sans);
+@import url('https://fonts.googleapis.com/css?family=Lato:400,300,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:900');
+@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body {

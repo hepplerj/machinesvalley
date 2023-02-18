@@ -35,10 +35,9 @@ L.geoJson(pts, {
   }
 }).addTo(layerGroup);
 
-// L.tileLayer('http://{s}.tiles.mapbox.com/v4/hepplerj.d2ec1aca/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiaGVwcGxlcmoiLCJhIjoiMjNqTEVBNCJ9.pGqKqkUDlcFmKMPeoARwkg',
-L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
   {
-    attribution: 'Map tiles by <a href="http://cartodb.com/attributions">CartoDB</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>. Company data compiled by Jason A. Heppler',
+    attribution: 'Map tiles by <a href="https://cartodb.com/attributions">CartoDB</a>, under <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="https://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>. Company data compiled by Jason A. Heppler',
     maxZoom: 17,
     minZoom: 9
   }).addTo(map);

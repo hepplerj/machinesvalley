@@ -183,7 +183,7 @@ function zoomed() {
         .remove();
 
     image.enter().append("image")
-        .attr("xlink:href", function(d) { return "http://" + ["a", "b", "c", "d"][Math.random() * 4 | 0] + ".basemaps.cartocdn.com/rastertiles/voyager/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
+        .attr("xlink:href", function(d) { return "https://" + ["a", "b", "c", "d"][Math.random() * 4 | 0] + ".basemaps.cartocdn.com/rastertiles/voyager/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
         .attr("width", 1)
         .attr("height", 1)
         .attr("x", function (d) {

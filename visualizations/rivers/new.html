@@ -5,13 +5,13 @@
 
 <title>Rivers</title>
 
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+<link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
 <!--[if lte IE 8]>
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
+<link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
 <![endif]-->
-<script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet-src.js"></script>
+<script src="https://cdn.leafletjs.com/leaflet-0.5/leaflet-src.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="https://d3js.org/queue.v1.min.js"></script>
 
 <style type="text/css">
 html, body { height: 100% }
@@ -40,9 +40,9 @@ body {
 
 <script>
 var map = L.map('map').setView([37.3382, -121.8863], 11);
-  L.tileLayer('http://{s}.tiles.mapbox.com/v3/hepplerj.i2kd8l64/{z}/{x}/{y}.png', {
+  L.tileLayer('https://{s}.tiles.mapbox.com/v3/hepplerj.i2kd8l64/{z}/{x}/{y}.png', {
       maxZoom: 14,
-      attribution: 'Map tiles (c) <a href="http://mapbox.com">MapBox</a>'
+      attribution: 'Map tiles (c) <a href="https://mapbox.com">MapBox</a>'
   }).addTo(map);
 
   d3.csv('ca_superfund.csv', function (error, rivers) {
@@ -108,7 +108,7 @@ var map = L.map('map').setView([37.3382, -121.8863], 11);
 // }
 
 // // Make the river overlay layer, vector tiles from our TileStache/Gunicorn server
-// var geojsonURL = "http://somebits.com:8001/rivers/{z}/{x}/{y}.json";
+// var geojsonURL = "https://somebits.com:8001/rivers/{z}/{x}/{y}.json";
 // var geojsonTileLayer = new L.TileLayer.GeoJSON(geojsonURL, { },
 //     { style: riverStyle });
 // map.addLayer(geojsonTileLayer);

@@ -5,12 +5,12 @@
 
     <link
         rel="stylesheet"
-        href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+        href="https://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
     />
-    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
 
     <script
-        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+        src="https://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
     </script>
     <style>
       #map {
@@ -28,9 +28,9 @@
 
         var map = L.map('map').setView([37.3711, -122.0375], 10);
         mapLink =
-            '<a href="http://stamen.com">Stamen Design</a>';
+            '<a href="https://stamen.com">Stamen Design</a>';
         L.tileLayer(
-            'http://{s}.sm.mapstack.stamen.com/(toner-lite,$fff[difference],$fff[@23],$fff[hsl-saturation@20])/{z}/{x}/{y}.png', {
+            'https://{s}.sm.mapstack.stamen.com/(toner-lite,$fff[difference],$fff[@23],$fff[hsl-saturation@20])/{z}/{x}/{y}.png', {
             attribution: '&copy; ' + mapLink,
             maxZoom: 14,
             }).addTo(map);

@@ -19,8 +19,8 @@
 <link rel="stylesheet" href="{{site.url}}/assets/css/navbar.css">
 
 <!-- Fonts -->
-<link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
 
 <script src="https://use.typekit.net/okz8fyd.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -29,7 +29,7 @@
 <script src="{{ site.url }}/visualizations/lib/d3.v3.min.js"></script>
 <script src="{{ site.url }}/visualizations/lib/topojson.v1.min.js"></script>
 <script src="{{ site.url }}/visualizations/lib/queue.v1.min.js"></script>
-<script src="http://d3js.org/d3.geo.tile.v0.min.js"></script>
+<script src="https://d3js.org/d3.geo.tile.v0.min.js"></script>
 {% if page.extra_css %}
 <link rel="stylesheet" href="{{site.url}}/assets/css/{{ page.extra_css }}">
 {% endif %}
@@ -53,7 +53,7 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 {% for link in site.links %}
-                <li itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="{{ site.url }}{{ link.url }}" itemprop="url"><span itemprop="name">{{ link.title }}</span></a></li>
+                <li itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="{{ site.url }}{{ link.url }}" itemprop="url"><span itemprop="name">{{ link.title }}</span></a></li>
                 {% endfor %}
               </ul>
             </div>
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-<div class="head-section" style="height: 700px; width: 100%">
+<div class="head-section" style="height: 100vh; width: 100%">
   <div class="text head-text">
     <div class="headline">Machines in the Valley</div>
     <div class="head-summary">Growth, Conflict, and Environmental Politics<br> in Silicon Valley</div>

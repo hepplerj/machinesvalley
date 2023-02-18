@@ -16,7 +16,7 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 {% for link in site.links %}
-                <li itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="{{ site.url }}{{ link.url }}" itemprop="url"><span itemprop="name">{{ link.title }}</span></a></li>
+                <li itemscope itemtype="https://schema.org/SiteNavigationElement"><a href="{{ site.url }}{{ link.url }}" itemprop="url"><span itemprop="name">{{ link.title }}</span></a></li>
                 {% endfor %}
               </ul>
             </div>

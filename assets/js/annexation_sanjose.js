@@ -37,14 +37,14 @@ L.control.zoom({
 }).addTo(mymap);
 
 // Mapbox Tile
-L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGVwcGxlcmoiLCJhIjoiMjNqTEVBNCJ9.pGqKqkUDlcFmKMPeoARwkg", { attribution: '<a href="http://mapbox.com">Mapbox</a>' }).addTo(mymap);
+L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGVwcGxlcmoiLCJhIjoiMjNqTEVBNCJ9.pGqKqkUDlcFmKMPeoARwkg", { attribution: '<a href="https://mapbox.com">Mapbox</a>' }).addTo(mymap);
 
 mymap.scrollWheelZoom.disable();
 
 // Historic basemaps
-var sj_1938 = L.tileLayer("http://warp.worldmap.harvard.edu/maps/tile/4189/{z}/{x}/{y}.png");
-var sj_1959 = L.tileLayer("http://warp.worldmap.harvard.edu/maps/tile/4184/{z}/{x}/{y}.png");
-var sj_1886 = L.tileLayer("http://warp.worldmap.harvard.edu/maps/tile/4147/{z}/{x}/{y}.png");
+var sj_1938 = L.tileLayer("https://warp.worldmap.harvard.edu/maps/tile/4189/{z}/{x}/{y}.png");
+var sj_1959 = L.tileLayer("https://warp.worldmap.harvard.edu/maps/tile/4184/{z}/{x}/{y}.png");
+var sj_1886 = L.tileLayer("https://warp.worldmap.harvard.edu/maps/tile/4147/{z}/{x}/{y}.png");
 var sj_ward1 = L.tileLayer("https://maps.georeferencer.com/georeferences/964369491444/2017-02-20T14:25:19.132722Z/map/{z}/{x}/{y}.png?key=KPlLnmp6U0gZTmAcJ4Ob");
 var sj_ward2 = L.tileLayer("https://maps.georeferencer.com/georeferences/378644494803/2017-02-20T14:25:19.132722Z/map/{z}/{x}/{y}.png?key=KPlLnmp6U0gZTmAcJ4Ob");
 var sj_ward3 = L.tileLayer("https://maps.georeferencer.com/georeferences/786097815676/2015-03-09T17:36:28.256160Z/map/{z}/{x}/{y}.png?key=KPlLnmp6U0gZTmAcJ4Ob");

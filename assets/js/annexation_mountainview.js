@@ -38,8 +38,8 @@ L.control.zoom({
 }).addTo(mymap);
 
 // OpenStreetMap Tile
-L.tileLayer("http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", {
-    attribution: '<a href="http://carto.com">CARTO</a>'
+L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", {
+    attribution: '<a href="https://carto.com">CARTO</a>'
 }).addTo(mymap);
 
 // .leaflet-objects-pane --> .leaflet-overlay-pane
