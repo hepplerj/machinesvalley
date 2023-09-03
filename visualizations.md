@@ -40,13 +40,13 @@ Each view aims to address or illustrate a research question or theme.</p>
     </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-xs-12 col-md-8">
     <a href="{{ site.url }}/visualizations/mountainview/"><img class="img-responsive img-rounded" src="{{site.url}}/assets/image/mv_annexation_preview.png"/>
     Mountain View Annexations, 1940&#8212;1990</a><br/>
     <p>Mountain View underwent dramatic expansion like many of the Bay Area cities in the postwar era.</p>
     </div>
-</div>
+</div> -->
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
