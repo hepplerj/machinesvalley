@@ -33,6 +33,8 @@
 {% if page.extra_css %}
 <link rel="stylesheet" href="{{site.url}}/assets/css/{{ page.extra_css }}">
 {% endif %}
+<script defer data-domain="machinesinthevalley.org" src="https://plausible.io/js/script.js"></script>
+
 </head>
 <body>
 
@@ -73,8 +75,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="{{site.url}}/assets/bootstrap/js/bootstrap.js"></script>
-
-{% include ga.html %}
 
 </body>
 </html>
