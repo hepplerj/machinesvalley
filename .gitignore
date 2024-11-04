@@ -1,15 +1,11 @@
-_site/
-viz/data
-narrative/
 *.dbf
 *.prj
 *.qpj
 *.shp
 *.shx
-.Rhistory
 .DS_Store
-.jekyll-cache/
-Gemfile.lock
+
+public/
 
 node_modules/
 vendor/
