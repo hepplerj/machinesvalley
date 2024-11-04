@@ -1,0 +1,68 @@
+#viz {
+  width: 100%;
+  height: 600px;
+}
+
+path {
+    fill: none;
+    stroke: none;
+    stroke-linejoin: round;
+    /*stroke-width: 1px;*/
+  }
+  
+  .map-tooltip {
+    font-size: 10pt;
+    font-family: sans-serif;
+    color: #333;
+    line-height: 1em;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid silver;
+    padding: .5em;
+    max-width: 350px;
+    pointer-events: none;
+    z-Index: 1000;
+  }
+  
+
+  
+  /* Map Features */
+  
+  .company-circ {
+    stroke: #000;
+    fill-opacity: .8;
+    stroke-opacity: .5;
+    cursor: crosshair;
+    fill: #7570b3;
+  }
+  
+  .company-circ-hidden {
+    display: none;
+  }
+  
+  .superfund-circ {
+    fill: #d95f02;
+    stroke: #000;
+    stroke-opacity: .5;
+    fill-opacity: .7;
+    cursor: crosshair;
+  }
+  
+  .superfund-circ :hover {
+    stroke: #fff;
+  }
+  
+  .superfund-circ-hidden {
+    display: none;
+  }
+  
+  .toxics-circ {
+    stroke: #000;
+    stroke-opacity: .5;
+    fill: #1b9e77;
+    fill-opacity: .7;
+    cursor: crosshair;
+  }
+  
+
+  

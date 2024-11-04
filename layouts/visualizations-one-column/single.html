@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{{- partial "head.html" . -}}
+
+<body>
+  {{- partial "header.html" . -}}
+
+    <!-- <div id="content" class="container mx-auto pt-10"> -->
+
+
+      <h2 class="pb-4 pl-4 pt-4">{{ .Title }}</h2>
+
+      {{ .Content }}
+
+  <!-- </div> -->
+      {{- partial "footer.html" . -}}
+      
+      {{ if hugo.Environment | eq "development" }}
+      {{/* Only minify for production; in development, keep things verbose for debugging and troubleshooting. */}}
+      {{ $cssStyle := resources.Get .Params.styles }}
+      <link rel="stylesheet" href="{{ $cssStyle.Permalink }}" integrity="{{ $cssStyle.Data.Integrity }}">
+      {{ $script := resources.Get .Params.script | js.Build (dict "target" "es2020") }}
+      <script type="module" src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+
+      {{ else }}
+
+      {{ $cssStyle := resources.Get .Params.styles | resources.Fingerprint }}
+      <link rel="stylesheet" href="{{ $cssStyle.Permalink }}" integrity="{{ $cssStyle.Data.Integrity }}">
+      {{ $script := resources.Get .Params.script | js.Build (dict "target" "es2020") | resources.Fingerprint }}
+      <script type="module" src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+      {{ end }}
+
+</body>
+
+</html>

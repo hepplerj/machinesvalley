@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>African American Population Change, 1960—1970 | Machines in the Valley</title>
+    
+  <link
+    rel="stylesheet"
+    href="http://localhost:1313/scss/app.min.422cb5366210c6f535fec59fc9b60d2f370f8ab91aa3d49a8997e3671c619ea6.css"
+    integrity="sha256-Qiy1NmIQxvU1/sWfybYNLzcPirkao9SaiZfjZxxhnqY="
+  />
+
+  <link rel="alternate" type="application/rss+xml" href="/blog/index.xml" />
+  <script
+    defer
+    data-domain="machinesinthevalley.org"
+    src="https://plausible.io/js/script.js"
+  ></script>
+  <script>
+    window.plausible =
+      window.plausible ||
+      function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
+  </script>
+</head>
+<body><nav id="header" class="bg-gray-800 p-4">
+  <div class="flex items-center justify-between">
+    <div class="font-semibold text-xl" id="site-title"><a class="text-white no-underline hover:text-gray-300" href="/">Machines in the Valley</a></div>
+    <div class="hidden md:flex space-x-4">
+      <a href="/introduction/" class="text-white hover:text-white hover:no-underline">Introduction</a>
+      <a href="/visualizations/" class="text-white hover:text-white hover:no-underline">Views</a>
+      <a href="/data/" class="text-white hover:text-white hover:no-underline">Data</a>
+    </div>
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-white">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden mt-2">
+    <a href="/introduction/" class="block text-white py-2 hover:text-white hover:no-underline">Introduction</a>
+    <a href="/visualizations/" class="block text-white py-2 hover:text-white hover:no-underline">Views</a>
+    <a href="/data/" class="block text-white py-2 hover:text-white hover:no-underline">Data</a>
+  </div>
+</nav><h2 class="pb-4 pl-4 pt-4 font-bold">African American Population Change, 1960—1970</h2>
+
+      <blockquote class="pl-4 w-4/5">
+        White flight, capital flight, unequal city services, and unequal access to the housing market isolated African American families to Northside, East San Jose, downtown Palo Alto, Barron Park, East Palo Alto, and Sunnyhills.
+      </blockquote>
+
+       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<div id="map"></div>
+  <div class="container mx-auto">
+<h3 id="about-the-visualization">About the Visualization</h3>
+<p>The rise of high-tech manufacturing jobs in Silicon Valley provided new employment opportunities for African Americans locating to the postwar valley. However, their opportunity to participate in suburban living was isolated until the end of the 1970s. Restrictive covenants and redlining initially forced African Americans into Northside properties. By the 1950s, roughly forty percent of the South Bay&rsquo;s 1,718 black population lived in Northside. Similarly, the county&rsquo;s Mexican Americans occupied the enclave of East San Jose, known as Eastside, while Japanese Americans were restricted to downtown and Northside. Southern and western neighborhoods of San Jose were essentially off limits to nonwhites.</p>
+<p>Black families were often steered towards declining areas. East Palo Alto represented the typical experience: the unincorporated city was socially, infrastructurally, and financially isolated from its neighboring cities. When Bayshore Freeway (Highway 101) was widened in the middle of the twentieth century the freeway became what the NAACP&rsquo;s <em>The Crisis</em> referred to as the &ldquo;concrete curtain.&rdquo;<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> When the California State Planning Commission went ahead with plans to widen the freeway in the late 1950s as a major corridor for trafﬁc between San Francisco and the growing tech industries of Santa Clara Valley, little effort was made to preserve East Palo Alto businesses which mostly lined the freeway. The freeway project appeared willing to curve around other commercial districts, but the ﬁfty-three East Palo Alto businesses lining the old four-lane freeway were displaced. The widening of the freeway also caused greater ﬂooding problems in the city and lowered land values, causing residential and business developers to look elsewhere.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<h3 id="citation">Citation</h3>
+
+
+
+<blockquote class="pl-4">
+    Jason A. Heppler, &ldquo;African American Population Change, 1960—1970,&rdquo; <em>Machines in the Valley</em>, (2021): <a href="http://localhost:1313/visualizations/census/">http://localhost:1313/visualizations/census/</a>.
+</blockquote>
+  <hr>
+<h4 id="data-sources">Data Sources</h4>
+<ul>
+<li>U.S. Census, 1940—2010</li>
+<li>Steven Manson, Jonathan Schroeder, David Van Riper, Katherine Knowles, Tracy Kugler, Finn Roberts, and Steven Ruggles. IPUMS National Historical Geographic Information System: Version 19.0 [dataset]. Minneapolis, MN: IPUMS. 2024. <a href="http://doi.org/10.18128/D050.V19.0">http://doi.org/10.18128/D050.V19.0</a></li>
+</ul>
+<h4 id="bibliography">Bibliography</h4>
+<ul>
+<li>Stephen J. Pitti, <em>The Devil in Silicon Valley: Northern California, Race, and Mexican Americans</em> (Princeton University Press, 2004).</li>
+<li>Robert Self, <em>American Babylon: Race and the Struggle for Postwar Oakland</em> (Princeton University Press, 2005).</li>
+<li>Herbert Ruffin II <em>Uninvited Neighbors: African Americans in Silicon Valley, 1769-1990</em> (University of Oklahoma Press, 2014).</li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Rachelle Marshall, &ldquo;Concrete Curtain—the East Palo Alto Story,&rdquo; <em>The Crisis</em> (November 1957): 543-548.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Bayinnah R. Jones, &ldquo;The Tinsley Case Decision,&rdquo; Ph.D. diss., University of North Carolina-Chapel Hill, 18; Palo Alto Times, January 11, 1956.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+
+<hr class="footer-divider">
+
+<footer>
+		<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>.
+			<a href="https://jasonheppler.org">Jason A. Heppler</a>. Code available on
+			<a href="https://github.com/hepplerj/machinesvalley">GitHub</a>, <a href="https://heppler.mit-license.org">MIT license</a>. Suggestions
+			and criticism welcome: <a href="mailto:jason@jasonheppler.org">jason@jasonheppler.org</a>.</p>
+</footer>
+</div>
+
+
+<script src="http://localhost:1313/js/main.js" defer></script>
+
+      
+      
+      <link rel="stylesheet" href="http://localhost:1313/viz/census/style.css" integrity="">
+      
+      <script type="module" src="http://localhost:1313/viz/census/main.js" integrity=""></script>
+
+      
+</body>
+</html>

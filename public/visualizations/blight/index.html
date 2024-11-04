@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Mapping Blight in San Jose, 1958 | Machines in the Valley</title>
+    
+  <link
+    rel="stylesheet"
+    href="http://localhost:1313/scss/app.min.422cb5366210c6f535fec59fc9b60d2f370f8ab91aa3d49a8997e3671c619ea6.css"
+    integrity="sha256-Qiy1NmIQxvU1/sWfybYNLzcPirkao9SaiZfjZxxhnqY="
+  />
+
+  <link rel="alternate" type="application/rss+xml" href="/blog/index.xml" />
+  <script
+    defer
+    data-domain="machinesinthevalley.org"
+    src="https://plausible.io/js/script.js"
+  ></script>
+  <script>
+    window.plausible =
+      window.plausible ||
+      function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
+  </script>
+</head>
+<body><nav id="header" class="bg-gray-800 p-4">
+  <div class="flex items-center justify-between">
+    <div class="font-semibold text-xl" id="site-title"><a class="text-white no-underline hover:text-gray-300" href="/">Machines in the Valley</a></div>
+    <div class="hidden md:flex space-x-4">
+      <a href="/introduction/" class="text-white hover:text-white hover:no-underline">Introduction</a>
+      <a href="/visualizations/" class="text-white hover:text-white hover:no-underline">Views</a>
+      <a href="/data/" class="text-white hover:text-white hover:no-underline">Data</a>
+    </div>
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-white">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden mt-2">
+    <a href="/introduction/" class="block text-white py-2 hover:text-white hover:no-underline">Introduction</a>
+    <a href="/visualizations/" class="block text-white py-2 hover:text-white hover:no-underline">Views</a>
+    <a href="/data/" class="block text-white py-2 hover:text-white hover:no-underline">Data</a>
+  </div>
+</nav><h2 class="pb-4 pl-4 pt-4 font-bold">Mapping Blight in San Jose, 1958</h2>
+
+      <blockquote class="pl-4 w-4/5">
+        In its 1958 Master Plan, the San Jose Planning Department mapped what it considered to be blighted areas of the city. Those areas largely overlapped with minority neighborhoods.
+      </blockquote>
+
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<div id="viz"></div>
+<div class="container mx-auto">
+<h3 id="about-the-map">About the Map</h3>
+<img src="/img/sj_blight.png" alt="San Jose, 1958" width="300" height="auto" class="float-left p-4 mr-4 mb-4">
+<p>The Mayfair neighborhood was a key site of Latinx activism focused on halting racial discrimination, calling for greater participation in electoral politics, labor rights, and a critique of San Jose&rsquo;s growth policies. Latinx activism and environmental regulations became entwined with debates over citizenship and discrimination, prompting activists to call for environmental equality alongside their challenges to racial inequality, citizenship, and segregation. Even economic issues that appeared neutral, such as zoning, sewer hookups, and street paving, became a core tenant of political organizing. After a months-long voter registration drive registered thousands of new Latinx voters, the San Jose city council reacted by approving new street and sewer projects for the eastern edges of the city.</p>
+<p>But the political victory was short lived. While the greatest financial benefits for cities came from taxing industry, municipalities of the Midpeninsula encouraged widespread suburban growth. In the wake of the &ldquo;monetary and credit revolution,&rdquo; in the words of historian David Freund, that &ldquo;made it easier—in many cases risk free—for the private sector to lend and borrow,&rdquo; thousands of new homeowners flooded housing markets. Aided by the Federal Housing Authority (FHA), created under the National Housing Act of 1934, guaranteed mortgage loans up to eighty percent of the value of a home encouraged widespread purchasing of homes. The federal subsidy into housing, Kenneth Jackson noted, meant there was &ldquo;very little risk to the banker if a loan turned sour.&rdquo;<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> The new lending terms under the FHA of low down payments, larger loans in proportion to a home’s value, low interest rates, and longer loan repayments ushered in a dramatic rise in demand. Nationally, single-family housing sales and starts doubled between 1936 and 1941, and rose almost fifteen-fold between 1944 and 1950. The federal tax code also allowed home ownership to blossom by allowing homeowners to take deductions from their mortgage interest and property taxes. Renters, however, received no similar federal subsidy. Thus, federal policies encouraged <a href="/visualizations/sanjose-annexations/">building in suburbs rather than city cores</a>. Federal tax policies also allowed developers to write off construction costs on commercial buildings, tipping incentives towards new construction instead of renovation.</p>
+<p>Mayfair became a victim of the city&rsquo;s growth mentality as it pursued new federal funding for <a href="https://catalog.hathitrust.org/Record/102203134">highway</a> and housing construction. Thanks to the availability of interstate construction funding, coupled with the <a href="https://catalog.hathitrust.org/Record/005888681?type%5B%5D=author&amp;lookfor%5B%5D=%22San%20Jose%20%28Calif.%29.%20City%20Planning%20Commission.%22&amp;ft=">city&rsquo;s identification of &ldquo;blighted&rdquo; areas</a>, new highway projects bifurcated&mdash;or in some cases, entirely wiped out&mdash;Latinx communities. Working-class Latinx communities were pushed further east and north of San Jose and, again, found themselves isolated. Urban renewal plans sealed the fate of Sal Si Puedes: what had once housed a community of 422 people became the site for highways. San Jose’s policies of transportation, urban renewal, and annexations overwhelmed Latinx activists. &ldquo;What use to be a very small neighborhood is now . . . hundreds of hastily-built tract homes that have become quite blighted,&rdquo; Herman Gallegos, leader of the Community Services Organization, <a href="https://digicoll.lib.berkeley.edu/record/217691?v=pdf">noted</a>. The problems of Sal Si Puedes &ldquo;were exacerbated by the sudden growth.&rdquo;</p>
+<h3 id="sources">Sources</h3>
+<ul>
+<li>Map of Mayfair derived from Margaret Clark, <em><a href="https://www.google.com/books/edition/Health_in_the_Mexican_American_Culture/IA38EAAAQBAJ?hl=en&amp;gbpv=0">Health in the Mexican American Community</a></em> (1959).</li>
+<li>Blight map derived from the <a href="https://catalog.hathitrust.org/Record/005888681">San Jose Master Plan</a>, San Jose Planning Department (1958).</li>
+</ul>
+<h3 id="citation">Citation</h3>
+
+
+
+<blockquote class="pl-4">
+    Jason A. Heppler, &ldquo;Mapping Blight in San Jose, 1958,&rdquo; <em>Machines in the Valley</em>, (2024): <a href="http://localhost:1313/visualizations/blight/">http://localhost:1313/visualizations/blight/</a>.
+</blockquote>
+</div>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>David Freund, &ldquo;Marketing the Free Market: State Intervention and the Politics of Prosperity in Metropolitan America,&rdquo; in Sugrue and Kruse, <em>The New Suburban History</em>, 15, 26.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+
+<hr class="footer-divider">
+
+<footer>
+		<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>.
+			<a href="https://jasonheppler.org">Jason A. Heppler</a>. Code available on
+			<a href="https://github.com/hepplerj/machinesvalley">GitHub</a>, <a href="https://heppler.mit-license.org">MIT license</a>. Suggestions
+			and criticism welcome: <a href="mailto:jason@jasonheppler.org">jason@jasonheppler.org</a>.</p>
+</footer>
+</div>
+
+
+<script src="http://localhost:1313/js/main.js" defer></script>
+
+      
+      
+      <link rel="stylesheet" href="http://localhost:1313/viz/blight/style.css" integrity="">
+      
+      <script type="module" src="http://localhost:1313/viz/blight/main.js" integrity=""></script>
+
+      
+</body>
+</html>

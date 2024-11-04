@@ -1,0 +1,21 @@
+#map {
+    width: 100%;
+    height: 600px;
+  }
+
+  .leaflet-container {
+    width: 100%;
+    height: 100%;
+}
+
+.map-tooltip {
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    pointer-events: none;
+    font-size: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}

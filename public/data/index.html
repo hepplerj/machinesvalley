@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Data | Machines in the Valley</title>
+    
+  <link
+    rel="stylesheet"
+    href="http://localhost:1313/scss/app.min.422cb5366210c6f535fec59fc9b60d2f370f8ab91aa3d49a8997e3671c619ea6.css"
+    integrity="sha256-Qiy1NmIQxvU1/sWfybYNLzcPirkao9SaiZfjZxxhnqY="
+  />
+
+  <link rel="alternate" type="application/rss+xml" href="/blog/index.xml" />
+  <script
+    defer
+    data-domain="machinesinthevalley.org"
+    src="https://plausible.io/js/script.js"
+  ></script>
+  <script>
+    window.plausible =
+      window.plausible ||
+      function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
+  </script>
+</head>
+<body><nav id="header" class="bg-gray-800 p-4">
+  <div class="flex items-center justify-between">
+    <div class="font-semibold text-xl" id="site-title"><a class="text-white no-underline hover:text-gray-300" href="/">Machines in the Valley</a></div>
+    <div class="hidden md:flex space-x-4">
+      <a href="/introduction/" class="text-white hover:text-white hover:no-underline">Introduction</a>
+      <a href="/visualizations/" class="text-white hover:text-white hover:no-underline">Views</a>
+      <a href="/data/" class="text-white hover:text-white hover:no-underline">Data</a>
+    </div>
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-white">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden mt-2">
+    <a href="/introduction/" class="block text-white py-2 hover:text-white hover:no-underline">Introduction</a>
+    <a href="/visualizations/" class="block text-white py-2 hover:text-white hover:no-underline">Views</a>
+    <a href="/data/" class="block text-white py-2 hover:text-white hover:no-underline">Data</a>
+  </div>
+</nav><div id="content" class="container mx-auto px-24 pt-10">
+        <div class="container mx-auto px-4">
+            <h1>Data</h1>
+
+            <p>I am happy to share my data and the tools I have compiled or created with other researchers, journalists, policy makers, and the public. All of the resources here are free and available for use. Code is licensed under the MIT License. Data may be licensed under different licenses; see the individual Github repositories for specific information.</p>
+<h3 id="maps-and-gis">Maps and GIS</h3>
+<ul>
+<li><strong><a href="https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/sv-annexations/sj_annex_full.json">San Jose annexations TopoJSON</a></strong>: Using the data <a href="https://www.sanjoseca.gov/index.aspx?NID=3308">provided by the City of San Jose</a>, I restructured the shapefile into a yearly breakdown in order to build the <a href="/visualizations/sanjose/">annexation visualization</a>.</li>
+<li><strong><a href="https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/sv-annexations/mountainview.json">Mountain View annexations TopoJSON</a></strong>: Using the data provided by the City of Mountain View, I restructured the shapefile into a yearly breakdown in order to build the <a href="/visualizations/mountainview/">annexation visualization</a>.</li>
+<li><strong><a href="https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/ca-openspace/openspace_santaclara.json">Santa Clara open space GeoJSON</a></strong>: Based on data provided by the Bay Area Open Space Conservancy.</li>
+<li><strong><a href="https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/ca-counties/ca_counties.json">California counties</a></strong>: The California Bay Area counties GeoJSON file is used as a base map of some of the visualizations.</li>
+<li><strong><a href="https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/sv-urban/urban_areas_out.json">Bay Area urban areas</a></strong>: A GeoJSON file of the Bay Area&rsquo;s 2014 urban areas.</li>
+</ul>
+<h3 id="databases">Databases</h3>
+<ul>
+<li><strong><a href="https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/sv-companies/sv_companies.csv">Silicon Valley companies, 1945-2000</a></strong>: A database I am compiling of technology companies in the Bay Area between 1945 and 2000.</li>
+<li><strong><a href="https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/ca-pollution/ca_superfund.csv">Bay Area Superfund sites</a></strong>: A database of the region&rsquo;s Superfund sites.</li>
+<li><strong><a href="https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/ca-pollution/ca_toxic_sites.csv">Bay Area toxic spills and sites</a></strong>: A database of the region&rsquo;s toxic spill sites.</li>
+<li><strong><a href="https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/census-population/pop_cities.csv">Bay Area city populations</a></strong>: Census figures for Bay Area cities.</li>
+<li><strong><a href="https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/census-population/population_bay_area.csv">Bay Area county populations</a></strong>: Census figures for Bay Area counties.</li>
+<li><strong><a href="https://github.com/hepplerj/machinesvalley/tree/gh-pages/data-files/sv-traffic/traffic.csv">Bay Area 1958 journey-to-work
+figures</a></strong>: Compiled for the <a href="/visualizations/traffic/">journey-to-work</a> visualization.</li>
+</ul>
+
+        </div>
+    </div></div>
+
+<hr class="footer-divider">
+
+<footer>
+		<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>.
+			<a href="https://jasonheppler.org">Jason A. Heppler</a>. Code available on
+			<a href="https://github.com/hepplerj/machinesvalley">GitHub</a>, <a href="https://heppler.mit-license.org">MIT license</a>. Suggestions
+			and criticism welcome: <a href="mailto:jason@jasonheppler.org">jason@jasonheppler.org</a>.</p>
+</footer>
+</div>
+
+
+<script src="http://localhost:1313/js/main.js" defer></script>
+</body>
+
+</html>

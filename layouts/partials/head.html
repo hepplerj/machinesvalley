@@ -1,0 +1,32 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {{ if .IsHome }}
+  <title>{{ .Site.Title }}</title>
+  {{ else }}
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  {{ end}} {{ $styles := resources.Get "scss/app.scss" | toCSS | postCSS (dict
+  "config" "./assets/scss/postcss.config.js") }} {{ $css := $styles | minify |
+  fingerprint | resources.PostProcess }}
+  <link
+    rel="stylesheet"
+    href="{{ $css.Permalink }}"
+    integrity="{{ $css.Data.Integrity }}"
+  />
+
+  <link rel="alternate" type="application/rss+xml" href="/blog/index.xml" />
+  <script
+    defer
+    data-domain="machinesinthevalley.org"
+    src="https://plausible.io/js/script.js"
+  ></script>
+  <script>
+    window.plausible =
+      window.plausible ||
+      function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
+  </script>
+</head>

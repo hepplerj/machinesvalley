@@ -1,0 +1,14 @@
+title: "Machines in the Valley"
+baseURL: "https://machinesinthevalley.org"
+
+permalinks:
+  blog: "/:section/:slug/"
+  page: "/:slug/"
+
+taxonomies: false
+pluralizelisttitles: false
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

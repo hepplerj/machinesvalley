@@ -1,16 +1,30 @@
 module.exports = {
-  content: [
-    "./_drafts/**/*.html",
-    "./_includes/**/*.html",
-    "./_layouts/**/*.html",
-    "./_posts/*.md",
-    "./*.md",
-    "./*.html",
-  ],
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    theme: {
-      extend: {},
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal'
     },
+    colors: {
+      'mv-green': "#007D68",
+    }
+  },
+  content: [
+
+		/* relevant files from the blog + theme */
+        "../../content/**/*.{html,md}",
+        "../../layouts/**/*.html",
+
+		/* relevant files from the theme */
+        "./layouts/**/*.html",
+
+        /* also pick nested css from theme */
+        "../../assets/css/*.css",
+    ],
+  variants: {
+    extend: {},
   },
   plugins: [],
-};
+}
