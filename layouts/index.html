@@ -1,16 +1,21 @@
 {{ define "main" }}
 
-<section class="w-full h-screen">
+<section class="w-full h-screen relative">
     <img src="img/head@2x.png" class="object-cover w-full h-full" alt="Overhead image of the Santa Cruz Foothills, California." />
-    <div class="head-section">
-        <div class="text head-text">
-          <div class="headline">Machines in the Valley</div>
-          <div class="head-summary">Growth, Conflict, and Environmental Politics<br> in Silicon Valley</div>
-          <div class="head-by head-by-main"><em>by</em> <span class="head-by-author"><a class="text-white hover:text-gray-300" href="https://jasonheppler.org">Jason A. Heppler</a></span></div>
-          <div class="head-by head-by-main"><span class="head-by-author">A companion website for <em><a class="text-white hover:text-gray-300" href="https://www.oupress.com/9780806193748/silicon-valley-and-the-environmental-inequalities-of-high-tech-urbanism/">Silicon Valley and the Environmental Inequalities of High-Tech Urbanism</a></em></span></div>
+    <div class="head-section absolute inset-0 flex items-center justify-center p-4">
+        <div class="text head-text p-4">
+          <div class="headline text-lg md:text-3xl lg:text-5xl text-white">Machines in the Valley</div>
+          <div class="head-summary text-base md:text-xl lg:text-2xl text-white mt-2 leading-snug md:leading-normal lg:leading-relaxed">
+            Growth, Conflict, and Environmental Politics<br> in Silicon Valley
+          </div>
+          <div class="head-by head-by-main text-white mt-2">
+            <em>by</em> <span class="head-by-author"><a class="text-white hover:text-gray-300" href="https://jasonheppler.org">Jason A. Heppler</a></span>
+          </div>
+          <div class="head-by head-by-main text-white mt-2">
+            <span class="head-by-author">A companion website for <em><a class="text-white hover:text-gray-300" href="https://www.oupress.com/9780806193748/silicon-valley-and-the-environmental-inequalities-of-high-tech-urbanism/">Silicon Valley and the Environmental Inequalities of High-Tech Urbanism</a></em></span>
+          </div>
         </div>
       </div>
-
 </section>
 
 {{ end }}
