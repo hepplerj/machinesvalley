@@ -1,4 +1,0 @@
-@tailwind base;@tailwind components;@tailwind utilities;body{font-family:ibm plex sans condensed,sans-serif}h1,h2,h3,h4,h5,h6{font-family:ibm plex sans,sans-serif}a{transition:color 200ms;color:#007d68;text-decoration:underline}a:hover{color:#403d39}@layer base{h1 {
-    @apply text-2xl; }
-  h2 {
-    @apply text-xl; } }ul{list-style-type:disc;margin:1.2rem 0 1.2rem 1.2rem;font-size:1.2rem}blockquote{margin:1.2rem 0 1.2rem 1.2rem;font-size:1.4rem;border-left:5px solid #e2e8f0}p{margin:1.2rem;font-size:1.2rem}footer p{font-size:1rem}.head-text{bottom:8%;color:#fff;position:absolute;text-align:center;width:100%;text-shadow:0 0 10px rgba(0,0,0,.5)}.headline{font-size:4.45rem;line-height:4.75rem}.head-summary{font-size:2.45rem;max-width:800px;margin:5px auto 15px}.head-by-main{font-size:1.5rem;margin:20px 0 15px}

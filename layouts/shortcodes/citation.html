@@ -1,6 +1,0 @@
-{{ $url := .Page.Permalink | absURL }}
-{{ $year := .Page.Params.date | dateFormat "2006" }}
-
-<blockquote class="pl-4">
-    Jason A. Heppler, &ldquo;{{ .Page.Title }},&rdquo; <em>Machines in the Valley</em>, ({{ $year }}): <a href="{{ $url }}">{{ $url }}</a>.
-</blockquote>
