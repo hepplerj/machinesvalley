@@ -1,0 +1,27 @@
+#map {
+    width: 100%;
+    height: 600px;
+}
+
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+}
+
+.map-tooltip {
+    position: absolute;
+    padding: 8px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    pointer-events: none;
+    font-size: 12px;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.year-control select {
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}

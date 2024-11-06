@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{{- partial "head.html" . -}}
+
+<body>
+    {{- partial "header.html" . -}}
+    <div id="content" class="container mx-auto px-24 pt-10">
+        <div class="container mx-auto px-4">
+            <h1>{{.Title}}</h1>
+
+            {{.Content}}
+        </div>
+    </div>
+    {{- partial "footer.html" . -}}
+</body>
+
+</html>

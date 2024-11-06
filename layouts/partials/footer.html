@@ -1,0 +1,14 @@
+</div><!-- end grid-container -->
+
+<hr class="footer-divider">
+
+<footer>
+		<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>.
+			<a href="https://jasonheppler.org">Jason A. Heppler</a>. Code available on
+			<a href="https://github.com/hepplerj/machinesvalley">GitHub</a>, <a href="https://heppler.mit-license.org">MIT license</a>. Suggestions
+			and criticism welcome: <a href="mailto:jason@jasonheppler.org">jason@jasonheppler.org</a>.</p>
+</footer>
+</div>
+
+{{ $js := resources.Get "js/main.js" | js.Build }}
+<script src="{{ $js.Permalink }}" defer></script>

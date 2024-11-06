@@ -1,0 +1,11 @@
+*.dbf
+*.prj
+*.qpj
+*.shp
+*.shx
+.DS_Store
+
+public/
+
+node_modules/
+vendor/
