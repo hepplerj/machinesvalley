@@ -9,6 +9,8 @@ build :
 
 deploy : build
 
+	sh fix_permissions.sh
+
 	rsync --omit-dir-times --exclude-from=rsync-excludes \
 		--checksum -avz \
 		--itemize-changes \
