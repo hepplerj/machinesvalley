@@ -20,7 +20,7 @@ thumbdesc: "Urban areas of the San Francisco Bay Area, California"
 
 <div id="viz"></div>
 
-<div class="container mx-auto">
+  <div id="content" class="container mx-auto px-4 sm:px-6 md:px-10 lg:px-24 pt-10">
 
 ### About the Map
 

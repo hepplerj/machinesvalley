@@ -17,7 +17,7 @@ thumbdesc: "Conservation lands in the San Francisco Bay Area"
 
 <div id="viz"></div>
 
-<div class="container mx-auto">
+<div id="content" class="container mx-auto px-4 sm:px-6 md:px-10 lg:px-24 pt-10">
     
 The map displays the general agencies that administer the open spaces of Santa Clara County. [According to the geographer](https://www.google.com/books/edition/The_Country_in_the_City/DsKVrqGFUJMC) Richard Walker, collectively there are more acres of open space in the nine-county Bay Area than in the entirety of Yosemite National Park. The efforts of conservationists over the course of the twentieth century resulted in several thousands of acres being placed under various agencies for their management.
 

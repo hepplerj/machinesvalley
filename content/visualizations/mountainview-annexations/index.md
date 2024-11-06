@@ -17,7 +17,7 @@ thumbdesc: "Annexations in Mountain View, California"
 
 <div id="map"></div>
 
-<div class="container mx-auto">
+<div id="content" class="container mx-auto px-4 sm:px-6 md:px-10 lg:px-24 pt-10">
 
 <div id="year-buttons" class="flex flex-wrap justify-center space-x-2 pt-5">
     <button 

@@ -16,7 +16,7 @@ thumbdesc: "Journey to work visualization in the San Francisco Bay Area"
 
 <div id="map"></div>
 
-<div class="container mx-auto">
+<div id="content" class="container mx-auto px-4 sm:px-6 md:px-10 lg:px-24 pt-10">
 
 ### About the Visualization
 
