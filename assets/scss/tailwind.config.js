@@ -1,21 +1,19 @@
 module.exports = {
+  content: [
+    "../../content/**/*.{html,md}",
+    "../../layouts/**/*.html",
+  ],
   theme: {
-    extend: {
-      
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal'
     },
-    theme: {
-      listStyleType: {
-        none: 'none',
-        disc: 'disc',
-        decimal: 'decimal'
-      },
-      colors: {
-        'mv-green': "#007D68",
-      }
+    colors: {
+      'mv-green': "#007D68",
     },
+    extend: {},
   },
-  variants: {
-
-  },
+  variants: {},
   plugins: []
 }
