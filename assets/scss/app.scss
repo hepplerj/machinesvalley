@@ -91,6 +91,10 @@ footer p {
   text-align: center;
   width: 100%;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  a, a:hover {
+    color: white;
+  }
 }
 
 .headline {
