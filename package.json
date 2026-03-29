@@ -35,7 +35,7 @@
   "description": "Website and visualizations for Machines in the Valley.",
   "devDependencies": {
     "autoprefixer": "^10.4.0",
-    "browser-sync": "^2.27.4",
+    "browser-sync": "^3.0.3",
     "css-loader": "^5.2.7",
     "eslint": "^7.30.0",
     "eslint-config-airbnb-base": "^14.2.1",
